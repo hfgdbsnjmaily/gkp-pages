@@ -1,33 +1,43 @@
-/* Big tablets to 1200px (width smaller than the 1140px row) */
+/* Big tablets to 1200px (width smaller than the 1140px row - 1024px-1140px) */
 @media only screen and (max-width: 1200px) {
-    .scroll-down { margin-top: 500px; }
-    .title { margin-top: 250px; }
-    .main-naw { margin-right: 20px; }
+    .scroll-down { margin-top: 1100px; }
+    .title { margin-top: 500px; }
+    .main-naw { margin-right: 30px; }
     .logo,
     .logo-black { margin-left: 15px; }
-    .crown-list ul li { font-size: 91%; }
+    .crown-list ul li { font-size: 89%; }
     .crown-list {
         width: 50%;
-        padding-top: 20px;
+        padding-top: 10px;
     }
+    .map-box h2 { margin-bottom: 5px; }
+    .new-label { font-size: 90%; }
     .about-us-text { margin: 0 30px; }
+    #pottermaniacs-pc { display: none; }
+    #pottermaniacs-mobile { display: inline-block; }
 }
 
-/* Small tablets to big tablets: from 769px to 1023px */
+/* Small tablets to big tablets: from 768px to 1023px */
 @media only screen and (max-width: 1023px) {
     body { font-size: 18px; }
     section { padding: 60px 0; }
     .crown-list ul li { font-size: 82%; }
     h3 { font-size: 108%; }
+    .logo { margin-top: 30px; }
+    .title { margin-top: 400px; }
+    .scroll-down { 
+        margin-top: 800px;
+        padding-top: 3px;
+    }
+    .map-box h2:after { margin-top: 15px; }
     .about-us-text { 
         margin-right: 40px;
         margin-left: -10px; }
     .about-us-text h3 { font-size: 99%; }
-    .scroll-down { padding-top: 3px; }
-}
+} 
 
-/* Small phones to small tablets: from 481px to 768px*/
-@media only screen and (max-width: 768px) {
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
     body { font-size: 16px; }
     section { padding: 30px 0; }
     .row,
@@ -36,13 +46,13 @@
         width: 100%;
         margin: 0 0 4% 0;
     }
-
+ 
     .main-nav { display: none; }
     .mobile-nav-icon { display: inline-block; }
     .main-nav {
         float: left;
-        margin-top: 35px;
-        margin-left: 25px;
+        margin-top: 20px;
+        margin-left: 0px;
     }
 
     .main-nav li { display: block; }
@@ -59,14 +69,21 @@
     .sticky .main-nav { margin-top: 10px; }
     .sticky .mobile-nav-icon i { color: #555; }
     .sticky .mobile-nav-icon { margin-top: 10px; }
-    h1 { font-size: 180%; }
+    h1 { font-size: 170%; }
     h2 { font-size: 150%; }
     h3 {
         font-size: 75%;
         font-weight: 300;
     }
+    
+    .logo { height: 50px; }
 
-    .scroll-down { padding-top: 5px; }
+    .title { margin-top: 250px; }
+    
+    .scroll-down { 
+        margin-top: 650px; 
+        margin-left: calc(50% - 32px);
+    }
     .map-box {
         width: 100%;
         height: auto;
@@ -87,38 +104,66 @@
         width: 100%;
         height: auto;
     }
+    
     .crown-list ul { padding-left: 0; }
     .crown-list .span-1-of-2 { width: 50%;}
-    .crown-list ul li { font-size: 100%; }
+    .crown-list ul li { font-size: 90%; }
+    .map-box h2 { margin-bottom: 20px; }
+    
+    .new-label { font-size: 67%; }
+    
+    .section-quote { height: 250px; }
+    
+    .section-quote .row {
+        width: 80%;
+        font-size: 100%;
+    }
+    
+    .section-quote:before {
+        margin: -20px 0 0 30px;
+    }
+
     .dg-container{
         margin-bottom: 70px;
         margin-top: 50px;
     }
 
     .dg-wrapper{
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
     }
 
     .dg-wrapper a{
-        width: 200px;
-        height: 200px;
-        margin-left: 0;
+        width: 300px;
+        height: 300px;
+        margin-left: -20px;
     }
 
    .dg-wrapper a img{
-       width: 200px;
+       width: 300px;
        margin-left: 0;
     }
+    
+    .dg-wrapper a div {
+        font-size: 90%;
+        line-height: 35px;
+    }
 
+    .section-about-us {
+        padding-bottom: -100px;
+    }
+    
     .section-about-us h2 {
         margin-top: 0px;
     }
-
+    
+    #bookworms-pc { display: none; }
+    #bookworms-mobile { display: inline-block; }
+    
     .span-1-of-5 { width: 18.72%;}
     .about-us-text {
         margin-right: 20px;
-        margin-left: -40px;
+        margin-left: -60px;
     }
 
     .about-us-text h3 {
@@ -145,17 +190,17 @@
     #pottermaniacs-mobile { display: inline-block; }
 
     .footer-nav {
-        margin-left: -40px;
+        margin-left: -45px;
     }
+    
+    .social-links { margin-right: -40px;
+    margin-top: -30px; }
 
-    .section-quote .row {
-    width: 50%;
-    font-size: 140%;
-
-}
+    .icons-src { padding-top: 20px; }
 
 
 /* Small phones: from 0 to 480px */
 @media only screen and (max-width: 480px) {
+    
 
 }
