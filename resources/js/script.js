@@ -4,9 +4,9 @@ $(document).ready(function() {
 
     $('.js--section-rules').waypoint(function(direction) {
         if (direction == "down") {
-            $('nav').addClass('sticky');
+            $('.nav').addClass('sticky');
         } else {
-            $('nav').removeClass('sticky');
+            $('.nav').removeClass('sticky');
         }
     }, {
         offset: '60px'
@@ -17,6 +17,13 @@ $(document).ready(function() {
     $(function(){
         $(".title").typed({
             strings: ["We haven’t been everywhere,<br> but it’s on our list"],
+            typeSpeed: 50
+        });
+    });
+    
+    $(function(){
+        $(".title-mobile").typed({
+            strings: ["We haven’t been<br> everywhere,<br> but it’s on our list"],
             typeSpeed: 50
         });
     });
@@ -695,4 +702,37 @@ $(document).ready(function() {
             icon.removeClass('ion-close-round');
         }
     }) 
+    
+ /* mobile */  
+    
+    $('.js--wp-3').waypoint(function(direction) {
+    
+    $('.counter').each(function() {
+  var $this = $(this),
+      countTo = $this.attr('data-count');
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 3000,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+  
+  
+
 });
+    });
+    
+});
+

@@ -146,6 +146,17 @@ header {
     transform: translate(-50%, -50%);
 }
 
+.title-mobile { 
+    display: none;
+    text-align: center;
+    position: absolute;
+    width: 1140px;
+    height: auto;
+    margin-top: 250px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .typed-cursor { display: none; }
 
 .logo,
@@ -297,6 +308,7 @@ header {
 }
 
 .map-mobile {display: none;}
+.crown-mobile { display: none; }
 
 .crown-list {
     position: absolute;
@@ -603,6 +615,33 @@ cite {
     background-color: rgba(0, 0, 0, 0.51);
 }
 .dg-wrapper a.dg-center div { display: block; }
+
+.dg-container nav{
+	width: 58px;
+	position: absolute;
+	z-index: 1000;
+	margin-top: 50px;
+	left: 50%;
+	margin-left: -29px;
+    display: none;
+}
+
+.dg-container nav span{
+	text-indent: -9000px;
+	float: left;
+	cursor:pointer;
+	width: 24px;
+	height: 25px;
+	opacity: 0.8;
+	background: transparent url(../../resources/img/arrows.png) no-repeat top left;
+}
+.dg-container nav span:hover{
+	opacity: 1;
+}
+.dg-container nav span.dg-next{
+	background-position: top right;
+	margin-left: 10px;
+}
 
 /* ------------------------------------- */
 /* ABOUT US */

@@ -136,7 +136,7 @@
     .dg-wrapper a{
         width: 300px;
         height: 300px;
-        margin-left: -20px;
+        margin-left: 0px;
     }
 
    .dg-wrapper a img{
@@ -201,6 +201,38 @@
 
 /* Small phones: from 0 to 480px */
 @media only screen and (max-width: 480px) {
+     
+    .logo { margin: 8px auto auto -10px; }
+    .mobile-nav-icon { margin: 15px -20px auto auto; }
+    .title { display: none; }
+    .title-mobile { 
+        display: inline-block;
+        margin-top: 150px;
+    }
     
-
+    .scroll-down { 
+        margin-top: 400px;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        padding-top: 6px;
+        margin-left: calc(50% - 30px);
+    }
+    
+    .crown { display: none; }
+    
+    .crown-mobile { 
+        display: inline-block;
+        margin: 0 auto;
+        font-size: 250%;
+    }
+    
+    .crown-list { text-align: center; }
+    .crown-mobile i { display: inline; }
+    .counter { display: inline; }
+    .crown-mobile div { display: inline; }
+    
+   .section-quote:before {
+        margin: -15px 0 0 25px;
+    }
+    
+    .dg-container nav {display: inline-block;}
 }
