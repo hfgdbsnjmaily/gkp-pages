@@ -1,7 +1,6 @@
 $(document).ready(function() {
     
 /* sticky navigation */
-
     $('.js--section-rules').waypoint(function(direction) {
         if (direction == "down") {
             $('.nav').addClass('sticky');
@@ -13,7 +12,6 @@ $(document).ready(function() {
     }); 
     
 /* title */
-
     $(function(){
         $(".title").typed({
             strings: ["We haven’t been everywhere,<br> but it’s on our list"],
@@ -617,7 +615,6 @@ $(document).ready(function() {
     });  
     
 /* buttons */   
-
     $('.js--more-hide').click(function() {
         $('.more-photos').animate({
             height: 'toggle'
@@ -641,7 +638,6 @@ $(document).ready(function() {
         });
 			});
     var modal = document.getElementById('myModal');
-
     lightbox('.lightbox',{
         captions: false,
         nav: "auto",
@@ -653,6 +649,15 @@ $(document).ready(function() {
         docClose: true,
         swipeClose: true,
         scroll: false
+    });
+    
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        spaceBetween: 10,
+    });
+    
+    var swiper = new Swiper('.swiper-container-mobile', {
+      
     });
     
 /* navigation scroll */      
@@ -701,9 +706,9 @@ $(document).ready(function() {
             icon.addClass('ion-navicon-round');
             icon.removeClass('ion-close-round');
         }
-    }) 
+    }); 
     
- /* mobile */  
+ /* results - counter */  
     
     $('.js--wp-3').waypoint(function(direction) {
     
@@ -714,9 +719,7 @@ $(document).ready(function() {
   $({ countNum: $this.text()}).animate({
     countNum: countTo
   },
-
   {
-
     duration: 3000,
     easing:'linear',
     step: function() {
@@ -726,13 +729,10 @@ $(document).ready(function() {
       $this.text(this.countNum);
       //alert('finished');
     }
-
   });  
   
   
-
 });
     });
     
 });
-

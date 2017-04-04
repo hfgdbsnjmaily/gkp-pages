@@ -16,7 +16,6 @@
     #pottermaniacs-pc { display: none; }
     #pottermaniacs-mobile { display: inline-block; }
 }
-
 /* Small tablets to big tablets: from 768px to 1023px */
 @media only screen and (max-width: 1023px) {
     body { font-size: 18px; }
@@ -35,7 +34,6 @@
         margin-left: -10px; }
     .about-us-text h3 { font-size: 99%; }
 } 
-
 /* Small phones to small tablets: from 481px to 767px */
 @media only screen and (max-width: 767px) {
     body { font-size: 16px; }
@@ -54,7 +52,6 @@
         margin-top: 20px;
         margin-left: 0px;
     }
-
     .main-nav li { display: block; }
     .main-nav li a:link,
     .main-nav li a:visited {
@@ -63,7 +60,6 @@
         padding: 10px 0;
         font-size: 100%;
     }
-
     .sticky .main-nav li a:link,
     .sticky .main-nav li a:visited { padding: 10px 0; }
     .sticky .main-nav { margin-top: 10px; }
@@ -77,7 +73,6 @@
     }
     
     .logo { height: 50px; }
-
     .title { margin-top: 250px; }
     
     .scroll-down { 
@@ -89,7 +84,6 @@
         height: auto;
         position: relative;
     }
-
     .map-mobile {
         display: block;
         width: 100%;
@@ -97,7 +91,6 @@
         position: relative;
         z-index: 0;
     }
-
     .map { display: none; }
     .crown-list {
         position: relative;
@@ -122,23 +115,19 @@
     .section-quote:before {
         margin: -20px 0 0 30px;
     }
-
     .dg-container{
         margin-bottom: 70px;
         margin-top: 50px;
     }
-
     .dg-wrapper{
         width: 300px;
         height: 300px;
     }
-
     .dg-wrapper a{
         width: 300px;
         height: 300px;
         margin-left: 0px;
     }
-
    .dg-wrapper a img{
        width: 300px;
        margin-left: 0;
@@ -148,7 +137,6 @@
         font-size: 90%;
         line-height: 35px;
     }
-
     .section-about-us {
         padding-bottom: -100px;
     }
@@ -165,40 +153,33 @@
         margin-right: 20px;
         margin-left: -60px;
     }
-
     .about-us-text h3 {
         font-size: 90%;
         font-weight: 300;
     }
-
     .icon-big {
         width: 50px;
         margin-bottom: 10px;
     }
-
     .features {
         width: 200px;
         height: 150px;
         text-align: center;
     }
-
     .features img {
         margin-left: 75px;
     }
-
     #pottermaniacs-pc { display: none; }
     #pottermaniacs-mobile { display: inline-block; }
-
     .footer-nav {
         margin-left: -45px;
     }
     
     .social-links { margin-right: -40px;
     margin-top: -30px; }
-
     .icons-src { padding-top: 20px; }
-
-
+    
+}
 /* Small phones: from 0 to 480px */
 @media only screen and (max-width: 480px) {
      
@@ -207,17 +188,31 @@
     .title { display: none; }
     .title-mobile { 
         display: inline-block;
-        margin-top: 150px;
+        margin-top: 200px;
     }
     
     .scroll-down { 
-        margin-top: 400px;
+        margin-top: 450px;
         border: 1px solid rgba(255, 255, 255, 0.8);
         padding-top: 6px;
         margin-left: calc(50% - 30px);
     }
     
-    .crown { display: none; }
+    .section-results { 
+    margin-top: -5px;
+    }
+    .result {
+        font-size: 250%;
+        margin-top: -15px;
+        margin-bottom: -15px;
+    }
+    .result h3 { 
+        display: inline-block;
+        margin-left: calc(50% - 50px);
+        text-align: center;
+    }
+    
+    .crown-list { display: none; }
     
     .crown-mobile { 
         display: inline-block;
@@ -225,14 +220,26 @@
         font-size: 250%;
     }
     
-    .crown-list { text-align: center; }
-    .crown-mobile i { display: inline; }
-    .counter { display: inline; }
-    .crown-mobile div { display: inline; }
-    
+    .pc { display: none; }
+    .button-show { display: none; }
+    .photos-crown-showcase-mobile { display: inline-block; }
+    .section-photos-crown { padding-bottom: 20px; }
+
    .section-quote:before {
         margin: -15px 0 0 25px;
     }
+
+    .dg-container {display: none; }
     
-    .dg-container nav {display: inline-block;}
+    .span-1-of-5 { width: 33%;}
+    
+    .section-about-us .pc {display: none; }
+    
+    .footer-nav {
+        width: 75%;
+        line-height: 15px;
+    }
+    
+    
+    
 }

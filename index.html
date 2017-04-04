@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="pl">
-
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
@@ -11,11 +9,19 @@
         <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">       
         <link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
         <link rel="stylesheet" type="text/css" href="vendors/css/lightbox.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/swiper.min.css">
         <link rel="stylesheet" type="text/css" href="resources/css/style.css">
         <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+        
+        <link rel="apple-touch-icon" sizes="76x76" href="resources/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="resources/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="resources/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="resources/favicons/manifest.json">
+        <link rel="mask-icon" href="resources/favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
     
-        <title>Targets of destinations</title>
+        <title>Crown of Polish Mountains | Mountain Challenge</title>
     </head>
     
     <body>
@@ -37,16 +43,31 @@
                     <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
                 </div>
             </nav>
-            <h1 class="title"></h1>
+            <h1 class="title js--wp-3"></h1>
             <h1 class="title-mobile"></h1>
             <div class="scroll-down js--scroll-down">
                 <a href="#"><i class="ion-ios-arrow-down"></i></a>   
             </div>
         </header>
         
+<!---------- RESULTS ---------->  
+        
+        <section class="section-results js--section-rules">
+            <div class="row js--wp-1">
+                <h2>Challenge in progress...</h2>        
+                <div class="result">
+                    <h3>
+                        <i class="ion-ios-checkmark-outline"></i>
+                        <div class="counter" data-count="9">0</div>
+                        /28
+                    </h3>
+                </div>
+            </div>
+        </section>
+    
 <!---------- RULES ---------->   
         
-        <section class="section-rules js--section-rules">
+        <!-- <section class="section-rules js--section-rules">
             <div class="row js--wp-1">
                 <h2>The 3 rules of mountaineering</h2>
                 <div class="col span-1-of-3 box">
@@ -62,11 +83,11 @@
                     <p>And it’s always harder than it looks.</p>
                 </div>
             </div>
-        </section>
+        </section> -->
         
 <!---------- MAP ---------->  
         
-        <div class="map-box js--wp-3" id="crown">
+        <div class="map-box" id="crown">
             <div class="map"></div>
             <div class="map-mobile"></div>
             <div class="crown-list">
@@ -106,7 +127,6 @@
                                 <li><i class="ion-ios-close-outline"></i> Babia Góra &mdash; Beskid Żywiecki</li>                        
                                 <li><i class="ion-ios-close-outline"></i> Rysy &mdash; Tatry</li>                        
                             </div>
-                            <div class="crown-mobile"><i class="ion-ios-checkmark-outline"></i><h3><div class="counter" data-count="9">0</div>/28</h3></div>
                         </ul>
                     </div>
                 </div>
@@ -116,8 +136,8 @@
 <!---------- PHOTOS - CROWN ---------->        
         
         <section class="section-photos-crown" id="photos">
-            <h2>Photos of victory</h2>
-            <ul class="photos-crown-showcase clearfix">
+            <h2>Hall of fame</h2>
+            <ul class="photos-crown-showcase pc clearfix">
 <!-- 1 rząd -->
                 <li>
                     <div class="crown-photo" id="scroll-photo">
@@ -435,6 +455,34 @@
             <div class="button-show">
                 <a class="btn btn-ghost js--more-hide" href="#scroll-photo"><p>. . .</p></a>
             </div>
+            <!-- mobile -->
+            
+            
+            <div class="photos-crown-showcase-mobile">
+                 <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="resources/img/sleza2.jpg" />
+                            <div class="label-mobile">Ślęża 718 m &mdash; 15 VIII 2014</div></div>
+                        <div class="swiper-slide"><img src="resources/img/chelmiec5.JPG" />
+                            <div class="label-mobile">Chełmiec 869 m &mdash; 5 III 2017</div></div>
+                        <div class="swiper-slide"><img src="resources/img/szczeliniec2.jpg" />
+                            <div class="label-mobile">Szczeliniec 979 m &mdash; 5 VI 2015</div></div>
+                        <div class="swiper-slide"><img src="resources/img/skryzczne.JPG" />
+                            <div class="label-mobile">Skrzyczne 1257 m &mdash; 17 VII 2016</div></div>
+                        <div class="swiper-slide"><img src="resources/img/tarnica6.jpg" />
+                            <div class="label-mobile">Tarnica 1346 m &mdash; 3 I 2017</div></div>
+                        <div class="swiper-slide"><img src="resources/img/snieznik.jpg" />
+                            <div class="label-mobile">Śnieżnik 1425 m &mdash; 1 II 2015</div></div>
+                        <div class="swiper-slide"><img src="resources/img/sniezka3.jpg" />
+                            <div class="label-mobile">Śnieżka 1602 m &mdash; 23 X 2016</div></div>
+                        <div class="swiper-slide"><img src="resources/img/wielkasowa.jpg" />
+                            <div class="label-mobile">Wielka Sowa 1015 m &mdash; 20 IX 2015</div></div>
+                        <div class="swiper-slide"><img src="resources/img/skalnik.JPG" />
+                            <div class="label-mobile">Skalnik 945 m &mdash; 25 III 2017</div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+        </div>   
         </section>
         
 <!---------- QUOTE ---------->  
@@ -545,7 +593,7 @@
                             <h3 id="pottermaniacs-mobile">Potter<br>maniacs</h3>
                         </div>
                     </div>
-                    <div class="col span-1-of-5">
+                    <div class="col span-1-of-5 pc">
                         <div class="features"><img class="icon-big" src="resources/img/icons/walter-white-color.png">
                             <h3>tv series<br>watchers</h3></div>
                         <div class="features"><img class="icon-big" src="resources/img/icons/tea-color.png">
@@ -604,6 +652,7 @@
         <script src="vendors/js/typed.min.js"></script>
         <script src="vendors/js/lightbox.js"></script>
         <script src="vendors/js/jquery.gallery.js"></script>
+        <script src="vendors/js/swiper.min.js"></script>
         <script type="text/javascript" src="vendors/js/modernizr.custom.53451.js"></script>  
         
     </body>
