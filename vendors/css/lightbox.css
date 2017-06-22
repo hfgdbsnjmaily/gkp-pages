@@ -60,7 +60,7 @@
   left: 0;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 85px;
   transition: left .3s ease, -webkit-transform .3s ease;
   transition: left .3s ease, transform .3s ease, -webkit-transform .3s ease;
   transition: left .3s ease, transform .3s ease;
@@ -139,7 +139,7 @@
 }
 
   .lightbox-overlay button:focus {
-    border: 1px solid #fff;
+    top: 180px;
     outline: 0;
   }
 
@@ -151,7 +151,7 @@
   .lightbox-overlay button[aria-label="Previous"],
   .lightbox-overlay button[aria-label="Next"] {
     top: 50%;
-    top: calc(50% - (1.6em / 2));
+    /*top: calc(50% - (1.6em / 2));*/
   }
 
     .lightbox-overlay button[aria-label="Previous"] {

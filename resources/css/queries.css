@@ -1,8 +1,8 @@
 /* Big tablets to 1200px (width smaller than the 1140px row - 1024px-1140px) */
 @media only screen and (max-width: 1200px) {
-    .scroll-down { margin-top: 1100px; }
+
     .title { margin-top: 500px; }
-    .main-naw { margin-right: 30px; }
+    .main-nav { margin-right: 30px; }
     .logo,
     .logo-black { margin-left: 15px; }
     .crown-list ul li { font-size: 89%; }
@@ -24,9 +24,13 @@
     h3 { font-size: 108%; }
     .logo { margin-top: 30px; }
     .title { margin-top: 400px; }
-    .scroll-down { 
-        margin-top: 800px;
-        padding-top: 3px;
+
+    .flag-icon h3 i{
+        margin-top: 0px;
+    }
+
+    .flag-icon h3 div {
+        display: none;
     }
     .map-box h2:after { margin-top: 15px; }
     .about-us-text { 
@@ -44,25 +48,30 @@
         width: 100%;
         margin: 0 0 4% 0;
     }
- 
-    .main-nav { display: none; }
-    .mobile-nav-icon { display: inline-block; }
-    .main-nav {
-        float: left;
-        margin-top: 20px;
-        margin-left: 0px;
+     .nav .row {
+        float: none;
+        margin-right: 0px;
+        
     }
-    .main-nav li { display: block; }
-    .main-nav li a:link,
-    .main-nav li a:visited {
+    .mobile-nav-icon { 
+        display: block;
+    }
+    .main-nav-list {
+        display: none; 
+        width: 320px;
+        margin-top: 0px;
+    }
+    .main-nav-list li { display: block; }
+    .main-nav-list li a:link,
+    .main-nav-list li a:visited {
         display: block;
         border: 0;
         padding: 10px 0;
         font-size: 100%;
     }
-    .sticky .main-nav li a:link,
-    .sticky .main-nav li a:visited { padding: 10px 0; }
-    .sticky .main-nav { margin-top: 10px; }
+    .sticky .main-nav-list li a:link,
+    .sticky .main-nav-list li a:visited { padding: 10px 0; }
+    .sticky .main-nav-list { margin-top: 10px; }
     .sticky .mobile-nav-icon i { color: #555; }
     .sticky .mobile-nav-icon { margin-top: 10px; }
     h1 { font-size: 170%; }
@@ -73,12 +82,18 @@
     }
     
     .logo { height: 50px; }
-    .title { margin-top: 250px; }
+    .sticky .logo-black { margin-left: -3px; }
     
-    .scroll-down { 
-        margin-top: 650px; 
-        margin-left: calc(50% - 32px);
+    .title { display: none; }
+    .title-mobile { display: inline-block; }
+    
+    .section-results { 
+        margin-top: 0;
     }
+
+    .result h3 { margin-left: calc(50% - 49px); }
+  
+
     .map-box {
         width: 100%;
         height: auto;
@@ -184,23 +199,20 @@
 @media only screen and (max-width: 480px) {
      
     .logo { margin: 8px auto auto -10px; }
-    .mobile-nav-icon { margin: 15px -20px auto auto; }
     .title { display: none; }
     .title-mobile { 
         display: inline-block;
-        margin-top: 200px;
+        margin-top: 250px;
     }
     
     .scroll-down { 
-        margin-top: 450px;
-        border: 1px solid rgba(255, 255, 255, 0.8);
-        padding-top: 6px;
-        margin-left: calc(50% - 30px);
+        padding-top: 5px;
     }
     
     .section-results { 
     margin-top: -5px;
     }
+    
     .result {
         font-size: 250%;
         margin-top: -15px;
@@ -235,11 +247,25 @@
     
     .section-about-us .pc {display: none; }
     
+    .no-mobile { display: none;}
+    
     .footer-nav {
-        width: 75%;
-        line-height: 15px;
+        float: none;
+        margin-left: auto;
     }
     
+    .section-footer {
+    padding: 15px 0px 3px 0px;
+    }
     
+    .social-links {
+        float: right;
+        margin-top: 0;
+        margin-right: auto;
+    }
+    
+    .footer-nav li {
+        margin-right: 10px;
+    }
     
 }

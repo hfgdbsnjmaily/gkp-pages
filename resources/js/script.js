@@ -1,644 +1,235 @@
-$(document).ready(function() {
+var document, $, location, window, lightbox, Swiper, setTimeout;
+
+$(document).ready(function() { 
     
-/* sticky navigation */
-    $('.js--section-rules').waypoint(function(direction) {
-        if (direction == "down") {
-            $('.nav').addClass('sticky');
-        } else {
-            $('.nav').removeClass('sticky');
-        }
-    }, {
-        offset: '60px'
-    }); 
+    var isTop = true;
+    console.log(isTop);
     
-/* title */
+/************************************ TITLE ************************************/
+    
     $(function(){
+        
         $(".title").typed({
+            
             strings: ["We haven’t been everywhere,<br> but it’s on our list"],
             typeSpeed: 50
         });
     });
     
     $(function(){
+        
         $(".title-mobile").typed({
+            
             strings: ["We haven’t been<br> everywhere,<br> but it’s on our list"],
             typeSpeed: 50
         });
     });
     
-/* more photos button */    
+/************************************ COUNTER - RESULTS ************************************/
+    
+    $('.js--wp-3').waypoint(function() {
+       
+        $('.counter').each(function() {
+            
+            var $this = $(this),
+            countTo = $this.attr('data-count');
+  
+            $({ countNum: $this.text()}).animate({
+                
+                countNum: countTo
+                },
+            { 
+                duration: 3000,
+                easing:'linear',
+                step: function() {
+                    
+                    $this.text(Math.floor(this.countNum));
+                },
+                
+                complete: function() {
+                    
+                    $this.text(this.countNum);
+                }                
+            });
+        });
+    });
+
+/************************************ ANIMATIONS ON SCROLL ************************************/
+    
+    $('.js--wp-1').waypoint(function() {
+        
+        $('.js--wp-1').addClass('animated zoomIn');
+    }, {
+        
+        offset: '50%'
+    });   
+    
+    $('.js--wp-2').waypoint(function() {
+        
+        $('.js--wp-2').addClass('animated bounceIn');
+    }, {
+        
+        offset: '50%'
+    }); 
+    
+/************************************ STICKY NAVIGATION ************************************/
+
+    
+    $('.js--section-rules').waypoint(function(direction) {
+        
+        if (direction == "down") {
+            
+            $('.nav').addClass('sticky');
+            $('.nav').removeClass('sticky-black');
+            isTop = false;
+            return isTop;
+            
+        } else {
+            
+            $('.nav').removeClass('sticky');
+            isTop = true;
+            return isTop;
+        }
+    }, {
+        
+        offset: '60px'
+    });   
+    
+/************************************ MOBILE NAVIGATION ************************************/
+    
+    $('.js--nav-icon').click(function() {
+        
+        var nav = $('.js--main-nav');
+        var icon = $('.js--nav-icon i');
+
+        if (isTop === true) {
+            
+            $('.nav').addClass('sticky-black');
+        }
+        
+        if (icon.hasClass('ion-navicon-round')) {
+            
+            icon.addClass('ion-close-round');
+            icon.removeClass('ion-navicon-round');
+            nav.slideToggle("slow");
+            
+        } else {
+            
+            icon.addClass('ion-navicon-round');
+            icon.removeClass('ion-close-round');
+            nav.slideToggle( "slow", function() {
+                
+                 $('.nav').removeClass('sticky-black');
+            }); 
+        }
+    }); 
+
+/************************************ NAVIGATION SCROLL ************************************/     
     
     $(function() {
-        $('.more-photos').animate({
-            height: 'toggle'
-        }, 100);
-    });
         
-/* map */ 
-    var map = new GMaps({
-        div: '.map',
-        lat: 50.7214316,
-        lng: 23.2134931,
-        zoom: 7
-    });
-    
-    var mapmobile = new GMaps({
-        div: '.map-mobile',
-        lat: 50.568984,
-        lng: 18.8597001,
-        zoom: 7
-    });
-    
-    var markerGreen = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/2ecc71/");
-    var markerRed = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/e74c3c/");
-    
-/* górska korona polski */
-    
-    map.addMarker({
-        lat: 50.891624,
-        lng: 20.896774,
-        title: 'Łysica',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Łysica</p>'
+        $('a[href*="#"]:not([href="#"])').click(function() {
+            
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            
+          if (target.length) {
+              
+            $('html, body').animate({
+                
+              scrollTop: target.offset().top -60
+            }, 1000);
+              
+            return false;
+          }
         }
-    });  
+      });
+    }); 
+
+/************************************ BUTTONS ************************************/   
     
-    map.addMarker({
-        lat: 50.864745, 
-        lng: 16.707827,
-        title: 'Ślęża',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Ślęża</p>'
-        }
-    });
-    
-    map.addMarker({
-        lat: 50.9443884,
-        lng: 15.8827756,
-        title: 'Skopiec',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Skopiec</p>'
-        }
-    });  
-    
-    map.addMarker({
-        lat: 50.4538922,
-        lng: 16.757811,
-        title: 'Kłodzka Góra',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Kłodzka Góra</p>'
-        }
-    });   
-    
-    map.addMarker({
-        lat: 50.7791356,
-        lng: 16.2077093,
-        title: 'Chełmiec',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Chełmiec</p>'
-        }
-    });  
-    
-    map.addMarker({
-        lat: 50.2500034,
-        lng: 17.4311446,
-        title: 'Biskupia Kopa',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Biskupia Kopa</p>'
-        }
-    });  
-    
-    map.addMarker({
-        lat: 49.76667,
-        lng: 20.0603113,
-        title: 'Lubomir',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Lubomir</p>'
-        }
-    });  
-    
-    map.addMarker({
-        lat: 50.483671,
-        lng: 16.3336122,
-        title: 'Szczeliniec Wielki',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Szczeliniec Wielki</p>'
-        }
-    });      
-    
-    map.addMarker({
-        lat: 49.7661082,
-        lng: 19.1530886,
-        title: 'Czupel',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Czupel</p>'
-        }
-    });      
-    
-    map.addMarker({
-        lat: 50.6807542,
-        lng: 16.275888,
-        title: 'Waligóra',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Waligóra</p>'
-        }
-    });    
-    
-    map.addMarker({
-        lat: 50.8083367,
-        lng: 15.8992001,
-        title: 'Skalnik',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Skalnik</p>'
-        }
-    });  
-    
-    map.addMarker({
-        lat: 50.2527811,
-        lng: 16.5644779,
-        title: 'Jagodna',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Jagodna</p>'
-        }
-    });  
-    
-    map.addMarker({
-        lat: 50.2638922,
-        lng: 17.0117001,
-        title: 'Kowadło',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Kowadło</p>'
-        }
-    });     
-    
-    map.addMarker({
-        lat: 49.4294017,
-        lng: 21.0941791,
-        title: 'Lackowa',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Lackowa</p>'
-        }
-    });      
-    
-    map.addMarker({
-        lat: 50.6803483,
-        lng: 16.483309,
-        title: 'Wielka Sowa',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Wielka Sowa</p>'
-        }
-    });     
-    
-    map.addMarker({
-        lat: 49.1727815,
-        lng: 20.0922553,
-        title: 'Wysoka',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Wysoka</p>'
-        }
-    });  
-    
-    map.addMarker({
-        lat: 49.4192215,
-        lng: 20.4559293,
-        title: 'Orlica',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Orlica</p>'
-        }
-    });     
-    
-    map.addMarker({
-        lat: 50.2440594,
-        lng: 16.9737003,
-        title: 'Rudawiec',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Rudawiec</p>'
-        }
-    });    
-    
-    map.addMarker({
-        lat: 50.8500034,
-        lng: 15.4172557,
-        title: 'Wysoka Kopa',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Wysoka Kopa</p>'
-        }
-    });   
-    
-    map.addMarker({
-        lat: 49.655234,
-        lng: 20.2746449,
-        title: 'Mogielica',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Mogielica</p>'
-        }
-    });   
-    
-    map.addMarker({
-        lat: 49.6959665,
-        lng: 19.0039589,
-        title: 'Skrzyczne',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Skrzyczne</p>'
-        }
-    });  
-    
-    map.addMarker({
-        lat: 49.4493442,
-        lng: 20.6019427,
-        title: 'Radziejowa',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Radziejowa</p>'
-        }
-    });   
-    
-    map.addMarker({
-        lat: 49.5429214,
-        lng: 20.1091561,
-        title: 'Turbacz',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Turbacz</p>'
-        }
-    });    
-    
-    map.addMarker({
-        lat: 49.0745582,
-        lng: 22.724061,
-        title: 'Tarnica',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Tarnica</p>'
-        }
-    });      
-    
-    map.addMarker({
-        lat: 50.0993116,
-        lng: 16.6902543,
-        title: 'Śnieżnik',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Śnieżnik</p>'
-        }
-    });      
-    
-    map.addMarker({
-        lat: 50.7360205,
-        lng: 15.737757,
-        title: 'Śnieżka',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Śnieżka</p>'
-        }
-    });     
-    
-    map.addMarker({
-        lat: 49.5731663,
-        lng: 19.5286077,
-        title: 'Babia Góra',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Babia Góra</p>'
-        }
-    });    
-    
-    map.addMarker({
-        lat: 49.1795515,
-        lng: 20.0858753,
-        title: 'Rysy',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Rysy</p>'
-        }
-    });
-        
-        mapmobile.addMarker({
-        lat: 50.891624,
-        lng: 20.896774,
-        title: 'Łysica',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Łysica</p>'
-        }
-    });  
-    
-    mapmobile.addMarker({
-        lat: 50.864745, 
-        lng: 16.707827,
-        title: 'Ślęża',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Ślęża</p>'
-        }
-    });
-    
-    mapmobile.addMarker({
-        lat: 50.9443884,
-        lng: 15.8827756,
-        title: 'Skopiec',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Skopiec</p>'
-        }
-    });  
-    
-    mapmobile.addMarker({
-        lat: 50.4538922,
-        lng: 16.757811,
-        title: 'Kłodzka Góra',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Kłodzka Góra</p>'
-        }
-    });   
-    
-    mapmobile.addMarker({
-        lat: 50.7791356,
-        lng: 16.2077093,
-        title: 'Chełmiec',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Chełmiec</p>'
-        }
-    });  
-    
-    mapmobile.addMarker({
-        lat: 50.2500034,
-        lng: 17.4311446,
-        title: 'Biskupia Kopa',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Biskupia Kopa</p>'
-        }
-    });  
-    
-    mapmobile.addMarker({
-        lat: 49.76667,
-        lng: 20.0603113,
-        title: 'Lubomir',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Lubomir</p>'
-        }
-    });  
-    
-    mapmobile.addMarker({
-        lat: 50.483671,
-        lng: 16.3336122,
-        title: 'Szczeliniec Wielki',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Szczeliniec Wielki</p>'
-        }
-    });      
-    
-    mapmobile.addMarker({
-        lat: 49.7661082,
-        lng: 19.1530886,
-        title: 'Czupel',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Czupel</p>'
-        }
-    });      
-    
-    mapmobile.addMarker({
-        lat: 50.6807542,
-        lng: 16.275888,
-        title: 'Waligóra',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Waligóra</p>'
-        }
-    });    
-    
-    mapmobile.addMarker({
-        lat: 50.8083367,
-        lng: 15.8992001,
-        title: 'Skalnik',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Skalnik</p>'
-        }
-    });  
-    
-    mapmobile.addMarker({
-        lat: 50.2527811,
-        lng: 16.5644779,
-        title: 'Jagodna',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Jagodna</p>'
-        }
-    });  
-    
-    mapmobile.addMarker({
-        lat: 50.2638922,
-        lng: 17.0117001,
-        title: 'Kowadło',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Kowadło</p>'
-        }
-    });     
-    
-    mapmobile.addMarker({
-        lat: 49.4294017,
-        lng: 21.0941791,
-        title: 'Lackowa',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Lackowa</p>'
-        }
-    });      
-    
-    mapmobile.addMarker({
-        lat: 50.6803483,
-        lng: 16.483309,
-        title: 'Wielka Sowa',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Wielka Sowa</p>'
-        }
-    });     
-    
-    mapmobile.addMarker({
-        lat: 49.1727815,
-        lng: 20.0922553,
-        title: 'Wysoka',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Wysoka</p>'
-        }
-    });  
-    
-    mapmobile.addMarker({
-        lat: 49.4192215,
-        lng: 20.4559293,
-        title: 'Orlica',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Orlica</p>'
-        }
-    });     
-    
-    mapmobile.addMarker({
-        lat: 50.2440594,
-        lng: 16.9737003,
-        title: 'Rudawiec',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Rudawiec</p>'
-        }
-    });    
-    
-    mapmobile.addMarker({
-        lat: 50.8500034,
-        lng: 15.4172557,
-        title: 'Wysoka Kopa',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Wysoka Kopa</p>'
-        }
-    });   
-    
-    mapmobile.addMarker({
-        lat: 49.655234,
-        lng: 20.2746449,
-        title: 'Mogielica',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Mogielica</p>'
-        }
-    });   
-    
-    mapmobile.addMarker({
-        lat: 49.6959665,
-        lng: 19.0039589,
-        title: 'Skrzyczne',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Skrzyczne</p>'
-        }
-    });  
-    
-    mapmobile.addMarker({
-        lat: 49.4493442,
-        lng: 20.6019427,
-        title: 'Radziejowa',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Radziejowa</p>'
-        }
-    });   
-    
-    mapmobile.addMarker({
-        lat: 49.5429214,
-        lng: 20.1091561,
-        title: 'Turbacz',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Turbacz</p>'
-        }
-    });    
-    
-    mapmobile.addMarker({
-        lat: 49.0745582,
-        lng: 22.724061,
-        title: 'Tarnica',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Tarnica</p>'
-        }
-    });      
-    
-    mapmobile.addMarker({
-        lat: 50.0993116,
-        lng: 16.6902543,
-        title: 'Śnieżnik',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Śnieżnik</p>'
-        }
-    });      
-    
-    mapmobile.addMarker({
-        lat: 50.7360205,
-        lng: 15.737757,
-        title: 'Śnieżka',
-        icon: markerGreen,
-        infoWindow: {
-            content: '<p>Śnieżka</p>'
-        }
-    });     
-    
-    mapmobile.addMarker({
-        lat: 49.5731663,
-        lng: 19.5286077,
-        title: 'Babia Góra',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Babia Góra</p>'
-        }
-    });    
-    
-    mapmobile.addMarker({
-        lat: 49.1795515,
-        lng: 20.0858753,
-        title: 'Rysy',
-        icon: markerRed,
-        infoWindow: {
-            content: '<p>Rysy</p>'
-        }
-    });  
-    
-/* buttons */   
     $('.js--more-hide').click(function() {
+        
         $('.more-photos').animate({
+            
             height: 'toggle'
         }, 100);
     });
     
     $('.js--scroll-down').click(function(){
-        $('html, body').animate({scrollTop: $('.js--section-rules').offset().top -60}, 1000);
+        
+        $('html, body').animate({
+            
+            scrollTop: $('.js--section-rules').offset().top -60
+        }, 1000);
     });
     
     $('.js--logo').click(function(){
-        $('html, body').animate({scrollTop: $('.js--start').offset().top -60}, 1000);
+        
+        $('html, body').animate({
+            
+            scrollTop: $('.js--start').offset().top -60
+        }, 1000);
     });
-    
-/* gallery */
+
+/* more photos button */    
     
     $(function() {
+        
+        $('.more-photos').animate({
+            
+            height: 'toggle'
+        }, 100);
+    });
+    
+    	$('.js--more-hide').click(function(){
+            
+		var $this = $(this);
+		$this.toggleClass('js--more-hide');
+		if($this.hasClass('js--more-hide')){
+            
+			$this.text('show more');
+            
+		} else {
+            
+			$this.text('hide more');
+		}
+	});
+
+/************************************ TOOLTIP ON IMAGES ************************************/ 
+    
+    if ($(window).innerWidth() <= 1023) {
+        
+        $(document).ready(function() {
+            
+            $('.tooltip').tooltipster({
+                
+                theme: 'tooltipster-shadow',
+                trigger: 'click',
+                animation: 'swing',
+                arrow: true,
+                distance: -20
+            });
+        }); 
+    }
+    
+/************************************ GALLERY ************************************/ 
+    
+    $(function() {
+        
         $('#dg-container').gallery({
+            
             autoplay: true,
-            interval: 2000 
+            interval: 3000 
         });
-			});
+    });
+    
     var modal = document.getElementById('myModal');
+    
     lightbox('.lightbox',{
+        
         captions: false,
         nav: "auto",
         navText: ["‹", "›"],
@@ -651,88 +242,210 @@ $(document).ready(function() {
         scroll: false
     });
     
+/************************************ QUOTES ************************************/ 
+    
+    $(function () {
+        
+        var quote1 = '<quoteblock>When you go to the mountains, you see them and you admire them. In a sense, they give you a challenge, and you try to express that challenge by climbing them.<cite><br>Edmund Hillary</cite></quoteblock>';
+        var quote2 = '<quoteblock>Mountains are the beginning and the end of all natural scenery.<cite><br>John Ruskin</cite></quoteblock>';
+        var quote3 = '<quoteblock>The only Zen you can find on the tops of mountains is the Zen you bring up there.<cite><br>Robert M. Pirsig</cite></quoteblock>';
+        
+        var quoteArr = [quote1, quote2, quote3];
+        var used = [quote1];
+        var change = $('#changing-quote');
+        var item;
+        var sentence = $('#sentence');
+
+        function quotes() {
+            
+            item = quoteArr[Math.floor(Math.random() * quoteArr.length)];
+            
+            if (quoteArr.length != used.length) {
+                
+                while (jQuery.inArray(item, used) != -1) {
+                    item = quoteArr[Math.floor(Math.random() * quoteArr.length)];
+                }
+                used.push(item);
+                
+            } else {
+                
+                used.length = 0;
+                item = quoteArr[Math.floor(Math.random() * quoteArr.length)];
+                used.push(item);
+            }
+            
+            change.html(item);
+            change.animate({
+                "opacity": "1"
+            }, 1500);
+
+            sentence.fadeIn(1500);
+        }
+
+        window.setInterval(function () {
+            
+            sentence.fadeOut(1500);
+            change.animate({
+                
+                "opacity": "0"
+            }, 1500);
+            
+            setTimeout(quotes, 1500);
+        }, 5000);
+
+    });
+    
+/************************************ MAPS ************************************/ 
+        
+    var markerGreen = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/2ecc71/");
+    var markerRed = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/e74c3c/");
+    
+    var crownMountainsArr = [
+                                [50.864745, 16.707827, 'Ślęża', markerGreen, 'sleza2.jpg', '15 VIII 2014', '718 m', 'Masyw Ślęży'],
+                                [50.7360205, 15.737757, 'Śnieżka', markerGreen, 'sniezka3.jpg', '23 X 2016', '1602 m', 'Karkonosze'],
+                                [50.0993116, 16.6902543, 'Śnieżnik', markerGreen, 'snieznik.JPG', '1 II 2015', '1425 m', 'Masyw Śnieżnika'],
+                                [49.0745582, 22.724061,'Tarnica', markerGreen, 'tarnica6.jpg', '3 I 2017', '1346 m', 'Bieszczady'],
+                                [49.6959665, 19.0039589, 'Skrzyczne', markerGreen, 'skryzczne.JPG', '17 VII 2016', '1257 m', 'Beskid Śląski'],
+                                [50.6803483, 16.483309, 'Wielka Sowa', markerGreen, 'wielkasowa.JPG', '20 IX 2015', '1015 m', 'Góry Sowie'],
+                                [50.8083367, 15.8992001, 'Skalnik', markerGreen, 'skalnik.JPG', '25 III 2017', '945 m', 'Rudawy Janowickie'],
+                                [50.483671, 16.3336122, 'Szczeliniec Wielki', markerGreen, 'szczeliniec2.jpg', '5 VI 2015', '919 m', 'Góry Stołowe'],
+                                [50.7791356, 16.2077093, 'Chełmiec', markerGreen, 'chelmiec5.JPG', '5 III 2017', '869 m', 'Góry Wałbrzyskie'],
+                                [50.6807542, 16.275888, 'Waligóra', markerGreen, 'waligora.JPG', '20 V 2017', '936 m', 'Góry Kamienne'],
+                                [50.891624, 20.896774, 'Łysica', markerRed, 'lysicaX.JPG', '', '612 m', 'Góry Świętokrzyskie'], 
+                                [49.1795515, 20.0858753, 'Rysy', markerRed, 'rysyX.JPG', '', '2499 m', 'Tatry'],
+                                [49.5731663, 19.5286077, 'Babia Góra', markerRed, 'babiaGoraX.JPG', '', '1725 m', 'Beskid Żywiecki'],
+                                [49.5429214, 20.1091561, 'Turbacz', markerRed, 'turbaczX.JPG', '', '1310 m', 'Gorce'],
+                                [49.4493442, 20.6019427, 'Radziejowa', markerRed, 'radziejowaX.JPG', '', '1262 m', 'Beskid Sądecki'],
+                                [49.655234, 20.2746449, 'Mogielica', markerRed, 'mogielicaX.JPG', '', '1170 m', 'Beskid Wyspowy'],
+                                [50.8500034, 15.4172557,'Wysoka Kopa', markerRed, 'wysokaKopaX.JPG', '', '1126 m', 'Góry Izerskie'],
+                                [50.2440594, 16.9737003, 'Rudawiec', markerRed, 'rudawiecX.JPG', '', '1112 m', 'Góry Bialskie'],
+                                [49.4192215, 20.4559293, 'Orlica', markerRed, 'orlicaX.JPG', '', '1084 m','Góry Orlickie'],
+                                [49.1727815, 20.0922553, 'Wysoka', markerRed, 'wysokaX.JPG', '', '1050 m', 'Pieniny'],                             
+                                [49.4294017, 21.0941791,'Lackowa', markerRed, 'lackowaX.JPG', '', '997 m', 'Beskid Niski'],
+                                [50.2638922, 17.0117001, 'Kowadło', markerRed, 'kowadloX.JPG', '', '989 m', 'Góry Złote'],
+                                [50.2527811, 16.5644779, 'Jagodna', markerRed, 'jagodnaX.JPG', '', '977 m', 'Góry Bystrzyckie'],                          
+                                [49.7661082, 19.1530886, 'Czupel', markerRed, 'czupelX.JPG', '', '934 m', 'Beskid Mały'],                               
+                                [49.76667, 20.0603113, 'Lubomir', markerRed, 'lubomirX.JPG', '', '912 m', 'Beskid Makowski'],
+                                [50.2500034, 17.4311446, 'Biskupia Kopa', markerRed, 'biskupiaKopaX.JPG', '', '889 m', 'Góry Opawskie'],           
+                                [50.4538922, 16.757811, 'Kłodzka Góra', markerRed, 'klodzkaGoraX.JPG', '', '765 m', 'Góry Bardzkie'],
+                                [50.9443884, 15.8827756, 'Skopiec', markerRed, 'skopiecX.JPG', '', '724 m', 'Góry Kaczawskie']
+                            ]; 
+    
+    var map = new GMaps({
+        
+        div: '.map',
+        lat: 50.7214316,
+        lng: 23.2134931,
+        zoom: 7
+    });
+    
+    var mapmobile = new GMaps({
+        
+        div: '.map-mobile',
+        lat: 50.568984,
+        lng: 18.8597001,
+        zoom: 7
+    });
+
+    var addMarkers = function(arr) {
+        
+        for (var i = 0; i < arr.length; i++) {
+            
+            map.addMarker({
+                lat: arr[i][0],
+                lng: arr[i][1],
+                title: arr[i][2],
+                icon: arr[i][3],
+                infoWindow: {
+                    
+                    content: arr[i][2]
+                }
+            });
+            
+            console.log(this.lat);
+            
+            mapmobile.addMarker({
+                
+                lat: arr[i][0],
+                lng: arr[i][1],
+                title: arr[i][2],
+                icon: arr[i][3],
+                infoWindow: {
+                    
+                    content: arr[i][2]
+                }
+            });
+        }
+    };
+    
+    addMarkers(crownMountainsArr);    
+    
+/************************************ CROWN GALLERY ************************************/ 
+    
+    var addPhotos = function(arr) {
+        
+        var html, newHtml, el;
+
+        for (var i = 0; i < arr.length; i++) {
+            
+            el = '.photos-crown-showcase';
+                
+            if (arr[i][3] == markerRed) { 
+                
+                html = '<li><div class="crown-photo-x"><img src="resources/img/%photo_name%" alt="%ALT%" class="tooltip"><h3 class="new-label"><span>%NAME%<br>%HEIGHT%<br></span></h3></div></div></li>';    
+                
+            } else {
+                
+                html = '<li><div class="crown-photo"><img src="resources/img/%photo_name%" alt="%ALT%" class="tooltip" title="%TITLE%"><h3 class="new-label"><span>%NAME%<br>%HEIGHT%<br></span></h3><div class="flag-icon"><h3><i class="ion-ios-flag-outline"></i><div>%DATE%</div></h3></div></div></li>';
+            }
+                
+            if (i > 13) {
+                
+                el = '.more-photos'; 
+            }
+                
+            newHtml = html.replace('%photo_name%', arr[i][4]);
+            newHtml = newHtml.replace('%DATE%', arr[i][5]);
+            newHtml = newHtml.replace('%NAME%', arr[i][2]);
+            newHtml = newHtml.replace('%HEIGHT%', arr[i][6]);
+            newHtml = newHtml.replace('%ALT%', arr[i][2]);
+            newHtml = newHtml.replace('%TITLE%', arr[i][1]);
+
+            document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
+        }
+    };
+    
+    addPhotos(crownMountainsArr);
+    
+/************************************ MOBILE CROWN GALLERY ************************************/ 
+    
+    var addPhotosMobile = function(arr) {
+        
+        var html, newHtml, el;
+        
+            for (var i = 0; i < 10; i++) {
+                
+                el = '.swiper-wrapper';
+                
+                html = '<div class="swiper-slide"><img src="resources/img/%photo_name%" /><div class="label-mobile">%NAME% %HEIGHT% &mdash; %DATE%</div></div>';
+                
+                newHtml = html.replace('%photo_name%', arr[i][4]);
+                newHtml = newHtml.replace('%DATE%', arr[i][5]);
+                newHtml = newHtml.replace('%NAME%', arr[i][2]);
+                newHtml = newHtml.replace('%HEIGHT%', arr[i][6]);
+
+                document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
+            }
+    };
+    
+    addPhotosMobile(crownMountainsArr);
+
     var swiper = new Swiper('.swiper-container', {
+        
         pagination: '.swiper-pagination',
-        spaceBetween: 10,
+        spaceBetween: 10
     });
     
-    var swiper = new Swiper('.swiper-container-mobile', {
-      
-    });
-    
-/* navigation scroll */      
-    
-    $(function() {
-        $('a[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html, body').animate({
-              scrollTop: target.offset().top -60
-            }, 1000);
-            return false;
-          }
-        }
-      });
-    }); 
-     
-/* animations on scroll */  
-    
-    $('.js--wp-1').waypoint(function(direction) {
-        $('.js--wp-1').addClass('animated zoomIn');
-    }, {
-        offset: '50%'
-    });   
-    
-    $('.js--wp-2').waypoint(function(direction) {
-        $('.js--wp-2').addClass('animated bounceIn');
-    }, {
-        offset: '50%'
-    });  
-    
- /* mobile navigation */  
-    
-    $('.js--nav-icon').click(function() {
-        var nav = $('.js--main-nav');
-        var icon = $('.js--nav-icon i');
-        
-        nav.slideToggle(200);
-        
-        if (icon.hasClass('ion-navicon-round')) {
-            icon.addClass('ion-close-round');
-            icon.removeClass('ion-navicon-round');
-        } else {
-            icon.addClass('ion-navicon-round');
-            icon.removeClass('ion-close-round');
-        }
-    }); 
-    
- /* results - counter */  
-    
-    $('.js--wp-3').waypoint(function(direction) {
-    
-    $('.counter').each(function() {
-  var $this = $(this),
-      countTo = $this.attr('data-count');
+    swiper = new Swiper('.swiper-container-mobile', {});
   
-  $({ countNum: $this.text()}).animate({
-    countNum: countTo
-  },
-  {
-    duration: 3000,
-    easing:'linear',
-    step: function() {
-      $this.text(Math.floor(this.countNum));
-    },
-    complete: function() {
-      $this.text(this.countNum);
-      //alert('finished');
-    }
-  });  
-  
-  
-});
-    });
-    
-});
+}); //end of script
