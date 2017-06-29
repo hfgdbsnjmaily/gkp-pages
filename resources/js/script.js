@@ -9,8 +9,10 @@ $(document).ready(function() {
     
     var title;
     
+    document.querySelector('h1').textContent = '';
+
     if ($(window).width() < 767) {
-       title = "We haven’t been<br> everywhere,<br> but it’s on our list";
+        title = "We haven’t been<br> everywhere,<br> but it’s on our list";
     }
     else {
         title = "We haven’t been everywhere,<br> but it’s on our list";
