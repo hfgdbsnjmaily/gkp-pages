@@ -138,8 +138,7 @@ header {
     position: relative;
 }
 
-.title,
-.title-mobile {
+.title {
     text-align: center;
     position: absolute;
     width: 1140px;
@@ -149,8 +148,6 @@ header {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-
-.title-mobile { display: none; }
 
 .typed-cursor { display: none; }
 
@@ -292,12 +289,12 @@ header {
 
 .section-results { margin-top: -35px; }
 
-.result { font-size: 250%; }
-
-.result h3 { 
+.result { font-size: 250%;
     display: inline-block;
-    margin-left: calc(50% - 111px); 
+    margin-left: calc(50% - 116px);
     text-align: center;
+    font-weight: 300;
+    font-size: 300%;
 }
 
 .result i { display: inline; }

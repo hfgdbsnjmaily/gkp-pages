@@ -88,7 +88,7 @@
         margin-top: 0;
     }
 
-    .result h3 { margin-left: calc(50% - 49px); }
+    .result { margin-left: calc(50% - 49px); }
   
 
     .map-box {
@@ -211,9 +211,9 @@
         margin-top: -15px;
         margin-bottom: -15px;
     }
-    .result h3 { 
+    .result {
         display: inline-block;
-        margin-left: calc(50% - 50px);
+        margin-left: calc(50% - 77px);
         text-align: center;
     }
     
