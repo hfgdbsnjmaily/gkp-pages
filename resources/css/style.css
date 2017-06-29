@@ -535,7 +535,7 @@ header {
     position: relative;
 }
 
-cite {
+#changing-quote p {
     float: right;
     margin-right: 35px;
 }

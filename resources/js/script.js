@@ -248,9 +248,9 @@ $(document).ready(function() {
     
     $(function () {
         
-        var quote1 = '<quoteblock>When you go to the mountains, you see them and you admire them. In a sense, they give you a challenge, and you try to express that challenge by climbing them.<cite><br>Edmund Hillary</cite></quoteblock>';
-        var quote2 = '<quoteblock>Mountains are the beginning and the end of all natural scenery.<cite><br>John Ruskin</cite></quoteblock>';
-        var quote3 = '<quoteblock>The only Zen you can find on the tops of mountains is the Zen you bring up there.<cite><br>Robert M. Pirsig</cite></quoteblock>';
+        var quote1 = 'When you go to the mountains, you see them and you admire them. In a sense, they give you a challenge, and you try to express that challenge by climbing them.<br><br>Edmund Hillary';
+        var quote2 = 'Mountains are the beginning and the end of all natural scenery.<br><br>John Ruskin';
+        var quote3 = 'The only Zen you can find on the tops of mountains is the Zen you bring up there.<br><br>Robert M. Pirsig';
         
         var quoteArr = [quote1, quote2, quote3];
         var used = [quote1];
