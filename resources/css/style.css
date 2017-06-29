@@ -313,6 +313,7 @@ header {
     width: 100%;
     height: 580px;
     position: relative;
+    margin-top: -5%;
 }
 
 .map,
