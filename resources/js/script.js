@@ -7,20 +7,20 @@ $(document).ready(function() {
     
 /************************************ TITLE ************************************/
     
+    var title;
+    
+    if ($(window).width() < 767) {
+       title = "We haven’t been<br> everywhere,<br> but it’s on our list";
+    }
+    else {
+        title = "We haven’t been everywhere,<br> but it’s on our list";
+    }
+
     $(function(){
         
         $(".title").typed({
-            
-            strings: ["We haven’t been everywhere,<br> but it’s on our list"],
-            typeSpeed: 50
-        });
-    });
-    
-    $(function(){
-        
-        $(".title-mobile").typed({
-            
-            strings: ["We haven’t been<br> everywhere,<br> but it’s on our list"],
+
+            strings: [title],
             typeSpeed: 50
         });
     });

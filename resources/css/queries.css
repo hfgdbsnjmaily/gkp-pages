@@ -83,10 +83,7 @@
     
     .logo { height: 50px; }
     .sticky .logo-black { margin-left: -3px; }
-    
-    .title { display: none; }
-    .title-mobile { display: inline-block; }
-    
+
     .section-results { 
         margin-top: 0;
     }
@@ -199,11 +196,7 @@
 @media only screen and (max-width: 480px) {
      
     .logo { margin: 8px auto auto -10px; }
-    .title { display: none; }
-    .title-mobile { 
-        display: inline-block;
-        margin-top: 250px;
-    }
+    .title { margin-top: 250px; }
     
     .scroll-down { 
         padding-top: 5px;
