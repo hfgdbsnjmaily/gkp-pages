@@ -32,6 +32,7 @@
     .flag-icon h3 div {
         display: none;
     }
+
     .map-box h2:after { margin-top: 15px; }
     .about-us-text { 
         margin-right: 40px;
@@ -90,7 +91,7 @@
 
     .result { margin-left: calc(50% - 49px); }
   
-
+    .crown-photo-x { display: none; }
     .map-box {
         width: 100%;
         height: auto;
@@ -219,6 +220,8 @@
     
     .crown-list { display: none; }
     
+    .crown-photo-x { display: none; }
+
     .crown-mobile { 
         display: inline-block;
         margin: 0 auto;
