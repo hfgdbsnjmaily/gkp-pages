@@ -250,9 +250,7 @@
         margin-left: auto;
     }
     
-    .section-footer {
-    padding: 15px 0px 3px 0px;
-    }
+    footer { padding: 15px 0px 3px 0px; }
     
     .social-links {
         float: right;
