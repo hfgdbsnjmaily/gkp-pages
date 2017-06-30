@@ -29,7 +29,7 @@ $(document).ready(function() {
     
 /************************************ COUNTER - RESULTS ************************************/
     
-    $('.js--wp-3').waypoint(function() {
+    $('.title').waypoint(function() {
        
         $('.counter').each(function() {
             
@@ -58,17 +58,17 @@ $(document).ready(function() {
 
 /************************************ ANIMATIONS ON SCROLL ************************************/
     
-    $('.js--wp-1').waypoint(function() {
+    $('.counter-results').waypoint(function() {
         
-        $('.js--wp-1').addClass('animated zoomIn');
+        $('.counter-results').addClass('animated zoomIn');
     }, {
         
         offset: '50%'
     });   
     
-    $('.js--wp-2').waypoint(function() {
+    $('.about-us-text').waypoint(function() {
         
-        $('.js--wp-2').addClass('animated bounceIn');
+        $('.about-us-text').addClass('animated bounceIn');
     }, {
         
         offset: '50%'
@@ -77,7 +77,7 @@ $(document).ready(function() {
 /************************************ STICKY NAVIGATION ************************************/
 
     
-    $('.js--section-rules').waypoint(function(direction) {
+    $('.section-results').waypoint(function(direction) {
         
         if (direction == "down") {
             
@@ -99,10 +99,10 @@ $(document).ready(function() {
     
 /************************************ MOBILE NAVIGATION ************************************/
     
-    $('.js--nav-icon').click(function() {
+    $('.mobile-nav-icon').click(function() {
         
-        var nav = $('.js--main-nav');
-        var icon = $('.js--nav-icon i');
+        var nav = $('.main-nav-list');
+        var icon = $('.mobile-nav-icon i');
 
         if (isTop === true) {
             
@@ -152,7 +152,7 @@ $(document).ready(function() {
 
 /************************************ BUTTONS ************************************/   
     
-    $('.js--more-hide').click(function() {
+    $('.more-hide').click(function() {
         
         $('.more-photos').animate({
             
@@ -160,19 +160,19 @@ $(document).ready(function() {
         }, 100);
     });
     
-    $('.js--scroll-down').click(function(){
+    $('.scroll-down').click(function(){
         
         $('html, body').animate({
             
-            scrollTop: $('.js--section-rules').offset().top -60
+            scrollTop: $('.section-results').offset().top -60
         }, 1000);
     });
     
-    $('.js--logo').click(function(){
+    $('.logo').click(function(){
         
         $('html, body').animate({
             
-            scrollTop: $('.js--start').offset().top -60
+            scrollTop: $('.header').offset().top -60
         }, 1000);
     });
 
@@ -186,11 +186,11 @@ $(document).ready(function() {
         }, 100);
     });
     
-    	$('.js--more-hide').click(function(){
+    	$('.more-hide').click(function(){
             
 		var $this = $(this);
-		$this.toggleClass('js--more-hide');
-		if($this.hasClass('js--more-hide')){
+		$this.toggleClass('more-hide');
+		if($this.hasClass('more-hide')){
             
 			$this.text('show more');
             

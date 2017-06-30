@@ -151,9 +151,6 @@ header {
 
 .typed-cursor { display: none; }
 
-.logo,
-.logo-black { cursor: pointer; }
-
 .logo-box { margin-left: 20px; }
 
 .logo {
@@ -161,9 +158,10 @@ header {
     width: auto;
     float: left;
     margin-top: 20px;
+    cursor: pointer;
 }
 
-.logo-black { 
+.black {
     display: none; 
     height: 50px;
     width: auto;
@@ -264,7 +262,7 @@ header {
 
 .sticky .logo { display: none; }
 
-.sticky .logo-black { display: block; }
+.sticky .black { display: block; }
 
 
 
