@@ -642,9 +642,8 @@ header {
 
 .features img { margin-left: 65px; }
 
-#pottermaniacs-mobile { display: none; }
-
-#bookworms-mobile { display: none; }
+#pottermaniacs br,
+#bookworms br { display: none; }
 
 /* --------------------------------------------------------------------------------------------------------------- */
 /* ------------------------------------- FOOTER ------------------------------------- */

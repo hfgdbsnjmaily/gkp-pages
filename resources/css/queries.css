@@ -13,9 +13,10 @@
     .map-box h2 { margin-bottom: 5px; }
     .new-label { font-size: 90%; }
     .about-us-text { margin: 0 30px; }
-    #pottermaniacs-pc { display: none; }
-    #pottermaniacs-mobile { display: inline-block; }
+
+   #pottermaniacs br { display: block; }
 }
+
 /* Small tablets to big tablets: from 768px to 1023px */
 @media only screen and (max-width: 1023px) {
     body { font-size: 18px; }
@@ -158,8 +159,7 @@
         margin-top: 0px;
     }
     
-    #bookworms-pc { display: none; }
-    #bookworms-mobile { display: inline-block; }
+    #bookworms br { display: block; }
     
     .span-1-of-5 { width: 18.72%;}
     .about-us-text {
@@ -182,8 +182,7 @@
     .features img {
         margin-left: 75px;
     }
-    #pottermaniacs-pc { display: none; }
-    #pottermaniacs-mobile { display: inline-block; }
+
     .footer-nav {
         margin-left: -45px;
     }
