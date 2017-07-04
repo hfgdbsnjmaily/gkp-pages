@@ -140,8 +140,8 @@ input[type=submit] {
 /* --------------------------------------------------------------------------------------------------------------- */
 
 header {
-    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/hero.jpeg);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/hero.jpeg);
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../src/css/img/hero.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../src/css/img/hero.jpeg);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -372,7 +372,7 @@ header {
 /* --------------------------------------------------------------------------------------------------------------- */
 
 .section-photos-crown {
-    background-image: url(img/back-photos.png);
+    background-image: url(../../src/css/img/back-photos.png);
     padding: 40px 0 0 0;
     background-color: #f2f2f2;
 
@@ -479,7 +479,7 @@ header {
 
 .button-show {
     height: 100px;
-    background-image: url(img/back-photos.png)
+    background-image: url(../../src/css/img/back-photos.png)
 }
 
 .photos-crown-showcase-mobile {
@@ -519,8 +519,8 @@ header {
 /* --------------------------------------------------------------------------------------------------------------- */
 
 .section-quote {
-    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(img/back-quote.jpeg);
-    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(img/back-quote.jpeg);
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../../src/css/img/back-quote.jpeg);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../../src/css/img/back-quote.jpeg);
     background-size: cover;
     background-position: top;
     height: 350px;
@@ -569,7 +569,7 @@ header {
             width: 24px;
             height: 25px;
             opacity: 0.8;
-            background: transparent url(../../resources/img/arrows.png) no-repeat top left;
+            background: transparent url(../../src/css/img/arrows.png) no-repeat top left;
 
             &:hover { opacity: 1; }
 
@@ -619,6 +619,7 @@ header {
             background-color: rgba(0, 0, 0, 0.51);
         }
         .dg-center div { display: block; }
+    }
 }
 
 /* --------------------------------------------------------------------------------------------------------------- */
@@ -626,7 +627,7 @@ header {
 /* --------------------------------------------------------------------------------------------------------------- */
 
 .section-about-us {
-    background-image: url(img/back-photos.png);
+    background-image: url(../../src/css/img/back-photos.png);
 
     h2 { margin-top: -40px; }
 }
@@ -664,6 +665,13 @@ footer {
         font-size: 90%;
         margin-top: 20px;
     }
+    a {
+        text-decoration: none;
+        color: $icon-color;
+    }
+    i {
+        -webkit-transition: color 0.2s; transition: color 0.2s;
+    }
 }
 
 %footer-li {
@@ -700,13 +708,9 @@ footer {
     }
 }
 
-.ion-social-facebook,
-.ion-social-instagram,
-.ion-ios-email-outline { -webkit-transition: color 0.2s; transition: color 0.2s; }
-
 .ion-social-facebook:hover { color: $facebook-color; }
 
-.ion-social-instagram:hover { color: $instagram-colord; }
+.ion-social-instagram:hover { color: $instagram-color; }
 
 .ion-ios-email-outline:hover { color: #bc2a2a; }
 

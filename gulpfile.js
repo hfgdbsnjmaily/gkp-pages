@@ -5,6 +5,12 @@ var
     newer = require('gulp-newer'),
     imagemin = require('gulp-imagemin'),
     htmlclean = require('gulp-htmlclean'),
+    sass = require('gulp-sass'),
+    cssnano = require('cssnano'),
+    postcss = require('gulp-postcss'),
+    assets = require('postcss-assets'),
+    autoprefixer = require('autoprefixer'),
+    mqpacker = require('css-mqpacker'),
 
     // development mode?
     devBuild = (process.env.NODE_ENV !== 'production'),
@@ -37,3 +43,30 @@ gulp.task('html', ['images'], function() {
 
   return page.pipe(gulp.dest(out));
 });
+
+// CSS processing
+gulp.task('css', ['images'], function() {
+
+  var postCssOpts = [
+  assets({ loadPaths: ['images/'] }),
+  autoprefixer({ browsers: ['last 2 versions', '> 2%'] }),
+  mqpacker
+  ];
+
+  if (!devBuild) {
+    postCssOpts.push(cssnano);
+  }
+
+  return gulp.src(folder.src + 'css/style.scss')
+    .pipe(sass({
+      outputStyle: 'nested',
+      imagePath: 'img/',
+      precision: 3,
+      errLogToConsole: true
+    }))
+    .pipe(postcss(postCssOpts))
+    .pipe(gulp.dest(folder.build + 'css/'));
+
+});
+
+
