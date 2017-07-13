@@ -148,9 +148,9 @@ $(document).ready(function() {
 
 /************************************ BUTTONS ************************************/
 
-    $('.more-hide').click(function() {
+    $('.section-photos-crown__button_ghost_more-hide').click(function() {
 
-        $('.section-photos-crown__photos-more-photos').animate({
+        $('.more-photos').animate({
 
             height: 'toggle'
         }, 100);
@@ -176,26 +176,30 @@ $(document).ready(function() {
 
     $(function() {
 
-        $('.section-photos-crown__photos-more-photos').animate({
+        $('.more-photos').animate({
 
             height: 'toggle'
         }, 100);
     });
 
-    	$('.more-hide').click(function(){
 
-		var $this = $(this);
-		$this.toggleClass('more-hide');
-		if($this.hasClass('more-hide')){
+    const button = document.querySelectorAll(".section-photos-crown__button_ghost_more-hide")[0];
 
-			$this.text('show more');
+    button.addEventListener('click', function() {
 
-		} else {
+        const element = document.quertSelecotr(".section-phots-crown");
 
-			$this.text('hide more');
-		}
-	});
+        if (button.getAttribute("data-text-swap") == button.innerHTML) {
+            button.innerHTML = button.getAttribute("data-text-original");
+            element.style.height = "5000 px";
+        } else {
 
+            button.setAttribute("data-text-original", button.innerHTML);
+            button.innerHTML = button.getAttribute("data-text-swap");
+            element.style.height = "6000 px";
+        }
+
+    }, false);
 /************************************ TOOLTIP ON IMAGES ************************************/
 
     if ($(window).innerWidth() <= 1023) {
@@ -308,7 +312,7 @@ $(document).ready(function() {
         [50.7360205, 15.737757, 'Śnieżka', markerGreen, 'sniezka3.jpg', '23 X 2016', '1602 m', 'Karkonosze'],
         [49.6959665, 19.0039589, 'Skrzyczne', markerGreen, 'skryzczne.jpg', '17 VII 2016', '1257 m', 'Beskid Śląski'],
         [50.6803483, 16.483309, 'Wielka Sowa', markerGreen, 'wielkasowa.jpg', '20 IX 2015', '1015 m', 'Góry Sowie'],
-        [50.483671, 16.3336122, 'Szczeliniec Wielki', markerGreen, 'szczeliniec2.jpg', '5 VI 2015', '919 m', 'Góry Stołowe'],
+        [50.483671, 16.3336122, 'Szczeliniec', markerGreen, 'szczeliniec2.jpg', '5 VI 2015', '919 m', 'Góry Stołowe'],
         [50.0993116, 16.6902543, 'Śnieżnik', markerGreen, 'snieznik.jpg', '1 II 2015', '1425 m', 'Masyw Śnieżnika'],
         [50.864745, 16.707827, 'Ślęża', markerGreen, 'sleza2.jpg', '15 VIII 2014', '718 m', 'Masyw Ślęży'],
         [50.891624, 20.896774, 'Łysica', markerRed, 'lysicaX.jpg', '', '612 m', 'Góry Świętokrzyskie'],
@@ -391,16 +395,16 @@ $(document).ready(function() {
 
             if (arr[i][3] == markerRed) {
 
-                html = '<li><div class="crown-photo-x"><img src="images/%photo_name%" alt="%ALT%" class="tooltip"><h3 class="new-label"><span>%NAME%<br>%HEIGHT%<br></span></h3></div></div></li>';
+                html = '<li><div class="section-photos-crown__crown-photo_dark"><img src="images/%photo_name%" alt="%ALT%" class="tooltip"><h3 class="new-label"><span>%NAME%<br>%HEIGHT%<br></span></h3></div></div></li>';
 
             } else {
 
-                html = '<li><div class="crown-photo"><img src="images/%photo_name%" alt="%ALT%" class="tooltip" title="%TITLE%"><h3 class="new-label"><span>%NAME%<br>%HEIGHT%<br></span></h3><div class="flag-icon"><h3><i class="ion-ios-flag-outline"></i><div>%DATE%</div></h3></div></div></li>';
+                html = '<li><div class="section-photos-crown__crown-photo"><img src="images/%photo_name%" alt="%ALT%" class="tooltip" title="%TITLE%"><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME%<br>%DATE%</div></h3></div></div></li>';
             }
 
             if (i > 13) {
 
-                el = '.section-photos-crown__photos-more-photos';
+                el = '.more-photos';
             }
 
             newHtml = html.replace('%photo_name%', arr[i][4]);

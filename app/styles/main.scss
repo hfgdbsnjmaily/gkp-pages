@@ -99,41 +99,28 @@ h3 {
 
 /* ------------------------------------------ BUTTONS ------------------------------------------ */
 
-.btn,
-input[type=submit] {
+%button {
+    display: inline-block;
+    padding: 5px 20px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    color: $icon-color;
+    background-color: #fff;
+    border: 1px solid #f2f2f2;
+    box-shadow: 1px 1px 30px 0px rgba(184,184,184,1);
     &:link,
     &:visited {
-        display: inline-block;
-        padding: 5px 20px;
-        font-weight: 300;
-        text-decoration: none;
-        border-radius: 200px;
-        -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
-        transition: background-color 0.2s, border 0.2s, color 0.2s;
-        color: $icon-color;
+        @extend %button;
     }
     &:hover,
     &:active {
-        background-color: $icon-color;
-        color: #fff;
+        background-color: #f2f2f2;
+
     }
 }
-
-.btn-ghost {
-    p {
-        word-spacing: 4px;
-        text-align: center;
-        font-size: 30px;
-    }
-    &:link,
-    &:visited,
-    &:hover,
-    &:active {
-        border: 1px solid $icon-color;
-        background-color: #fff;
-    }
-}
-
 
 /* --------------------------------------------------------------------------------------------------------------- */
 /* ------------------------------------- HEADER ------------------------------------- */
@@ -322,7 +309,7 @@ header {
 /* ------------------------------------- MAP ------------------------------------- */
 /* --------------------------------------------------------------------------------------------------------------- */
 
-//*:focus { outline: none; }
+*:focus { outline: none; }
 
 .section-map {
     width: 100%;
@@ -367,14 +354,9 @@ header {
 /* --------------------------------------------------------------------------------------------------------------- */
 
 .section-photos-crown {
-
     background-image: url(../images/back-photos.png);
-    padding: 40px 0 0 0;
-
-    .btn-ghost {
-        float: right;
-        margin: 25px 50px 25px 0;
-    }
+    padding: 40px 0 150px 0;
+    height: inherit;
 }
 
 %photos {
@@ -388,17 +370,16 @@ header {
     }
  }
 
-.section-photos-crown__photos,
-.section-photos-crown__photos-more-photos { @extend %photos; }
+.section-photos-crown__photos { @extend %photos; }
 
 
-.crown-photo {
+.section-photos-crown__crown-photo {
     width: 100%;
     margin: 0;
     overflow: hidden;
     background-color: #000;
     position: relative;
-    border: 2px solid #fff;
+    //border: 2px solid #fff;
 
     h3 {
         position: absolute;
@@ -433,8 +414,8 @@ header {
     }
 }
 
-.crown-photo-x {
-    @extend .crown-photo;
+.section-photos-crown__crown-photo_dark {
+    @extend .section-photos-crown__crown-photo;
     img {
         opacity: 0.1;
         &:hover{
@@ -443,41 +424,35 @@ header {
     }
 }
 
-.flag-icon {
+.section-photos-crown__caption {
     h3 {
         position: absolute;
-        top: 90%;
+        top: 85%;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         color: rgba(255, 255, 255, 0.8);
         text-align: center;
         width: 100%;
         font-size: 90%;
-
-        i {
-            float: right;
-            margin-right: 5px;
-            font-size: 110%;
-            z-index: 1;
-            margin-top: 13px;
-        }
         div {
-            margin-top: 15px;
-            margin-right: 25px;
+
+            margin-right: 7%;
             text-align: right;
         }
     }
 }
 
-.section-photos-crown__photos-more-photos {
+.more-photos {
     -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
     transition: opacity 0.5s, -webkit-transform 0.5s;
     transition: transform 0.5s, opacity 0.5s;
     transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
 }
 
-.button-show {
-    height: 100px;
+.section-photos-crown__button_ghost_more-hide {
+    @extend %button;
+    float: right;
+    margin: 25px 50px 25px 0;
 }
 
 .photos-crown-showcase-mobile {
