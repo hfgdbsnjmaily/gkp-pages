@@ -1,0 +1,469 @@
+<!doctype html>
+<html class="no-js" lang="pl">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
+        <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.css">
+        <link rel="stylesheet" href="/bower_components/animate.css/animate.css">
+        <link rel="stylesheet" href="/bower_components/lightbox2/dist/css/lightbox.css">
+        <link rel="stylesheet" href="/bower_components/swiper/dist/css/swiper.css">
+        <link rel="stylesheet" href="/bower_components/tooltipster/dist/css/tooltipster.bundle.css">
+        <!--<link rel="stylesheet" href="vendors/css/tooltipster-sideTip-shadow.min.css">-->
+
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/grid.css">
+        <!--<link rel="stylesheet" href="styles/queries.css">-->
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,600" rel="stylesheet">
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+        <title>Crown of Polish Mountains | Mountain Challenge</title>
+
+    </head>
+
+    <body>
+
+<!--HEADER-->
+
+        <header class="header">
+            <nav>
+                <div class="header__logo-box">
+                        <img src="images/logo-white.png" alt="Logo" class="header__logo_white">
+                        <img src="images/logo-black.png" alt="Logo" class="header__logo_black">
+                </div>
+                <a class="header__nav-icon_mobile"><i class="ion-navicon-round"></i></a>
+                <ul class="header__nav-list">
+                    <li><a href="#crown">Crown of Polish Mountains</a></li>
+                    <li><a href="#photos">Hall of fame</a></li>
+                    <li><a href="#about-us">About us</a></li>
+                </ul>
+            </nav>
+            <h1 class="header__title">We haven’t been everywhere,<br> but it’s on our list</h1>
+            <div class="header__scroll-down">
+                <a href="#"><i class="ion-ios-arrow-down"></i></a>
+            </div>
+        </header>
+
+<!--RESULTS-->
+
+        <section class="section-results">
+                <h2>Challenge in progress...</h2>
+                <div class="section-results__result">
+                        <i class="ion-ios-checkmark-outline"></i>
+                        <div class="section-results__counter" data-count="11">0</div>
+                        /28
+                </div>
+        </section>
+
+<!--MAP-->
+        <section class="section-map">
+            <div class="section-map__map"></div>
+            <div class="section-map__map_mobile"></div>
+            <div class="section-map__crown-list">
+                    <h2>Crown of Polish Mountains</h2>
+                    <div>
+                        <ul class="col span-1-of-2">
+                            <li><i class="ion-ios-close-outline"></i> Łysica &mdash; Góry Świętokrzyskie</li>
+                            <li><i class="ion-ios-checkmark-outline"></i> Ślęża &mdash; Masyw Ślęży</li>
+                            <li><i class="ion-ios-close-outline"></i> Skopiec &mdash; Góry Kaczawskie</li>
+                            <li><i class="ion-ios-close-outline"></i> Kłodzka Góra &mdash; Góry Bardzkie</li>
+                            <li><i class="ion-ios-checkmark-outline"></i> Chełmiec &mdash; Góry Wałbrzyskie</li>
+                            <li><i class="ion-ios-close-outline"></i> Biskupia Kopa &mdash; Góry Opawskie</li>
+                            <li><i class="ion-ios-close-outline"></i> Lubomir &mdash; Beskid Makowski</li>
+                            <li><i class="ion-ios-checkmark-outline"></i> Tarnica &mdash; Bieszczady</li>
+                            <li><i class="ion-ios-close-outline"></i> Czupel &mdash; Beskid Mały</li>
+                            <li><i class="ion-ios-checkmark-outline"></i> Waligóra &mdash; Góry Kamienne</li>
+                            <li><i class="ion-ios-checkmark-outline"></i> Skalnik &mdash; Rudawy Janowickie</li>
+                            <li><i class="ion-ios-close-outline"></i> Jagodna &mdash; Góry Bystrzyckie</li>
+                            <li><i class="ion-ios-close-outline"></i> Kowadło &mdash; Góry Złote</li>
+                            <li><i class="ion-ios-close-outline"></i> Lackowa &mdash; Beskid Niski</li>
+                        </ul>
+                        <ul class="col span-1-of-2">
+                            <li><i class="ion-ios-checkmark-outline"></i> Wielka Sowa &mdash; Góry Sowie</li>
+                            <li><i class="ion-ios-close-outline"></i> Wysoka &mdash; Pieniny</li>
+                            <li><i class="ion-ios-close-outline"></i> Orlica &mdash; Góry Orlickie</li>
+                            <li><i class="ion-ios-close-outline"></i> Rudawiec &mdash; Góry Bialskie</li>
+                            <li><i class="ion-ios-close-outline"></i> Wysoka Kopa &mdash; Góry Izerskie</li>
+                            <li><i class="ion-ios-close-outline"></i> Mogielica &mdash; Beskid Wyspowy</li>
+                            <li><i class="ion-ios-checkmark-outline"></i> Skrzyczne &mdash; Beskid Śląski</li>
+                            <li><i class="ion-ios-close-outline"></i> Radziejowa &mdash; Beskid Sądecki</li>
+                            <li><i class="ion-ios-close-outline"></i> Turbacz &mdash; Gorce</li>
+                            <li><i class="ion-ios-checkmark-outline"></i> Szczeliniec Wielki &mdash; Góry Stołowe</li>
+                            <li><i class="ion-ios-checkmark-outline"></i> Śnieżnik &mdash; Masyw Śnieżnika</li>
+                            <li><i class="ion-ios-checkmark-outline"></i> Śnieżka &mdash; Karkonosze</li>
+                            <li><i class="ion-ios-close-outline"></i> Babia Góra &mdash; Beskid Żywiecki</li>
+                            <li><i class="ion-ios-close-outline"></i> Rysy &mdash; Tatry</li>
+                        </ul>
+                    </div>
+                </div>
+        </section>
+
+<!--PHOTOS - CROWN-->
+
+        <section class="section-photos-crown">
+            <h2>Hall of fame</h2>
+            <ul class="section-photos-crown__photos clearfix"></ul>
+            <ul class="section-photos-crown__photos-more-photos"></ul>
+
+            <div class="button-show">
+                <a class="btn btn-ghost more-hide" href="#scroll-photo">show more</a>
+            </div>
+<!--mobile-->
+
+            <div class="photos-crown-showcase-mobile">
+                 <div class="swiper-container">
+                    <div class="swiper-wrapper"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+<!--QUOTE-->
+
+        <section class="section-quote">
+            <h2>About mountains...</h2>
+            <div class="row">
+                <div>
+                    <p id="sentence">
+                        <span id="changing-quote">
+                            When you go to the mountains, you see them and you admire them. In a sense, they give you a challenge, and you try to express that challenge by climbing them.<br><br>Edmund Hillary
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+<!--GALLERY-->
+
+        <section id="dg-container" class="dg-container">
+            <h2 id="photos-other">Some more photos</h2>
+            <div class="dg-wrapper">
+                <a href="images/chelmiec2big.jpg" class="lightbox">
+                    <img src="images/chelmiec2.jpg" alt="Chelmiec">
+                    <div>Chełmiec &mdash; 14 III 2017</div>
+                </a>
+                <a href="images/kalenica2big.jpg" class="lightbox">
+                    <img src="images/kalenica2.jpg" alt="Kalenica">
+                    <div>Kalenica &mdash; 2 X 2016</div>
+                </a>
+                <a href="images/dolina5stawowbig.jpg" class="lightbox">
+                    <img src="images/dolina5stawow.jpg" alt="Dolina Pieciu Stawow">
+                    <div>Dolina Pięciu Stawów &mdash; 20 VIII 2016</div>
+                </a>
+                <a href="images/dolina5stawow2big.jpg" class="lightbox">
+                    <img src="images/dolina5stawow2.jpg" alt="Dolina Pieciu Stawow">
+                    <div>Tatry &mdash; 20 VIII 2016</div>
+                </a>
+                <a href="images/kalenicabig.jpg" class="lightbox">
+                    <img src="images/kalenica.jpg" alt="Kalenica">
+                    <div>Kalenica &mdash; 2 X 2016</div>
+                </a>
+                <a href="images/skrzyczne7big.jpg" class="lightbox">
+                    <img src="images/skrzyczne7.jpg" alt="Skrzyczne">
+                    <div>Skrzyczne &mdash; 4 II 2017</div>
+                </a>
+                <a href="images/slezabig.jpg" class="lightbox">
+                    <img src="images/sleza.jpg" alt="Sleza">
+                    <div>Widok na Ślężę &mdash; 11 IX 2015</div>
+                </a>
+                <a href="images/sniezka4big.jpg" class="lightbox">
+                    <img src="images/sniezka4.jpg" alt="Sniezka">
+                    <div>Śnieżka &mdash; 23 X 2016</div>
+                </a>
+                <a href="images/sniezka6big.jpg" class="lightbox">
+                    <img src="images/sniezka6.jpg" alt="Sniezka">
+                    <div>Śnieżka &mdash; 30 XI 2014</div>
+                </a>
+                <a href="images/tarnicabig.jpg" class="lightbox">
+                    <img src="images/tarnica.jpg" alt="Tarnica">
+                    <div>Tarnica &mdash; 3 I 2017</div>
+                </a>
+                <a href="images/zakretSmiercibig.jpg" class="lightbox">
+                    <img src="images/zakretSmierci.jpg" alt="Zakret Smierci">
+                    <div>Zakręt Śmierci &mdash; 12 IV 2015</div>
+                </a>
+                <a href="images/zakretSmierci2big.jpg" class="lightbox">
+                    <img src="images/zakretSmierci2.jpg" alt="Zakret Smierci">
+                    <div>Zakręt Śmierci &mdash; 12 IV 2015</div>
+                </a>
+                <a href="images/tatry5big.jpg" class="lightbox">
+                    <img src="images/tatry5.jpg" alt="Tatry">
+                    <div>Tatry &mdash; 20 VIII 2016</div>
+                </a>
+                <a href="images/snieznik3big.jpg" class="lightbox">
+                    <img src="images/snieznik3.jpg" alt="Snieznik">
+                    <div>Śnieżnik &mdash; 1 II 2015</div>
+                </a>
+                <a href="images/snieznik4big.jpg" class="lightbox">
+                    <img src="images/snieznik4.jpg" alt="Snieznik">
+                    <div>Śnieżnik &mdash; 1 II 2015</div>
+                </a>
+                <a href="images/szczeliniecbig.jpg" class="lightbox">
+                    <img src="images/szczeliniec.jpg" alt="Szczeliniec Wielki">
+                    <div>Szczeliniec Wielki &mdash; 5 VI 2015</div>
+                </a>
+                <a href="images/szczeliniec4big.jpg" class="lightbox">
+                    <img src="images/szczeliniec4.jpg" alt="Szczeliniec Wielki">
+                    <div>Szczeliniec Wielki &mdash; 5 VI 2015</div>
+                </a>
+                <a href="images/sniezneKotlybig.jpg" class="lightbox">
+                    <img src="images/sniezneKotly.jpg" alt="Sniezne Kotly">
+                    <div>Śnieżne Kotły &mdash; 11 IV 2015</div>
+                </a>
+                <a href="images/sniezneKotly2big.jpg" class="lightbox">
+                    <img src="images/sniezneKotly2.jpg" alt="Sniezne Kotly">
+                    <div>Śnieżne Kotły &mdash; 11 IV 2015</div>
+                </a>
+                <a href="images/tarnica7big.jpg" class="lightbox">
+                    <img src="images/tarnica7.jpg" alt="Tarnica">
+                    <div>Tarnica &mdash; 3 I 2017</div>
+                </a>
+                <a href="images/sniezneKotly6big.jpg" class="lightbox">
+                    <img src="images/sniezneKotly6.jpg" alt="Sniezne Kotly">
+                    <div>Śnieżne Kotły &mdash; 11 IV 2015</div>
+                </a>
+                <a href="images/chelmiecbig.jpg" class="lightbox">
+                    <img src="images/chelmiec.jpg" alt="Chelmiec">
+                    <div>Chełmiec &mdash; 14 III 2017</div>
+                </a>
+                <a href="images/chelmiec3big.jpg" class="lightbox">
+                    <img src="images/chelmiec3.jpg" alt="Chelmiec">
+                    <div>Chełmiec &mdash; 14 III 2017</div>
+                </a>
+                <a href="images/chelmiec4big.jpg" class="lightbox">
+                    <img src="images/chelmiec4.jpg" alt="Chelmiec">
+                    <div>Chełmiec &mdash; 14 III 2017</div>
+                </a>
+                <a href="images/skrzyczne2big.jpg" class="lightbox">
+                    <img src="images/skrzyczne2.jpg" alt="Skrzyczne">
+                    <div>Skrzyczne &mdash; 4 II 2017</div>
+                </a>
+                <a href="images/skrzyczne3big.jpg" class="lightbox">
+                    <img src="images/skrzyczne3.jpg" alt="Skrzyczne">
+                    <div>Skrzyczne &mdash; 4 II 2017</div>
+                </a>
+                <a href="images/skrzyczne4big.jpg" class="lightbox">
+                    <img src="images/skrzyczne4.jpg" alt="Skrzyczne">
+                    <div>Skrzyczne &mdash; 4 II 2017</div>
+                </a>
+                <a href="images/skrzyczne5big.jpg" class="lightbox">
+                    <img src="images/skrzyczne5.jpg" alt="Skrzyczne">
+                    <div>Skrzyczne &mdash; 4 II 2017</div>
+                </a>
+                <a href="images/sleza3big.jpg" class="lightbox">
+                    <img src="images/sleza3.jpg" alt="Sleza">
+                    <div>Widok na Ślężę &mdash; 12 VI 2016</div>
+                </a>
+                <a href="images/sniezka2big.jpg" class="lightbox">
+                    <img src="images/sniezka2.jpg" alt="Sniezka">
+                    <div>Śnieżka &mdash; 23 X 2016</div>
+                </a>
+                <a href="images/sleza4big.jpg" class="lightbox">
+                    <img src="images/sleza4.jpg" alt="Sleza">
+                    <div>Ślęża &mdash; 10 I 2016</div>
+                </a>
+                <a href="images/sniezka5big.jpg" class="lightbox">
+                    <img src="images/sniezka5.jpg" alt="Sniezka">
+                    <div>Śnieżka &mdash; 30 XI 2014</div>
+                </a>
+                <a href="images/sleza5big.jpg" class="lightbox">
+                    <img src="images/sleza5.jpg" alt="Sleza">
+                    <div>Ślęża &mdash; 10 I 2016</div>
+                </a>
+                <a href="images/sniezkabig.jpg" class="lightbox">
+                    <img src="images/sniezka.jpg" alt="Sniezka">
+                    <div>Śnieżka &mdash; 23 X 2016</div>
+                </a>
+                <a href="images/sniezka7big.jpg" class="lightbox">
+                    <img src="images/sniezka7.jpg" alt="Sniezka">
+                    <div>Śnieżka &mdash; 30 XI 2014</div>
+                </a>
+                <a href="images/sniezka8big.jpg" class="lightbox">
+                    <img src="images/sniezka8.jpg" alt="Sniezka">
+                    <div>Śnieżka &mdash; 13 XII 2015</div>
+                </a>
+                <a href="images/sniezka9big.jpg" class="lightbox">
+                    <img src="images/sniezka9.jpg" alt="Sniezka">
+                    <div>Śnieżka &mdash; 13 XII 2015</div>
+                </a>
+                <a href="images/sniezneKotly3big.jpg" class="lightbox">
+                    <img src="images/sniezneKotly3.jpg" alt="Sniezne Kotly">
+                    <div>Śnieżne Kotły &mdash; 11 IV 2015</div>
+                </a>
+                <a href="images/sniezneKotly4big.jpg" class="lightbox">
+                    <img src="images/sniezneKotly4.jpg" alt="Sniezne Kotly">
+                    <div>Śnieżne Kotły &mdash; 11 IV 2015</div>
+                </a>
+                <a href="images/sniezneKotly5big.jpg" class="lightbox">
+                    <img src="images/sniezneKotly5.jpg" alt="Sniezne Kotly">
+                    <div>Śnieżne Kotły &mdash; 11 IV 2015</div>
+                </a>
+                <a href="images/snieznik2big.jpg" class="lightbox">
+                    <img src="images/snieznik2.jpg" alt="Snieznik">
+                    <div>Śnieżnik &mdash; 1 II 2015</div>
+                </a>
+                <a href="images/szczeliniec3big.jpg" class="lightbox">
+                    <img src="images/szczeliniec3.jpg" alt="Szczeliniec Wielki">
+                    <div>Szczeliniec Wielki &mdash; 5 VI 2015</div>
+                </a>
+                <a href="images/tarnica2big.jpg" class="lightbox">
+                    <img src="images/tarnica2.jpg" alt="Tarnica">
+                    <div>Tarnica &mdash; 3 I 2017</div>
+                </a>
+                <a href="images/tarnica3big.jpg" class="lightbox">
+                    <img src="images/tarnica3.jpg" alt="Tarnica">
+                    <div>Tarnica &mdash; 3 I 2017</div>
+                </a>
+                <a href="images/tarnica4big.jpg" class="lightbox">
+                    <img src="images/tarnica4.jpg" alt="Tarnica">
+                    <div>Tarnica &mdash; 3 I 2017</div>
+                </a>
+                <a href="images/tarnica5big.jpg" class="lightbox">
+                    <img src="images/tarnica5.jpg" alt="Tarnica">
+                    <div>Tarnica &mdash; 3 I 2017</div>
+                </a>
+                <a href="images/tatrybig.jpg" class="lightbox">
+                    <img src="images/tatry.jpg" alt="Tatry">
+                    <div>Tatry &mdash; 20 VIII 2016</div>
+                </a>
+                <a href="images/tatry2big.jpg" class="lightbox">
+                    <img src="images/tatry2.jpg" alt="Tatry">
+                    <div>Tatry &mdash; 20 VIII 2016</div>
+                </a>
+                <a href="images/tatry3big.jpg" class="lightbox">
+                    <img src="images/tatry3.jpg" alt="Tatry">
+                    <div>Widok na Tatry &mdash; 20 VIII 2016</div>
+                </a>
+                <a href="images/tatry4big.jpg" class="lightbox">
+                    <img src="images/tatry4.jpg" alt="Tatry">
+                    <div>Tatry &mdash; 20 VIII 2016</div>
+                </a>
+                <a href="images/zakretSmierci3big.jpg" class="lightbox">
+                    <img src="images/zakretSmierci3.jpg" alt="Zakret Smierci">
+                    <div>Śnieżne Kotły &mdash; 11 IV 2015</div>
+                </a>
+            </div>
+            <nav class="nav-gallery">
+				<span class="dg-prev">&lt;</span>
+				<span class="dg-next">&gt;</span>
+            </nav>
+        </section>
+
+<!--ABOUT US-->
+
+        <section class="section-about-us" id="about-us">
+            <h2>About us</h2>
+            <div class="row">
+                <div class="about-us-text">
+                    <div class="col span-1-of-5">
+                        <div class="features"><img class="icon-big" src="images/icons/cat-color.png" alt="cat-icon">
+                            <h3>Cats<br>lovers</h3></div>
+                        <div class="features"><img class="icon-big" src="images/icons/book-color.png" alt="book-icon">
+                            <h3 id="bookworms">Books<br>worms</h3>
+                        </div>
+                        <div class="features"><img class="icon-big" src="images/icons/iphone-color.png" alt="iphone-icon">
+                            <h3>iPhone<br>users</h3></div>
+                    </div>
+                    <div class="col span-1-of-5">
+                        <div class="features"><img class="icon-big" src="images/icons/calculator-color.png" alt="calculator-icon">
+                            <h3>Scientific<br>minds</h3></div>
+                        <div class="features"><img class="icon-big" src="images/icons/music-color.png" alt="music-icon">
+                            <h3>Reggae<br>fans</h3></div>
+                        <div class="features"><img class="icon-big" src="images/icons/nature-color.png" alt="nature-icon">
+                            <h3>in harmony<br>with nature</h3></div>
+                    </div>
+                    <div class="col span-1-of-5">
+                        <div class="features"><img class="icon-big" src="images/icons/wine-color.png" alt="wine-icon">
+                            <h3>Wine<br>tasters</h3></div>
+                        <div class="features"><img class="icon-big" src="images/icons/game-color.png" alt="game-icon">
+                            <h3>Game<br>lovers</h3></div>
+                        <div class="features"><img class="icon-big" src="images/icons/harry-color.png" alt="harry-icon">
+                            <h3 id="pottermaniacs">Potter<br>maniacs</h3>
+                        </div>
+                    </div>
+                    <div class="col span-1-of-5 pc">
+                        <div class="features"><img class="icon-big" src="images/icons/walter-white-color.png" alt="walter-icon">
+                            <h3>tv series<br>watchers</h3></div>
+                        <div class="features"><img class="icon-big" src="images/icons/tea-color.png" alt="tea-icon">
+                            <h3>Tea<br>drinkers</h3></div>
+                        <div class="features"><img class="icon-big" src="images/icons/it-color.png" alt="it-icon">
+                            <h3>IT<br>students</h3></div>
+                    </div>
+                    <div class="col span-1-of-5 no-mobile">
+                        <div class="features"><img class="icon-big" src="images/icons/food-color.png" alt="food-icon">
+                            <h3>Foodies</h3></div>
+                        <div class="features"><img class="icon-big" src="images/icons/map-color.png" alt="map-icon">
+                            <h3>Travelers</h3></div>
+                        <div class="features"><img class="icon-big" src="images/icons/sport-color.png" alt="sport-icon">
+                            <h3>Sport<br>freaks</h3></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!--FOOTER-->
+
+        <footer>
+            <div class="row">
+                <div class="col span-1-of-2">
+                    <ul class="footer-nav">
+                        <li><a href="#crown">Map</a></li>
+                        <li><a href="#photos">Hall of fame</a></li>
+                        <li><a href="#photos-other" class="no-mobile">Other photos</a></li>
+                        <li><a href="#about-us">About us</a></li>
+                    </ul>
+                </div>
+                <div class="col span-1-of-2">
+                    <ul class="social-links">
+                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                        <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                        <li><a href="#"><i class="ion-ios-email-outline"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <p>Copyright &copy; 2017 by Weronika. All rights reserved.</p>
+                <a href="https://icons8.com" class="icons-src">Icon pack by Icons8</a>
+            </div>
+        </footer>
+
+        <script src="/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/bower_components/tether/dist/js/tether.js"></script>
+        <script src="/bower_components/modernizr/modernizr.js"></script>
+
+        <script src="/bower_components/bootstrap/js/dist/util.js"></script>
+        <script src="/bower_components/bootstrap/js/dist/alert.js"></script>
+        <script src="/bower_components/bootstrap/js/dist/button.js"></script>
+        <script src="/bower_components/bootstrap/js/dist/carousel.js"></script>
+        <script src="/bower_components/bootstrap/js/dist/collapse.js"></script>
+        <script src="/bower_components/bootstrap/js/dist/dropdown.js"></script>
+        <script src="/bower_components/bootstrap/js/dist/modal.js"></script>
+        <script src="/bower_components/bootstrap/js/dist/scrollspy.js"></script>
+        <script src="/bower_components/bootstrap/js/dist/tab.js"></script>
+        <script src="/bower_components/bootstrap/js/dist/tooltip.js"></script>
+        <script src="/bower_components/bootstrap/js/dist/popover.js"></script>
+
+
+        <script src="/bower_components/respond/dest/respond.min.js"></script>
+        <script src="/bower_components/html5shiv/dist/html5shiv.js"></script>
+        <script src="/bower_components/selectivizr/selectivizr.js"></script>
+        <script src="http://maps.google.com/maps/api/js"></script>
+
+        <script src="/bower_components/waypoints/lib/jquery.waypoints.js"></script>
+        <script src="/bower_components/tooltipster/dist/js/tooltipster.bundle.min.js"></script>
+        <script src="/bower_components/gmaps/gmaps.js"></script>
+        <script src="/bower_components/typed.js/lib/typed.min.js"></script>
+        <script src="/bower_components/lightbox2/dist/js/lightbox.js"></script>
+        <script src="/bower_components/swiper/dist/js/swiper.js"></script>
+
+        <script src="scripts/main.js"></script>
+        <script src="scripts/3Dgallery/js/jquery.gallery.js"></script>
+        <script src="scripts/3Dgallery/js/modernizr.custom.53451.js"></script>
+  </body>
+</html>
