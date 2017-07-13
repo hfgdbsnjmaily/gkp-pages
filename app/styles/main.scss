@@ -455,12 +455,12 @@ header {
     margin: 25px 50px 25px 0;
 }
 
-.photos-crown-showcase-mobile {
+.section-photos-crown__photos_mobile {
     display: none;
     margin-left: calc(50% - 150px);
 }
 
-.label-mobile {
+.section-photos-crown__label_mobile {
 	text-align: center;
 	line-height: 30px;
 	text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
@@ -472,20 +472,20 @@ header {
     background-color: rgba(0, 0, 0, 0.51);
 }
 
-.swiper-container {
+.section-photos-crown__swiper-container_mobile {
     width: 300px;
     height: 300px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.swiper-slide {
+.section-photos-crown__swiper-slide_mobile {
     text-align: center;
     font-size: 18px;
     background: rgba(255, 255, 255, 0);
 }
 
-.swiper-pagination {display: none;}
+.section-photos-crown__swiper-pagination_mobile {display: none;}
 
 /* --------------------------------------------------------------------------------------------------------------- */
 /* ------------------------------------- QUOTE ------------------------------------- */

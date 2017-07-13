@@ -428,9 +428,9 @@ $(document).ready(function() {
 
             for (var i = 0; i < 10; i++) {
 
-                el = '.swiper-wrapper';
+                el = '.section-photos-crown__swiper-wrapper_mobile';
 
-                html = '<div class="swiper-slide"><img src="images/%photo_name%" /><div class="label-mobile">%NAME% %HEIGHT% &mdash; %DATE%</div></div>';
+                html = '<div class="section-photos-crown__swiper-slide_mobile"><img src="images/%photo_name%" /><div class="section-photos-crown__label_mobile">%NAME% %HEIGHT% &mdash; %DATE%</div></div>';
 
                 newHtml = html.replace('%photo_name%', arr[i][4]);
                 newHtml = newHtml.replace('%DATE%', arr[i][5]);
@@ -443,9 +443,9 @@ $(document).ready(function() {
 
     addPhotosMobile(crownMountainsArr);
 
-    var swiper = new Swiper('.swiper-container', {
+    var swiper = new Swiper('.section-photos-crown__swiper-container_mobile', {
 
-        pagination: '.swiper-pagination',
+        pagination: '.section-photos-crown__swiper-pagination_mobile',
         spaceBetween: 10
     });
 
