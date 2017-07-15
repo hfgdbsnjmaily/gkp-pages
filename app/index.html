@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="/bower_components/lightbox2/dist/css/lightbox.css">
         <link rel="stylesheet" href="/bower_components/swiper/dist/css/swiper.css">
         <link rel="stylesheet" href="/bower_components/tooltipster/dist/css/tooltipster.bundle.css">
+        <link rel="stylesheet" href="/bower_components/blueimp/css/blueimp-gallery.min.css">
         <!--<link rel="stylesheet" href="vendors/css/tooltipster-sideTip-shadow.min.css">-->
 
         <link rel="stylesheet" href="styles/main.css">
@@ -108,7 +109,7 @@
 
         <section class="section-photos-crown">
             <h2>Hall of fame</h2>
-            <ul class="section-photos-crown__photos clearfix" id="scroll-photo"></ul>
+            <ul class="section-photos-crown__photos-all clearfix" id="scroll-photo"></ul>
 
             <ul class="section-photos-crown__photos more-photos clearfix"></ul>
             <a class="section-photos-crown__button_ghost_more-hide" href="#scroll-photo" data-text-swap="hide more">show more</a>
@@ -136,219 +137,70 @@
 
 <!--GALLERY-->
 
-        <section id="dg-container" class="dg-container">
+        <section class="section-more-photos">
             <h2 id="photos-other">Some more photos</h2>
-            <div class="dg-wrapper">
-                <a href="images/chelmiec2big.jpg" class="lightbox">
-                    <img src="images/chelmiec2.jpg" alt="Chelmiec">
-                    <div>Chełmiec &mdash; 14 III 2017</div>
-                </a>
-                <a href="images/kalenica2big.jpg" class="lightbox">
-                    <img src="images/kalenica2.jpg" alt="Kalenica">
-                    <div>Kalenica &mdash; 2 X 2016</div>
-                </a>
-                <a href="images/dolina5stawowbig.jpg" class="lightbox">
-                    <img src="images/dolina5stawow.jpg" alt="Dolina Pieciu Stawow">
-                    <div>Dolina Pięciu Stawów &mdash; 20 VIII 2016</div>
-                </a>
-                <a href="images/dolina5stawow2big.jpg" class="lightbox">
-                    <img src="images/dolina5stawow2.jpg" alt="Dolina Pieciu Stawow">
-                    <div>Tatry &mdash; 20 VIII 2016</div>
-                </a>
-                <a href="images/kalenicabig.jpg" class="lightbox">
-                    <img src="images/kalenica.jpg" alt="Kalenica">
-                    <div>Kalenica &mdash; 2 X 2016</div>
-                </a>
-                <a href="images/skrzyczne7big.jpg" class="lightbox">
-                    <img src="images/skrzyczne7.jpg" alt="Skrzyczne">
-                    <div>Skrzyczne &mdash; 4 II 2017</div>
-                </a>
-                <a href="images/slezabig.jpg" class="lightbox">
-                    <img src="images/sleza.jpg" alt="Sleza">
-                    <div>Widok na Ślężę &mdash; 11 IX 2015</div>
-                </a>
-                <a href="images/sniezka4big.jpg" class="lightbox">
-                    <img src="images/sniezka4.jpg" alt="Sniezka">
-                    <div>Śnieżka &mdash; 23 X 2016</div>
-                </a>
-                <a href="images/sniezka6big.jpg" class="lightbox">
-                    <img src="images/sniezka6.jpg" alt="Sniezka">
-                    <div>Śnieżka &mdash; 30 XI 2014</div>
-                </a>
-                <a href="images/tarnicabig.jpg" class="lightbox">
-                    <img src="images/tarnica.jpg" alt="Tarnica">
-                    <div>Tarnica &mdash; 3 I 2017</div>
-                </a>
-                <a href="images/zakretSmiercibig.jpg" class="lightbox">
-                    <img src="images/zakretSmierci.jpg" alt="Zakret Smierci">
-                    <div>Zakręt Śmierci &mdash; 12 IV 2015</div>
-                </a>
-                <a href="images/zakretSmierci2big.jpg" class="lightbox">
-                    <img src="images/zakretSmierci2.jpg" alt="Zakret Smierci">
-                    <div>Zakręt Śmierci &mdash; 12 IV 2015</div>
-                </a>
-                <a href="images/tatry5big.jpg" class="lightbox">
-                    <img src="images/tatry5.jpg" alt="Tatry">
-                    <div>Tatry &mdash; 20 VIII 2016</div>
-                </a>
-                <a href="images/snieznik3big.jpg" class="lightbox">
-                    <img src="images/snieznik3.jpg" alt="Snieznik">
-                    <div>Śnieżnik &mdash; 1 II 2015</div>
-                </a>
-                <a href="images/snieznik4big.jpg" class="lightbox">
-                    <img src="images/snieznik4.jpg" alt="Snieznik">
-                    <div>Śnieżnik &mdash; 1 II 2015</div>
-                </a>
-                <a href="images/szczeliniecbig.jpg" class="lightbox">
-                    <img src="images/szczeliniec.jpg" alt="Szczeliniec Wielki">
-                    <div>Szczeliniec Wielki &mdash; 5 VI 2015</div>
-                </a>
-                <a href="images/szczeliniec4big.jpg" class="lightbox">
-                    <img src="images/szczeliniec4.jpg" alt="Szczeliniec Wielki">
-                    <div>Szczeliniec Wielki &mdash; 5 VI 2015</div>
-                </a>
-                <a href="images/sniezneKotlybig.jpg" class="lightbox">
-                    <img src="images/sniezneKotly.jpg" alt="Sniezne Kotly">
-                    <div>Śnieżne Kotły &mdash; 11 IV 2015</div>
-                </a>
-                <a href="images/sniezneKotly2big.jpg" class="lightbox">
-                    <img src="images/sniezneKotly2.jpg" alt="Sniezne Kotly">
-                    <div>Śnieżne Kotły &mdash; 11 IV 2015</div>
-                </a>
-                <a href="images/tarnica7big.jpg" class="lightbox">
-                    <img src="images/tarnica7.jpg" alt="Tarnica">
-                    <div>Tarnica &mdash; 3 I 2017</div>
-                </a>
-                <a href="images/sniezneKotly6big.jpg" class="lightbox">
-                    <img src="images/sniezneKotly6.jpg" alt="Sniezne Kotly">
-                    <div>Śnieżne Kotły &mdash; 11 IV 2015</div>
-                </a>
-                <a href="images/chelmiecbig.jpg" class="lightbox">
-                    <img src="images/chelmiec.jpg" alt="Chelmiec">
-                    <div>Chełmiec &mdash; 14 III 2017</div>
-                </a>
-                <a href="images/chelmiec3big.jpg" class="lightbox">
-                    <img src="images/chelmiec3.jpg" alt="Chelmiec">
-                    <div>Chełmiec &mdash; 14 III 2017</div>
-                </a>
-                <a href="images/chelmiec4big.jpg" class="lightbox">
-                    <img src="images/chelmiec4.jpg" alt="Chelmiec">
-                    <div>Chełmiec &mdash; 14 III 2017</div>
-                </a>
-                <a href="images/skrzyczne2big.jpg" class="lightbox">
-                    <img src="images/skrzyczne2.jpg" alt="Skrzyczne">
-                    <div>Skrzyczne &mdash; 4 II 2017</div>
-                </a>
-                <a href="images/skrzyczne3big.jpg" class="lightbox">
-                    <img src="images/skrzyczne3.jpg" alt="Skrzyczne">
-                    <div>Skrzyczne &mdash; 4 II 2017</div>
-                </a>
-                <a href="images/skrzyczne4big.jpg" class="lightbox">
-                    <img src="images/skrzyczne4.jpg" alt="Skrzyczne">
-                    <div>Skrzyczne &mdash; 4 II 2017</div>
-                </a>
-                <a href="images/skrzyczne5big.jpg" class="lightbox">
-                    <img src="images/skrzyczne5.jpg" alt="Skrzyczne">
-                    <div>Skrzyczne &mdash; 4 II 2017</div>
-                </a>
-                <a href="images/sleza3big.jpg" class="lightbox">
-                    <img src="images/sleza3.jpg" alt="Sleza">
-                    <div>Widok na Ślężę &mdash; 12 VI 2016</div>
-                </a>
-                <a href="images/sniezka2big.jpg" class="lightbox">
-                    <img src="images/sniezka2.jpg" alt="Sniezka">
-                    <div>Śnieżka &mdash; 23 X 2016</div>
-                </a>
-                <a href="images/sleza4big.jpg" class="lightbox">
-                    <img src="images/sleza4.jpg" alt="Sleza">
-                    <div>Ślęża &mdash; 10 I 2016</div>
-                </a>
-                <a href="images/sniezka5big.jpg" class="lightbox">
-                    <img src="images/sniezka5.jpg" alt="Sniezka">
-                    <div>Śnieżka &mdash; 30 XI 2014</div>
-                </a>
-                <a href="images/sleza5big.jpg" class="lightbox">
-                    <img src="images/sleza5.jpg" alt="Sleza">
-                    <div>Ślęża &mdash; 10 I 2016</div>
-                </a>
-                <a href="images/sniezkabig.jpg" class="lightbox">
-                    <img src="images/sniezka.jpg" alt="Sniezka">
-                    <div>Śnieżka &mdash; 23 X 2016</div>
-                </a>
-                <a href="images/sniezka7big.jpg" class="lightbox">
-                    <img src="images/sniezka7.jpg" alt="Sniezka">
-                    <div>Śnieżka &mdash; 30 XI 2014</div>
-                </a>
-                <a href="images/sniezka8big.jpg" class="lightbox">
-                    <img src="images/sniezka8.jpg" alt="Sniezka">
-                    <div>Śnieżka &mdash; 13 XII 2015</div>
-                </a>
-                <a href="images/sniezka9big.jpg" class="lightbox">
-                    <img src="images/sniezka9.jpg" alt="Sniezka">
-                    <div>Śnieżka &mdash; 13 XII 2015</div>
-                </a>
-                <a href="images/sniezneKotly3big.jpg" class="lightbox">
-                    <img src="images/sniezneKotly3.jpg" alt="Sniezne Kotly">
-                    <div>Śnieżne Kotły &mdash; 11 IV 2015</div>
-                </a>
-                <a href="images/sniezneKotly4big.jpg" class="lightbox">
-                    <img src="images/sniezneKotly4.jpg" alt="Sniezne Kotly">
-                    <div>Śnieżne Kotły &mdash; 11 IV 2015</div>
-                </a>
-                <a href="images/sniezneKotly5big.jpg" class="lightbox">
-                    <img src="images/sniezneKotly5.jpg" alt="Sniezne Kotly">
-                    <div>Śnieżne Kotły &mdash; 11 IV 2015</div>
-                </a>
-                <a href="images/snieznik2big.jpg" class="lightbox">
-                    <img src="images/snieznik2.jpg" alt="Snieznik">
-                    <div>Śnieżnik &mdash; 1 II 2015</div>
-                </a>
-                <a href="images/szczeliniec3big.jpg" class="lightbox">
-                    <img src="images/szczeliniec3.jpg" alt="Szczeliniec Wielki">
-                    <div>Szczeliniec Wielki &mdash; 5 VI 2015</div>
-                </a>
-                <a href="images/tarnica2big.jpg" class="lightbox">
-                    <img src="images/tarnica2.jpg" alt="Tarnica">
-                    <div>Tarnica &mdash; 3 I 2017</div>
-                </a>
-                <a href="images/tarnica3big.jpg" class="lightbox">
-                    <img src="images/tarnica3.jpg" alt="Tarnica">
-                    <div>Tarnica &mdash; 3 I 2017</div>
-                </a>
-                <a href="images/tarnica4big.jpg" class="lightbox">
-                    <img src="images/tarnica4.jpg" alt="Tarnica">
-                    <div>Tarnica &mdash; 3 I 2017</div>
-                </a>
-                <a href="images/tarnica5big.jpg" class="lightbox">
-                    <img src="images/tarnica5.jpg" alt="Tarnica">
-                    <div>Tarnica &mdash; 3 I 2017</div>
-                </a>
-                <a href="images/tatrybig.jpg" class="lightbox">
-                    <img src="images/tatry.jpg" alt="Tatry">
-                    <div>Tatry &mdash; 20 VIII 2016</div>
-                </a>
-                <a href="images/tatry2big.jpg" class="lightbox">
-                    <img src="images/tatry2.jpg" alt="Tatry">
-                    <div>Tatry &mdash; 20 VIII 2016</div>
-                </a>
-                <a href="images/tatry3big.jpg" class="lightbox">
-                    <img src="images/tatry3.jpg" alt="Tatry">
-                    <div>Widok na Tatry &mdash; 20 VIII 2016</div>
-                </a>
-                <a href="images/tatry4big.jpg" class="lightbox">
-                    <img src="images/tatry4.jpg" alt="Tatry">
-                    <div>Tatry &mdash; 20 VIII 2016</div>
-                </a>
-                <a href="images/zakretSmierci3big.jpg" class="lightbox">
-                    <img src="images/zakretSmierci3.jpg" alt="Zakret Smierci">
-                    <div>Śnieżne Kotły &mdash; 11 IV 2015</div>
-                </a>
+
+            <div id="wysoka-kopa">
+                <ul class="section-more-photos__photos clearfix">
+                    <li>
+                        <div class="section-more-photos__photo">
+                            <a href="images/chelmiec2big.jpg" title="Chełmiec &mdash; 14 III 2017" data-gallery="#blueimp-gallery-wysoka-kopa">
+                                <img src="images/chelmiec2.jpg" alt="Chelmiec">
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="section-more-photos__photo_hidden">
+                            <a href="images/chelmiec3big.jpg" title="Chełmiec &mdash; 14 III 2017" data-gallery="#blueimp-gallery-wysoka-kopa">
+                                <img src="images/chelmiec3.jpg" alt="Chelmiec">
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="section-more-photos__photo_hidden">
+                            <a href="images/chelmiec4big.jpg" title="Chełmiec &mdash; 14 III 2017" data-gallery="#blueimp-gallery-wysoka-kopa">
+                                <img src="images/chelmiec3.jpg" alt="Chelmiec">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <nav class="nav-gallery">
-				<span class="dg-prev">&lt;</span>
-				<span class="dg-next">&gt;</span>
-            </nav>
+            <div id="waligora">
+                <ul class="section-more-photos__photos clearfix">
+                    <li>
+                        <div class="section-more-photos__photo">
+                            <a href="images/skalnik.JPG" title="Chełmiec &mdash; 14 III 2017" data-gallery="#blueimp-gallery-waligora">
+                                <img src="images/skalnik.JPG" alt="Chelmiec">
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="section-more-photos__photo_hidden">
+                            <a href="images/skalnik1.jpg" title="Chełmiec &mdash; 14 III 2017" data-gallery="#blueimp-gallery-waligora">
+                                <img src="images/skalnik1.jpg" alt="Chelmiec">
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="section-more-photos__photo_hidden">
+                            <a href="images/skalnik2.jpg" title="Chełmiec &mdash; 14 III 2017" data-gallery="#blueimp-gallery-waligora">
+                                <img src="images/skalnik2.jpg" alt="Chelmiec">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
         </section>
+        <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+                <div class="slides"></div>
+                <h3 class="title"></h3>
+                <a class="prev">‹</a>
+                <a class="next">›</a>
+                <a class="close">×</a>
+                <a class="play-pause"></a>
+                <ol class="indicator"></ol>
+        </div>
 
 <!--ABOUT US-->
 
@@ -456,9 +308,10 @@
         <script src="/bower_components/typed.js/lib/typed.min.js"></script>
         <script src="/bower_components/lightbox2/dist/js/lightbox.js"></script>
         <script src="/bower_components/swiper/dist/js/swiper.js"></script>
+        <script src="/bower_components/blueimp/js/blueimp-gallery.min.js"></script>
 
         <script src="scripts/main.js"></script>
-        <script src="scripts/3Dgallery/js/jquery.gallery.js"></script>
-        <script src="scripts/3Dgallery/js/modernizr.custom.53451.js"></script>
+        <!--<script src="scripts/3Dgallery/js/jquery.gallery.js"></script>
+        <script src="scripts/3Dgallery/js/modernizr.custom.53451.js"></script>-->
   </body>
 </html>

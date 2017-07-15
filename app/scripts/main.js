@@ -217,33 +217,17 @@ $(document).ready(function() {
         });
     }
 
-/************************************ GALLERY ************************************/
-
-    $(function() {
-
-        $('#dg-container').gallery({
-
-            autoplay: true,
-            interval: 3000
-        });
-    });
 
 
-    var modal = document.getElementById('myModal');
-
-    /*lightbox.option('.lightbox',{
-
-        captions: false,
-        nav: "auto",
-        navText: ["‹", "›"],
-        close: false,
-        counter: true,
-        keyboard: true,
-        zoom: false,
-        docClose: true,
-        swipeClose: true,
-        scroll: false
-    });*/
+    /*document.getElementById('wysoka-kopa').onclick = function (event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement,
+            link = target.src ? target.parentNode : target,
+            options = {index: link, event: event},
+            links = this.getElementsByTagName('a');
+        blueimp.Gallery(links, options);
+    };
+*/
 
 /************************************ QUOTES ************************************/
 
@@ -304,17 +288,17 @@ $(document).ready(function() {
     var markerRed = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/e74c3c/");
 
     var crownMountainsArr = [
-        [50.8500034, 15.4172557,'Wysoka Kopa', markerGreen, 'wysokaKopa.jpg', '8 VII 2017', '1126 m', 'Góry Izerskie'],
-        [50.6807542, 16.275888, 'Waligóra', markerGreen, 'waligora.jpg', '20 V 2017', '936 m', 'Góry Kamienne'],
-        [50.8083367, 15.8992001, 'Skalnik', markerGreen, 'skalnik.jpg', '25 III 2017', '945 m', 'Rudawy Janowickie'],
-        [50.7791356, 16.2077093, 'Chełmiec', markerGreen, 'chelmiec5.jpg', '5 III 2017', '869 m', 'Góry Wałbrzyskie'],
-        [49.0745582, 22.724061,'Tarnica', markerGreen, 'tarnica6.jpg', '3 I 2017', '1346 m', 'Bieszczady'],
-        [50.7360205, 15.737757, 'Śnieżka', markerGreen, 'sniezka3.jpg', '23 X 2016', '1602 m', 'Karkonosze'],
-        [49.6959665, 19.0039589, 'Skrzyczne', markerGreen, 'skryzczne.jpg', '17 VII 2016', '1257 m', 'Beskid Śląski'],
-        [50.6803483, 16.483309, 'Wielka Sowa', markerGreen, 'wielkasowa.jpg', '20 IX 2015', '1015 m', 'Góry Sowie'],
-        [50.483671, 16.3336122, 'Szczeliniec', markerGreen, 'szczeliniec2.jpg', '5 VI 2015', '919 m', 'Góry Stołowe'],
-        [50.0993116, 16.6902543, 'Śnieżnik', markerGreen, 'snieznik.jpg', '1 II 2015', '1425 m', 'Masyw Śnieżnika'],
-        [50.864745, 16.707827, 'Ślęża', markerGreen, 'sleza2.jpg', '15 VIII 2014', '718 m', 'Masyw Ślęży'],
+        [50.8500034, 15.4172557,'Wysoka Kopa', markerGreen, 'wysokaKopabig.jpg', '8 VII 2017', '1126 m', 'Góry Izerskie', 'wysoka-kopa'],
+        [50.6807542, 16.275888, 'Waligóra', markerGreen, 'waligorabig.jpg', '20 V 2017', '936 m', 'Góry Kamienne', 'waligora'],
+        [50.8083367, 15.8992001, 'Skalnik', markerGreen, 'skalnikbig.jpg', '25 III 2017', '945 m', 'Rudawy Janowickie', 'skalnik'],
+        [50.7791356, 16.2077093, 'Chełmiec', markerGreen, 'chelmiec5big.jpg', '5 III 2017', '869 m', 'Góry Wałbrzyskie', 'chelmiec'],
+        [49.0745582, 22.724061,'Tarnica', markerGreen, 'tarnica6big.jpg', '3 I 2017', '1346 m', 'Bieszczady', 'tarnica'],
+        [50.7360205, 15.737757, 'Śnieżka', markerGreen, 'sniezka3big.jpg', '23 X 2016', '1602 m', 'Karkonosze','sniezka'],
+        [49.6959665, 19.0039589, 'Skrzyczne', markerGreen, 'skryzcznebig.jpg', '17 VII 2016', '1257 m', 'Beskid Śląski', 'skrzyczne'],
+        [50.6803483, 16.483309, 'Wielka Sowa', markerGreen, 'wielkasowabig.jpg', '20 IX 2015', '1015 m', 'Góry Sowie', 'wielka-sowa'],
+        [50.483671, 16.3336122, 'Szczeliniec', markerGreen, 'szczeliniec2big.jpg', '5 VI 2015', '919 m', 'Góry Stołowe', 'szczeliniec'],
+        [50.0993116, 16.6902543, 'Śnieżnik', markerGreen, 'snieznikbig.jpg', '1 II 2015', '1425 m', 'Masyw Śnieżnika', 'snieznik'],
+        [50.864745, 16.707827, 'Ślęża', markerGreen, 'sleza2big.jpg', '15 VIII 2014', '718 m', 'Masyw Ślęży', 'sleza'],
         [50.891624, 20.896774, 'Łysica', markerRed, 'lysicaX.jpg', '', '612 m', 'Góry Świętokrzyskie'],
         [49.1795515, 20.0858753, 'Rysy', markerRed, 'rysyX.jpg', '', '2499 m', 'Tatry'],
         [49.5731663, 19.5286077, 'Babia Góra', markerRed, 'babiaGoraX.jpg', '', '1725 m', 'Beskid Żywiecki'],
@@ -383,6 +367,8 @@ $(document).ready(function() {
 
     addMarkers(crownMountainsArr);
 
+
+
 /************************************ CROWN GALLERY ************************************/
 
     var addPhotos = function(arr) {
@@ -391,15 +377,15 @@ $(document).ready(function() {
 
         for (var i = 0; i < arr.length; i++) {
 
-            el = '.section-photos-crown__photos';
+            el = '.section-photos-crown__photos-all';
 
             if (arr[i][3] == markerRed) {
 
-                html = '<li><div class="section-photos-crown__crown-photo_dark"><img src="images/%photo_name%" alt="%ALT%" class="tooltip"><h3 class="new-label"><span>%NAME%<br>%HEIGHT%<br></span></h3></div></div></li>';
+                html = '<div class="section-more-photos__photo-box"><li><div class="section-photos-crown__crown-photo_dark"><img src="images/%photo_name%" alt="%ALT%" class="tooltip"><h3 class="new-label"><span>%NAME%<br>%HEIGHT%<br></span></h3></div></div></li></div>';
 
             } else {
 
-                html = '<li><div class="section-photos-crown__crown-photo"><img src="images/%photo_name%" alt="%ALT%" class="tooltip" title="%TITLE%"><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME%<br>%DATE%</div></h3></div></div></li>';
+                html = '<div class="section-more-photos__photo-box" id="%gallery_name1%"><ul class="section-more-photos__photos clearfix"><li><div class="section-photos-crown__crown-photo"><a href="images/%photo_name_1%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo_name%" alt="%ALT%" class="tooltip" title="%TITLE%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li></ul></div>';
             }
 
             if (i > 13) {
@@ -407,12 +393,18 @@ $(document).ready(function() {
                 el = '.more-photos';
             }
 
-            newHtml = html.replace('%photo_name%', arr[i][4]);
+
+            newHtml = html.replace('%photo_name_1%', arr[i][4]);
             newHtml = newHtml.replace('%DATE%', arr[i][5]);
+            newHtml = newHtml.replace('%DATE1%', arr[i][5]);
+            newHtml = newHtml.replace('%photo_name%', arr[i][4]);
             newHtml = newHtml.replace('%NAME%', arr[i][2]);
+            newHtml = newHtml.replace('%NAME1%', arr[i][2]);
             newHtml = newHtml.replace('%HEIGHT%', arr[i][6]);
             newHtml = newHtml.replace('%ALT%', arr[i][2]);
             newHtml = newHtml.replace('%TITLE%', arr[i][1]);
+            newHtml = newHtml.replace('%gallery_name%', arr[i][8]);
+            newHtml = newHtml.replace('%gallery_name1%', arr[i][8]);
 
             document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
         }
@@ -450,5 +442,26 @@ $(document).ready(function() {
     });
 
     swiper = new Swiper('.swiper-container-mobile', {});
+
+/************************************ GALLERY ************************************/
+
+    var crownGalleries = function(arr) {
+
+        for (var i = 0; i < 12; i++) {
+            var id = arr[i][8];
+            console.log(arr[i][8]);
+
+            document.getElementById(id).onclick = function (event) {
+                event = event || window.event;
+                var target = event.target || event.srcElement,
+                    link = target.src ? target.parentNode : target,
+                    options = {index: link, event: event},
+                    links = this.getElementsByTagName('a');
+                blueimp.Gallery(links, options);
+            };
+        }
+    };
+
+    crownGalleries(crownMountainsArr);
 
 }); //end of script

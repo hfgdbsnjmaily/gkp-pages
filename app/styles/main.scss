@@ -366,12 +366,18 @@ header {
     li {
         display: block;
         float: left;
-        width: getColumnWidth(100%, 7, 0);
+        //width: getColumnWidth(100%, 7, 0);
     }
  }
 
-.section-photos-crown__photos { @extend %photos; }
+.section-photos-crown__photos-all { @extend %photos; }
 
+.section-more-photos__photo-box {
+    display: block;
+    float: left;
+    width: getColumnWidth(100%, 7, 0);
+    list-style: none;
+}
 
 .section-photos-crown__crown-photo {
     width: 100%;
@@ -391,6 +397,7 @@ header {
         color: #fff;
         text-align: center;
     }
+
     img {
         width: 100%;
         height: auto;
@@ -411,7 +418,7 @@ header {
             left: 50%;
             text-align: center;
         }
-    }
+        }
 }
 
 .section-photos-crown__crown-photo_dark {
@@ -513,86 +520,6 @@ header {
     }
 
     h2 { display: none; }
-}
-
-/* --------------------------------------------------------------------------------------------------------------- */
-/* ------------------------------------- GALLERY ------------------------------------- */
-/* --------------------------------------------------------------------------------------------------------------- */
-
-.dg-container {
-	width: 100%;
-	height: 450px;
-	position: relative;
-    margin-bottom: 170px;
-    margin-top: 20px;
-
-    nav {
-        width: 58px;
-        position: absolute;
-        z-index: 1000;
-        margin-top: 50px;
-        left: 50%;
-        margin-left: -29px;
-        display: none;
-
-        span{
-            text-indent: -9000px;
-            float: left;
-            cursor:pointer;
-            width: 24px;
-            height: 25px;
-            opacity: 0.8;
-            background: transparent url(../images/arrows.png) no-repeat top left;
-
-            &:hover { opacity: 1; }
-
-            .dg-next{
-                background-position: top right;
-                margin-left: 10px;
-            }
-        }
-    }
-}
-
-.dg-wrapper {
-	width: 300px;
-	height: 300px;
-	margin: 0 auto;
-	position: relative;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-	-webkit-perspective: 1000px;
-	perspective: 1000px;
-
-    a {
-        width: 300px;
-        height: 300px;
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
-
-        .dg-transition { -webkit-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; }
-
-        img {
-            display: block;
-            padding: 41px 0px 0px 0px;
-        }
-        div {
-            text-align: center;
-            line-height: 50px;
-            text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
-            color: #fff;
-            font-size: 16px;
-            width: 100%;
-            bottom: -40px;
-            display: none;
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.51);
-        }
-        .dg-center div { display: block; }
-    }
 }
 
 /* --------------------------------------------------------------------------------------------------------------- */
