@@ -287,18 +287,40 @@ $(document).ready(function() {
     var markerGreen = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/2ecc71/");
     var markerRed = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/e74c3c/");
 
+    const wysokaKopaPhotos = ['wysokaKopa.jpg', 'wysokakopa2.jpg', 'wysokakopa3.jpg', 'wysokakopa4.jpg', 'wysokakopa5.jpg', 'wysokakopa6.jpg'];
+
+    const waligoraPhotos = ['waligora.jpg', 'waligora2.jpg', 'waligora3.jpg', 'waligora4.jpg'];
+
+    const skalnikPhotos = ['skalnik.jpg', 'skalnik2.jpg', 'skalnik3.jpg', 'skalnik4.jpg', 'skalnik5.jpg', 'skalnik6.jpg'];
+
+    const chelmiecPhotos = ['chelmiec.jpg', 'chelmiec2.jpg', 'chelmiec3.jpg', 'chelmiec4.jpg', 'chelmiec5.jpg',  'chelmiec6.jpg',  'chelmiec7.jpg',  'chelmiec8.jpg', 'chelmiec9.jpg'];
+
+    const tarnicaPhotos = ['tarnica.jpg', 'tarnica2.jpg', 'tarnica3.jpg', 'tarnica4.jpg', 'tarnica5.jpg', 'tarnica7.jpg', 'tarnica8.jpg', 'tarnica9.jpg', 'tarnica10.jpg', 'tarnica11.jpg', 'tarnica12.jpg', 'tarnica13.jpg', 'tarnica14.jpg', 'tarnica15.jpg'];
+
+    const sniezkaPhotos = ['sniezka.jpg', 'sniezka2.jpg', 'sniezka3.jpg', 'sniezka4.jpg', 'sniezka5.jpg', 'sniezka6.jpg', 'sniezka7.jpg', 'sniezka8.jpg', 'sniezka9.jpg'];
+
+    const skrzycznePhotos = ['skrzyczne.jpg', 'skrzyczne2.jpg', 'skrzyczne3.jpg', 'skrzyczne4.jpg', 'skrzyczne5.jpg', 'skrzyczne6.jpg', 'skrzyczne7.jpg', 'skrzyczne8.jpg', 'skrzyczne9.jpg'];
+
+    const wielkaSowaPhotos = ['wielkasowa.jpg'];
+
+    const szczeliniecPhotos = ['szczeliniec.jpg', 'szczeliniec2.jpg', 'szczeliniec3.jpg', 'szczeliniec4.jpg'];
+
+    const snieznikPhotos = ['snieznik.jpg', 'snieznik2.jpg', 'snieznik3.jpg', 'snieznik4.jpg'];
+
+    const slezaPhotos = ['sleza.jpg', 'sleza2.jpg', 'sleza3.jpg', 'sleza4.jpg', 'sleza5.jpg', 'sleza6.jpg', 'sleza7.jpg'];
+
     var crownMountainsArr = [
-        [50.8500034, 15.4172557,'Wysoka Kopa', markerGreen, 'wysokaKopabig.jpg', '8 VII 2017', '1126 m', 'Góry Izerskie', 'wysoka-kopa'],
-        [50.6807542, 16.275888, 'Waligóra', markerGreen, 'waligorabig.jpg', '20 V 2017', '936 m', 'Góry Kamienne', 'waligora'],
-        [50.8083367, 15.8992001, 'Skalnik', markerGreen, 'skalnikbig.jpg', '25 III 2017', '945 m', 'Rudawy Janowickie', 'skalnik'],
-        [50.7791356, 16.2077093, 'Chełmiec', markerGreen, 'chelmiec5big.jpg', '5 III 2017', '869 m', 'Góry Wałbrzyskie', 'chelmiec'],
-        [49.0745582, 22.724061,'Tarnica', markerGreen, 'tarnica6big.jpg', '3 I 2017', '1346 m', 'Bieszczady', 'tarnica'],
-        [50.7360205, 15.737757, 'Śnieżka', markerGreen, 'sniezka3big.jpg', '23 X 2016', '1602 m', 'Karkonosze','sniezka'],
-        [49.6959665, 19.0039589, 'Skrzyczne', markerGreen, 'skryzcznebig.jpg', '17 VII 2016', '1257 m', 'Beskid Śląski', 'skrzyczne'],
-        [50.6803483, 16.483309, 'Wielka Sowa', markerGreen, 'wielkasowabig.jpg', '20 IX 2015', '1015 m', 'Góry Sowie', 'wielka-sowa'],
-        [50.483671, 16.3336122, 'Szczeliniec', markerGreen, 'szczeliniec2big.jpg', '5 VI 2015', '919 m', 'Góry Stołowe', 'szczeliniec'],
-        [50.0993116, 16.6902543, 'Śnieżnik', markerGreen, 'snieznikbig.jpg', '1 II 2015', '1425 m', 'Masyw Śnieżnika', 'snieznik'],
-        [50.864745, 16.707827, 'Ślęża', markerGreen, 'sleza2big.jpg', '15 VIII 2014', '718 m', 'Masyw Ślęży', 'sleza'],
+        [50.8500034, 15.4172557,'Wysoka Kopa', markerGreen, wysokaKopaPhotos, '8 VII 2017', '1126 m', 'Góry Izerskie', 'wysoka-kopa'],
+        [50.6807542, 16.275888, 'Waligóra', markerGreen, waligoraPhotos, '20 V 2017', '936 m', 'Góry Kamienne', 'waligora'],
+        [50.8083367, 15.8992001, 'Skalnik', markerGreen, skalnikPhotos, '25 III 2017', '945 m', 'Rudawy Janowickie', 'skalnik'],
+        [50.7791356, 16.2077093, 'Chełmiec', markerGreen, chelmiecPhotos, '5 III 2017', '869 m', 'Góry Wałbrzyskie', 'chelmiec'],
+        [49.0745582, 22.724061,'Tarnica', markerGreen, tarnicaPhotos, '3 I 2017', '1346 m', 'Bieszczady', 'tarnica'],
+        [50.7360205, 15.737757, 'Śnieżka', markerGreen, sniezkaPhotos, '23 X 2016', '1602 m', 'Karkonosze','sniezka'],
+        [49.6959665, 19.0039589, 'Skrzyczne', markerGreen, skrzycznePhotos, '17 VII 2016', '1257 m', 'Beskid Śląski', 'skrzyczne'],
+        [50.6803483, 16.483309, 'Wielka Sowa', markerGreen, wielkaSowaPhotos, '20 IX 2015', '1015 m', 'Góry Sowie', 'wielka-sowa'],
+        [50.483671, 16.3336122, 'Szczeliniec', markerGreen, szczeliniecPhotos, '5 VI 2015', '919 m', 'Góry Stołowe', 'szczeliniec'],
+        [50.0993116, 16.6902543, 'Śnieżnik', markerGreen, snieznikPhotos, '1 II 2015', '1425 m', 'Masyw Śnieżnika', 'snieznik'],
+        [50.864745, 16.707827, 'Ślęża', markerGreen, slezaPhotos, '15 VIII 2014', '718 m', 'Masyw Ślęży', 'sleza'],
         [50.891624, 20.896774, 'Łysica', markerRed, 'lysicaX.jpg', '', '612 m', 'Góry Świętokrzyskie'],
         [49.1795515, 20.0858753, 'Rysy', markerRed, 'rysyX.jpg', '', '2499 m', 'Tatry'],
         [49.5731663, 19.5286077, 'Babia Góra', markerRed, 'babiaGoraX.jpg', '', '1725 m', 'Beskid Żywiecki'],
@@ -317,6 +339,7 @@ $(document).ready(function() {
         [50.4538922, 16.757811, 'Kłodzka Góra', markerRed, 'klodzkaGoraX.jpg', '', '765 m', 'Góry Bardzkie'],
         [50.9443884, 15.8827756, 'Skopiec', markerRed, 'skopiecX.jpg', '', '724 m', 'Góry Kaczawskie']
     ];
+
 
     var map = new GMaps({
 
@@ -381,11 +404,11 @@ $(document).ready(function() {
 
             if (arr[i][3] == markerRed) {
 
-                html = '<div class="section-more-photos__photo-box"><li><div class="section-photos-crown__crown-photo_dark"><img src="images/%photo_name%" alt="%ALT%" class="tooltip"><h3 class="new-label"><span>%NAME%<br>%HEIGHT%<br></span></h3></div></div></li></div>';
+                html = '<div class="section-more-photos__photo-box"><li><div class="section-photos-crown__crown-photo_dark"><img src="images/%photo_name_x%" alt="%ALT%" class="tooltip"><h3 class="new-label"><span>%NAME%<br>%HEIGHT%<br></span></h3></div></div></li></div>';
 
             } else {
 
-                html = '<div class="section-more-photos__photo-box" id="%gallery_name1%"><ul class="section-more-photos__photos clearfix"><li><div class="section-photos-crown__crown-photo"><a href="images/%photo_name_1%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo_name%" alt="%ALT%" class="tooltip" title="%TITLE%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li></ul></div>';
+                html = '<div class="section-more-photos__photo-box" id="%gallery_name1%"><ul class="section-more-photos__photos clearfix %gallery_name2%">';
             }
 
             if (i > 13) {
@@ -394,10 +417,11 @@ $(document).ready(function() {
             }
 
 
-            newHtml = html.replace('%photo_name_1%', arr[i][4]);
+            newHtml = html.replace('%photo_name1%', arr[i][4][0]);
+            newHtml = newHtml.replace('%photo_name_x%', arr[i][4]);
             newHtml = newHtml.replace('%DATE%', arr[i][5]);
             newHtml = newHtml.replace('%DATE1%', arr[i][5]);
-            newHtml = newHtml.replace('%photo_name%', arr[i][4]);
+            newHtml = newHtml.replace('%photo_name%', arr[i][4][0]);
             newHtml = newHtml.replace('%NAME%', arr[i][2]);
             newHtml = newHtml.replace('%NAME1%', arr[i][2]);
             newHtml = newHtml.replace('%HEIGHT%', arr[i][6]);
@@ -405,12 +429,63 @@ $(document).ready(function() {
             newHtml = newHtml.replace('%TITLE%', arr[i][1]);
             newHtml = newHtml.replace('%gallery_name%', arr[i][8]);
             newHtml = newHtml.replace('%gallery_name1%', arr[i][8]);
+            newHtml = newHtml.replace('%gallery_name2%', arr[i][8]);
 
             document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
         }
     };
 
     addPhotos(crownMountainsArr);
+
+    var addMorePhotos = function(photosArr, num) {
+
+        var html, newHtml, el, className;
+
+        for (var i = 0; i < photosArr.length; i++) {
+
+            className = crownMountainsArr[i][8];
+            el = '.' + className;
+
+            if (i == photosArr.length) {
+
+                html = '<li><div class="section-photos-crown__crown-photo_hidden"><a href="images/%photo%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo_name%" alt="%ALT%" class="tooltip" title="%TITLE%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li></ul></div>';
+
+            } else if (i === 0) {
+
+                html = '<li><div class="section-photos-crown__crown-photo"><a href="images/%photo1%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo_name%" alt="%ALT%" class="tooltip" title="%TITLE%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li>';
+            } else {
+
+                html = '<li><div class="section-photos-crown__crown-photo_hidden"><a href="images/%photo2%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo_name%" alt="%ALT%" class="tooltip" title="%TITLE%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li>';
+
+            }
+
+            newHtml = html.replace('%photo%', photosArr[i][4][0]);
+            newHtml = newHtml.replace('%photo1%', photosArr[i][4]);
+            newHtml = newHtml.replace('%DATE%', crownMountainsArr[num][5]);
+            newHtml = newHtml.replace('%DATE1%', crownMountainsArr[num][5]);
+            newHtml = newHtml.replace('%photo2%', photosArr[i][4][0]);
+            newHtml = newHtml.replace('%NAME%', crownMountainsArr[num][2]);
+            newHtml = newHtml.replace('%NAME1%', crownMountainsArr[num][2]);
+            newHtml = newHtml.replace('%HEIGHT%', crownMountainsArr[num][6]);
+            newHtml = newHtml.replace('%ALT%', crownMountainsArr[num][2]);
+            newHtml = newHtml.replace('%TITLE%', crownMountainsArr[num][1]);
+            newHtml = newHtml.replace('%gallery_name%', crownMountainsArr[num][8]);
+            newHtml = newHtml.replace('%gallery_name1%', crownMountainsArr[num][8]);
+            newHtml = newHtml.replace('%gallery_name2%', crownMountainsArr[num][8]);
+
+            document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
+        }
+    };
+
+    var addListOfPhotos = function(arr) {
+
+        for (var i; i < 12; i++) {
+            addMorePhotos(arr[4], i);
+            console.log(arr[4], i);
+        }
+    };
+
+    addListOfPhotos(crownMountainsArr);
 
 /************************************ MOBILE CROWN GALLERY ************************************/
 

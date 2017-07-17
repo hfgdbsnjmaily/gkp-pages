@@ -371,7 +371,9 @@ header {
  }
 
 .section-photos-crown__photos-all { @extend %photos; }
-
+.section-photos-crown__crown-photo_hidden {
+    display: none;
+}
 .section-more-photos__photo-box {
     display: block;
     float: left;
