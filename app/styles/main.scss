@@ -414,7 +414,7 @@ header {
         &:hover{
             -webkit-transform: scale(1.03);
             transform: scale(1.03);
-            opacity: 1;
+            opacity: 0.1;
             margin: 0;
             top: 50%;
             left: 50%;
@@ -502,6 +502,15 @@ header {
     background: rgba(255, 255, 255, 0);
 }
 
+.tooltipster-sidetip.tooltipster-shadow .tooltipster-box {
+    background:rgba(255, 255, 255, 0);
+    text-transform: uppercase;
+}
+.tooltipster-sidetip.tooltipster-shadow .tooltipster-content {
+    color:#fff;
+    text-align: center;
+    font-weight: 300
+}
 .section-photos-crown__swiper-pagination_mobile {display: none;}
 
 /* --------------------------------------------------------------------------------------------------------------- */

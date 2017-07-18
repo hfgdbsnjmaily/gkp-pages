@@ -187,7 +187,7 @@ $(document).ready(function() {
 
     button.addEventListener('click', function() {
 
-        const element = document.querySelector(".section-phots-crown");
+        const element = document.querySelector(".section-photos-crown");
 
         if (button.getAttribute("data-text-swap") == button.innerHTML) {
             button.innerHTML = button.getAttribute("data-text-original");
@@ -202,32 +202,21 @@ $(document).ready(function() {
     }, false);
 /************************************ TOOLTIP ON IMAGES ************************************/
 
-    if ($(window).innerWidth() <= 1023) {
+    $(document).ready(function() {
 
-        $(document).ready(function() {
+        $('.tooltip').tooltipster({
 
-            $('.tooltip').tooltipster({
-
-                theme: 'tooltipster-shadow',
-                trigger: 'click',
-                animation: 'swing',
-                arrow: true,
-                distance: -20
-            });
+            theme: 'tooltipster-shadow',
+            trigger: 'hover',
+            animation: 'grow',
+            arrow: false,
+            distance: -100,
+            contentAsHTML: true,
+            maxWidth: 190,
+            timer: 500
         });
-    }
+    });
 
-
-
-    /*document.getElementById('wysoka-kopa').onclick = function (event) {
-        event = event || window.event;
-        var target = event.target || event.srcElement,
-            link = target.src ? target.parentNode : target,
-            options = {index: link, event: event},
-            links = this.getElementsByTagName('a');
-        blueimp.Gallery(links, options);
-    };
-*/
 
 /************************************ QUOTES ************************************/
 
@@ -396,7 +385,7 @@ $(document).ready(function() {
 
             if (arr[i][3] == markerRed) {
 
-                html = '<div class="section-more-photos__photo-box"><li><div class="section-photos-crown__crown-photo_dark"><img src="images/%photo_name_x%" alt="%ALT%" class="tooltip"><h3 class="new-label"><span>%NAME%<br>%HEIGHT%<br></span></h3></div></div></li></div>';
+                html = '<div class="section-more-photos__photo-box"><li><div class="section-photos-crown__crown-photo_dark"><img src="images/%photo_name_x%" alt="%ALT%"><h3 class="new-label"><span>%NAME%<br>%HEIGHT%<br></span></h3></div></div></li></div>';
 
             } else {
 
@@ -426,22 +415,20 @@ $(document).ready(function() {
         var html, newHtml, el, className;
 
         for (var i = 0; i < photosArr.length; i++) {
-            console.log(crownMountainsArr[num][8]);
 
             className = crownMountainsArr[num][8];
             el = '.'+className;
-            console.log(el);
 
             if (i == photosArr.length) {
 
-                html = '<li><div class="section-photos-crown__crown-photo_hidden"><a href="images/%photo%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%ALT%" class="tooltip" title="%TITLE%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li>';
+                html = '<li><div class="section-photos-crown__crown-photo_hidden"><a href="images/%photo%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%ALT%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li>';
 
             } else if (i === 0) {
 
-                html = '<li><div class="section-photos-crown__crown-photo"><a href="images/%photo1%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%ALT%" class="tooltip" title="%TITLE%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li>';
+                html = '<li><div class="section-photos-crown__crown-photo"><a href="images/%photo1%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%ALT%" class="tooltip" title="Click to open gallery from %name%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li>';
             } else {
 
-                html = '<li><div class="section-photos-crown__crown-photo_hidden"><a href="images/%photo2%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%ALT%" class="tooltip" title="%TITLE%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li>';
+                html = '<li><div class="section-photos-crown__crown-photo_hidden"><a href="images/%photo2%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%ALT%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li>';
 
             }
 
@@ -452,6 +439,7 @@ $(document).ready(function() {
             newHtml = newHtml.replace('%photo2%', photosArr[i]);
             newHtml = newHtml.replace('%NAME%', crownMountainsArr[num][2]);
             newHtml = newHtml.replace('%NAME1%', crownMountainsArr[num][2]);
+            newHtml = newHtml.replace('%name%', crownMountainsArr[num][2]);
             newHtml = newHtml.replace('%HEIGHT%', crownMountainsArr[num][6]);
             newHtml = newHtml.replace('%ALT%', crownMountainsArr[num][2]);
             newHtml = newHtml.replace('%TITLE%', crownMountainsArr[num][1]);
@@ -484,7 +472,6 @@ $(document).ready(function() {
 
         for (var i = 0; i < 11; i++) {
             addMorePhotos(arr[i][4], i);
-            console.log(arr[0][4], i);
         }
     };
 
