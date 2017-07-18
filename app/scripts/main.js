@@ -215,7 +215,6 @@ $(document).ready(function() {
             maxWidth: 190,
             timer: 500
         });
-    });
 
 
 /************************************ QUOTES ************************************/
@@ -425,7 +424,7 @@ $(document).ready(function() {
 
             } else if (i === 0) {
 
-                html = '<li><div class="section-photos-crown__crown-photo"><a href="images/%photo1%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%ALT%" class="tooltip" title="Click to open gallery from %name%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li>';
+                html = '<li><div class="section-photos-crown__crown-photo"><a href="images/%photo1%" class="section-photos-crown__photo-link" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%ALT%" class="tooltip" title="Click to open gallery from %name%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li>';
             } else {
 
                 html = '<li><div class="section-photos-crown__crown-photo_hidden"><a href="images/%photo2%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%ALT%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li>';
