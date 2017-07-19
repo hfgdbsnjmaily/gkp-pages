@@ -64,8 +64,7 @@ section { padding: 80px 0; }
 
 h1 {
     @extend %h;
-    margin-top: 250px;
-    margin-bottom: 20px;
+    margin-top: 20%;
     color: #fff;
     font-size: 240%;
     word-spacing: 4px;
@@ -77,7 +76,7 @@ h2 {
     font-size: 180%;
     word-spacing: 2px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 2%;
     letter-spacing: 1px;
     &:after {
         display: block;
@@ -86,14 +85,13 @@ h2 {
         content: " ";
         width: 100px;
         margin: 0 auto;
-        margin-top: 30px;
+        margin-top: 2%;
     }
 }
 
 h3 {
     @extend %h;
     font-size: 135%;
-    margin-bottom: 15px;
 }
 
 
@@ -101,11 +99,9 @@ h3 {
 
 %button {
     display: inline-block;
-    padding: 5px 20px;
+    padding: 1% 2%;
     font-weight: 300;
     text-decoration: none;
-    border-radius: 200px;
-    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
     transition: background-color 0.2s, border 0.2s, color 0.2s;
     color: $icon-color;
     background-color: #fff;
@@ -127,7 +123,6 @@ h3 {
 /* --------------------------------------------------------------------------------------------------------------- */
 
 header {
-    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/hero.jpeg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/hero.jpeg);
     background-size: cover;
     background-position: center;
@@ -142,20 +137,16 @@ header {
     position: absolute;
     width: 1140px;
     height: auto;
-    top: 50px;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-
-.header__logo-box { margin-left: 20px; }
 
 %logo {
     height: 80px;
     width: auto;
     float: left;
-    margin-top: 20px;
     cursor: pointer;
+    margin: 1% 0 0 1%;
 }
 
 .header__logo_black {
@@ -164,7 +155,7 @@ header {
     height: 50px;
     width: auto;
     float: left;
-    margin: 5px 0;
+    margin: 1% 0 0 2%;
 }
 
 .header__logo_white {
@@ -175,14 +166,14 @@ header {
     color: rgba(255, 255, 255, 0.8);
     text-align: center;
     border: 2px solid rgba(255, 255, 255, 0.8);
-    bottom: 20px;
+    bottom: 2%;
     border-radius: 50%;
     height: 40px;
     width: 40px;
     font-size: 150%;
     position: absolute;
     left: calc(50% - 20px);
-    padding-top: 3px;
+    padding-top: 0.2%;
 
     a {
         color: rgba(255, 255, 255, 0.8);
@@ -194,24 +185,23 @@ header {
 .header__nav-list {
     float: right;
     list-style: none;
-    margin-top: 55px;
+    margin: 3% 0 0 2%;
     z-index: 99;
 
     li {
         display: inline-block;
-        margin-left: 40px;
+        padding-right: 30px;
         z-index: 99;
     }
     a {
         &:link,
         &:visited {
-            padding: 8px 0;
+            padding: 2% 0;
             color: #fff;
             text-transform: uppercase;
             text-decoration: none;
             font-size: 90%;
             border-bottom: 2px solid transparent;
-            -webkit-transition: border-bottom 0.2s;
             transition: border-bottom 0.2s;
             z-index: 99;
         }
@@ -227,13 +217,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    /* the element will be always on the top */
     z-index: 9999;
-    padding-bottom: 15px;
-    padding-top: 10px;
-    padding-right: 3%;
-
-    .header__nav-list { margin-top: 18px; }
+    padding: 0 3% 1% 0;
 }
 
 .sticky {
@@ -245,7 +230,6 @@ header {
             a {
                 &:link,
                 &:visited{
-                    padding: 10px 0;
                     color: $font-color;
                 }
             }
@@ -264,7 +248,6 @@ header {
             a {
                 &:link,
                 &:visited{
-                    padding: 10px 0;
                     color: #fff;
                 }
             }
@@ -293,7 +276,8 @@ header {
 
 .section-results { margin-bottom: 5%; }
 
-.section-results__result { font-size: 250%;
+.section-results__result {
+    font-size: 250%;
     display: inline-block;
     margin-left: calc(50% - 116px);
     text-align: center;
@@ -337,11 +321,12 @@ header {
     background-color: rgba(255, 255, 255, 0.9);
     z-index: 10;
     height: 580px;
+    padding-top: 1%;
     ul {
         list-style: none;
-        padding-left: 20px;
+        padding: 2% 0 0 1%;
 
-        li { padding-bottom: 6px; }
+        li { padding-bottom: 3%; }
     }
 }
 
@@ -355,7 +340,7 @@ header {
 
 .section-photos-crown {
     background-image: url(../images/back-photos.png);
-    padding: 40px 0 150px 0;
+    padding: 2% 0 10% 0;
     height: inherit;
 }
 
@@ -366,7 +351,6 @@ header {
     li {
         display: block;
         float: left;
-        //width: getColumnWidth(100%, 7, 0);
     }
  }
 
@@ -394,7 +378,6 @@ header {
         margin: 0;
         top: 50%;
         left: 50%;
-        -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         color: #fff;
         text-align: center;
@@ -403,16 +386,11 @@ header {
     img {
         width: 100%;
         height: auto;
-        -webkit-transform: scale(1.15);
         transform: scale(1.15);
-        -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-        transition: opacity 0.5s, -webkit-transform 0.5s;
         transition: transform 0.5s, opacity 0.5s;
-        transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
         opacity: 0.4;
 
         &:hover{
-            -webkit-transform: scale(1.03);
             transform: scale(1.03);
             opacity: 0.1;
             margin: 0;
@@ -437,12 +415,12 @@ header {
     h3 {
         position: absolute;
         top: 85%;
-        -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         color: rgba(255, 255, 255, 0.8);
         text-align: center;
         width: 100%;
         font-size: 90%;
+
         div {
 
             margin-right: 7%;
@@ -451,17 +429,12 @@ header {
     }
 }
 
-.more-photos {
-    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-    transition: opacity 0.5s, -webkit-transform 0.5s;
-    transition: transform 0.5s, opacity 0.5s;
-    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
-}
+.more-photos { transition: transform 0.5s, opacity 0.5s; }
 
 .section-photos-crown__button_ghost_more-hide {
     @extend %button;
     float: right;
-    margin: 25px 50px 25px 0;
+    margin: 2% 4% 2% 0;
 }
 
 .blueimp-gallery > .indicator > li {
@@ -479,7 +452,7 @@ header {
 .tooltipster-sidetip.tooltipster-shadow .tooltipster-content {
     color:#fff;
     text-align: center;
-    font-weight: 300
+    font-weight: 300;
 }
 
 /*
@@ -524,7 +497,6 @@ header {
 /* --------------------------------------------------------------------------------------------------------------- */
 
 .section-quote {
-    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../images/back-quote.jpeg);
     background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../images/back-quote.jpeg);
     background-size: cover;
     background-position: top;
@@ -536,7 +508,7 @@ header {
         font-size: 150%;
         word-spacing: 4px;
         letter-spacing: 1px;
-        margin-left: 30px;
+        margin-left: 3%;
         padding-top: 0;
         color: #fff;
         font-style: italic;
@@ -567,7 +539,7 @@ header {
     width: 70px;
     display: block;
     color: #000000;
-    margin-bottom: 10px;
+    margin-bottom: 2%;
     text-align: center;
 }
 
@@ -576,7 +548,7 @@ header {
     height: 170px;
     text-align: center;
 
-    img { margin-left: 65px; }
+    img { margin-left: 33%; }
 }
 
 #pottermaniacs br,
@@ -587,21 +559,20 @@ header {
 /* --------------------------------------------------------------------------------------------------------------- */
 
 .footer {
-    padding: 15px 40px 40px 40px;
+    padding: 1%;
     font-size: 80%;
     border-top: 1px solid $icon-color;
     p {
         color: $icon-color;
         text-align: center;
         font-size: 90%;
-        margin-top: 20px;
     }
     a {
         text-decoration: none;
         color: $icon-color;
     }
     i {
-        -webkit-transition: color 0.2s; transition: color 0.2s;
+        transition: color 0.2s;
     }
 }
 
@@ -612,6 +583,7 @@ header {
 %footer-li {
     display: inline-block;
     margin-right: 20px;
+
     &:last-child { margin: 0; }
     &:link,
     &:visited {
