@@ -215,7 +215,7 @@ $(document).ready(function() {
             maxWidth: 190,
             timer: 500
         });
-
+    });
 
 /************************************ QUOTES ************************************/
 
@@ -227,9 +227,9 @@ $(document).ready(function() {
 
         var quoteArr = [quote1, quote2, quote3];
         var used = [quote1];
-        var change = $('#changing-quote');
+        var change = $('.section-quote__changing-quote');
         var item;
-        var sentence = $('#sentence');
+        var sentence = $('.section-quote__sentence');
 
         function quotes() {
 

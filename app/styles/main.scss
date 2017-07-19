@@ -371,6 +371,7 @@ header {
  }
 
 .section-photos-crown__photos-all { @extend %photos; }
+
 .section-photos-crown__crown-photo_hidden {
     display: none;
 }
@@ -385,9 +386,8 @@ header {
     width: 100%;
     margin: 0;
     overflow: hidden;
-    background-color: #000;
     position: relative;
-    //border: 2px solid #fff;
+    background-color: #000;
 
     h3 {
         position: absolute;
@@ -433,14 +433,6 @@ header {
     }
 }
 
-.blueimp-gallery > .indicator > li {
-    width: 25px;
-    height: 25px;
-    background: rgba(255, 255, 255, 0.25) center no-repeat;
-    background-size: contain;
-    border-radius: 15px;
-}
-
 .section-photos-crown__caption {
     h3 {
         position: absolute;
@@ -472,6 +464,26 @@ header {
     margin: 25px 50px 25px 0;
 }
 
+.blueimp-gallery > .indicator > li {
+    width: 25px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.25) center no-repeat;
+    background-size: contain;
+    border-radius: 15px;
+}
+
+.tooltipster-sidetip.tooltipster-shadow .tooltipster-box {
+    background:rgba(255, 255, 255, 0);
+    text-transform: uppercase;
+}
+.tooltipster-sidetip.tooltipster-shadow .tooltipster-content {
+    color:#fff;
+    text-align: center;
+    font-weight: 300
+}
+
+/*
+
 .section-photos-crown__photos_mobile {
     display: none;
     margin-left: calc(50% - 150px);
@@ -502,16 +514,10 @@ header {
     background: rgba(255, 255, 255, 0);
 }
 
-.tooltipster-sidetip.tooltipster-shadow .tooltipster-box {
-    background:rgba(255, 255, 255, 0);
-    text-transform: uppercase;
-}
-.tooltipster-sidetip.tooltipster-shadow .tooltipster-content {
-    color:#fff;
-    text-align: center;
-    font-weight: 300
-}
 .section-photos-crown__swiper-pagination_mobile {display: none;}
+*/
+
+
 
 /* --------------------------------------------------------------------------------------------------------------- */
 /* ------------------------------------- QUOTE ------------------------------------- */
@@ -524,7 +530,6 @@ header {
     background-position: top;
     height: 350px;
     background-attachment: fixed;
-    margin-bottom: -50px;
 
     p {
         width: 70%;
@@ -546,12 +551,19 @@ header {
 /* --------------------------------------------------------------------------------------------------------------- */
 
 .section-about-us {
-    background-image: url(../images/back-photos.png);
+    background: #fff;
+    margin-left: 4%;
 
-    h2 { margin-top: -40px; }
+    &:before,
+    &:after {
+        content:"";
+        display:table;
+    }
+
+    &:after { clear: both; }
 }
 
-.icon-big {
+.section-about-us__icon {
     width: 70px;
     display: block;
     color: #000000;
@@ -559,7 +571,7 @@ header {
     text-align: center;
 }
 
-.features {
+.section-about-us__features {
     width: 200px;
     height: 170px;
     text-align: center;
@@ -574,7 +586,7 @@ header {
 /* ------------------------------------- FOOTER ------------------------------------- */
 /* --------------------------------------------------------------------------------------------------------------- */
 
-footer {
+.footer {
     padding: 15px 40px 40px 40px;
     font-size: 80%;
     border-top: 1px solid $icon-color;
@@ -593,6 +605,10 @@ footer {
     }
 }
 
+.footer__row {
+    @extend .row;
+}
+
 %footer-li {
     display: inline-block;
     margin-right: 20px;
@@ -607,7 +623,7 @@ footer {
     }
 }
 
-.footer-nav {
+.footer__nav {
     list-style: none;
     float: left;
         li {
@@ -617,7 +633,7 @@ footer {
     }
 }
 
-.social-links {
+.footer__social-links {
     list-style: none;
     float: right;
         li {
@@ -633,7 +649,7 @@ footer {
 
 .ion-ios-email-outline:hover { color: #bc2a2a; }
 
-.icons-src {
+.footer__icons-src {
     text-decoration: none;
     color: $icon-color;
     font-size: 60%;
