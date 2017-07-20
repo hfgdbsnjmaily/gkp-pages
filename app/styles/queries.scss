@@ -1,29 +1,38 @@
 /* Big tablets to 1200px (width smaller than the 1140px row - 1024px-1140px) */
+
 @media only screen and (max-width: 1200px) {
 
-    .title { margin-top: 500px; }
-    .main-nav { margin-right: 30px; }
-    .logo white,
-    .logo black { margin-left: 15px; }
-    .crown-list ul li { font-size: 89%; }
-    .crown-list {
-        width: 50%;
-        padding-top: 10px;
-    }
-    .map-box h2 { margin-bottom: 5px; }
-    .new-label { font-size: 90%; }
-    .about-us-text { margin: 0 30px; }
+    .header__title {margin-top: 50%;}
 
-   #pottermaniacs br { display: block; }
+    .header__logo_white,
+    .header__logo_black { margin-left: 3%; }
+
+    .section-map__crown-list {
+        width: 50%;
+        margin-top: 1.8%;
+
+        ul li { font-size: 89%; }
+    }
+
+    .section-about-us__about-us-box { margin-right: 5%; }
+
+    .section-about-us__features_mobile-change { h3 { br { display: block; } } }
 }
 
 /* Small tablets to big tablets: from 768px to 1023px */
+
 @media only screen and (max-width: 1023px) {
+
     body { font-size: 18px; }
+
     section { padding: 60px 0; }
+
     .crown-list ul li { font-size: 82%; }
+
     h3 { font-size: 108%; }
+
     .logo { margin-top: 30px; }
+
     .title { margin-top: 400px; }
 
     .flag-icon h3 i{
@@ -35,9 +44,12 @@
     }
 
     .map-box h2:after { margin-top: 15px; }
+
     .about-us-text {
+
         margin-right: 40px;
         margin-left: -10px; }
+
     .about-us-text h3 { font-size: 99%; }
 }
 /* Small phones to small tablets: from 481px to 767px */

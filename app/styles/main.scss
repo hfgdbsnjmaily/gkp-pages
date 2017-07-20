@@ -551,8 +551,13 @@ header {
     img { margin-left: 33%; }
 }
 
-#pottermaniacs br,
-#bookworms br { display: none; }
+.section-about-us__features_mobile-change {
+    @extend .section-about-us__features;
+    h3 {
+       br { display: none; }
+    }
+
+}
 
 /* --------------------------------------------------------------------------------------------------------------- */
 /* ------------------------------------- FOOTER ------------------------------------- */
