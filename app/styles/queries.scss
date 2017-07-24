@@ -35,9 +35,10 @@
 
     .section-map h2:after { margin-top: 2%; }
 
-    .section-photos-crown { padding: 5% 0 10% 0; }
-
-    .section-photos-crown h3 { font-size: 89%; }
+    .section-photos-crown { 
+        padding: 5% 0 10% 0;
+        h3 { font-size: 89%; }
+    }
 
     .section-photos-crown__caption h3 div { font-size: 90%;}
 
@@ -126,7 +127,7 @@
     .photos-crown-showcase-mobile { display: inline-block; }
 
     .section-photos-crown__photos-all,
-    .section-photos-crown__photos more-photos,
+    .section-photos-crown__photos .more-photos,
     .section-photos-crown__button_ghost_more-hide { display: none; }
 
     .section-photos-crown__photos-crown-showcase_mobile {

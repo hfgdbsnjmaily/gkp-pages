@@ -1,13 +1,11 @@
-var document, $, location, window, lightbox, Swiper, setTimeout;
-
 $(document).ready(function() {
 
-    var isTop = true;
+    let isTop = true;
 
 
 /************************************ TITLE ************************************/
 
-    var title;
+    let title;
 
     document.querySelector('h1').textContent = '';
 
@@ -29,7 +27,7 @@ $(document).ready(function() {
 
         $('.section-results__counter').each(function() {
 
-            var $this = $(this),
+            let $this = $(this),
             countTo = $this.attr('data-count');
 
             $({ countNum: $this.text()}).animate({
@@ -97,8 +95,8 @@ $(document).ready(function() {
 
     $('.header__nav-icon_mobile').click(function() {
 
-        var nav = $('.header__nav-list');
-        var icon = $('.header__nav-icon_mobile i');
+        const nav = $('.header__nav-list');
+        const icon = $('.header__nav-icon_mobile i');
 
         if (isTop === true) {
 
@@ -130,7 +128,7 @@ $(document).ready(function() {
 
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 
-          var target = $(this.hash);
+          let target = $(this.hash);
           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 
           if (target.length) {
@@ -221,15 +219,15 @@ $(document).ready(function() {
 
     $(function () {
 
-        var quote1 = 'When you go to the mountains, you see them and you admire them. <br>In a sense, they give you a challenge, and you try to express that challenge by climbing them.<br><br>Edmund Hillary';
-        var quote2 = 'Mountains are the beginning and the end of all natural scenery.<br><br>John Ruskin';
-        var quote3 = 'The only Zen you can find on the tops of mountains is the Zen you bring up there.<br><br>Robert M. Pirsig';
+        const quote1 = 'When you go to the mountains, you see them and you admire them. <br>In a sense, they give you a challenge, and you try to express that challenge by climbing them.<br><br>Edmund Hillary';
+        const quote2 = 'Mountains are the beginning and the end of all natural scenery.<br><br>John Ruskin';
+        const quote3 = 'The only Zen you can find on the tops of mountains is the Zen you bring up there.<br><br>Robert M. Pirsig';
 
-        var quoteArr = [quote1, quote2, quote3];
-        var used = [quote1];
-        var change = $('.section-quote__changing-quote');
-        var item;
-        var sentence = $('.section-quote__sentence');
+        const quoteArr = [quote1, quote2, quote3];
+        const used = [quote1];
+        const change = $('.section-quote__changing-quote');
+        let item;
+        const sentence = $('.section-quote__sentence');
 
         function quotes() {
 
@@ -272,8 +270,8 @@ $(document).ready(function() {
 
 /************************************ MAPS ************************************/
 
-    var markerGreen = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/2ecc71/");
-    var markerRed = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/e74c3c/");
+    const markerGreen = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/2ecc71/");
+    const markerRed = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/e74c3c/");
 
     const crownMountainsPhotosArr = [
         ['wysokaKopa.jpg', 'wysokakopa2.jpg', 'wysokakopa3.jpg', 'wysokakopa4.jpg', 'wysokakopa5.jpg', 'wysokakopa6.jpg'],
@@ -290,7 +288,7 @@ $(document).ready(function() {
         ['skopiec.jpg', 'skopiec2.jpg', 'skopiec3.jpg', 'skopiec4.jpg', 'skopiec5.jpg', 'skopiec6.jpg', 'skopiec7.jpg']
     ];
 
-    var crownMountainsArr = [
+    const crownMountainsArr = [
         [50.9443884, 15.8827756, 'Skopiec', markerGreen, crownMountainsPhotosArr[11], '22 VII 2017', '724 m', 'Góry Kaczawskie', 'skopiec'],
         [50.8500034, 15.4172557,'Wysoka Kopa', markerGreen, crownMountainsPhotosArr[0], '8 VII 2017', '1126 m', 'Góry Izerskie', 'wysokaKopa'],
         [50.6807542, 16.275888, 'Waligóra', markerGreen, crownMountainsPhotosArr[1], '20 V 2017', '936 m', 'Góry Kamienne', 'waligora'],
@@ -323,7 +321,7 @@ $(document).ready(function() {
     ];
 
 
-    var map = new GMaps({
+    const map = new GMaps({
 
         div: '.section-map__map',
         lat: 50.7214316,
@@ -331,7 +329,7 @@ $(document).ready(function() {
         zoom: 7
     });
 
-    var mapmobile = new GMaps({
+    const mapmobile = new GMaps({
 
         div: '.section-map__map_mobile',
         lat: 50.568984,
@@ -339,9 +337,9 @@ $(document).ready(function() {
         zoom: 7
     });
 
-    var addMarkers = function(arr) {
+    let addMarkers = function(arr) {
 
-        for (var i = 0; i < arr.length; i++) {
+        for (let i = 0; i < arr.length; i++) {
 
             map.addMarker({
                 lat: arr[i][0],
@@ -353,8 +351,6 @@ $(document).ready(function() {
                     content: arr[i][2]
                 }
             });
-
-
 
             mapmobile.addMarker({
 
@@ -376,11 +372,11 @@ $(document).ready(function() {
 
 /************************************ CROWN GALLERY ************************************/
 
-    var addPhotos = function(arr) {
+    ley addPhotos = function(arr) {
 
-        var html, newHtml, el;
+        let html, newHtml, el;
 
-        for (var i = 0; i < arr.length; i++) {
+        for (let i = 0; i < arr.length; i++) {
 
             el = '.section-photos-crown__photos-all';
 
@@ -411,11 +407,11 @@ $(document).ready(function() {
 
     addPhotos(crownMountainsArr);
 
-    var addMorePhotos = function(photosArr, num) {
+    let addMorePhotos = function(photosArr, num) {
 
-        var html, newHtml, el, className;
+        let html, newHtml, el, className;
 
-        for (var i = 0; i < photosArr.length; i++) {
+        for (let i = 0; i < photosArr.length; i++) {
 
             className = crownMountainsArr[num][8];
             el = '.'+className;
@@ -452,14 +448,14 @@ $(document).ready(function() {
         }
     };
 
-    var crownGalleries = function(arr) {
+    let crownGalleries = function(arr) {
 
-        for (var i = 0; i < 12; i++) {
-            var id = arr[i][8];
+        for (let i = 0; i < 12; i++) {
+            let id = arr[i][8];
 
             document.getElementById(id).onclick = function (event) {
                 event = event || window.event;
-                var target = event.target || event.srcElement,
+                let target = event.target || event.srcElement,
                     link = target.src ? target.parentNode : target,
                     options = {index: link, event: event},
                     links = this.getElementsByTagName('a');
@@ -469,9 +465,9 @@ $(document).ready(function() {
     };
 
 
-    var addListOfPhotos = function(arr) {
+    let addListOfPhotos = function(arr) {
 
-        for (var i = 0; i < 12; i++) {
+        for (let i = 0; i < 12; i++) {
             addMorePhotos(arr[i][4], i);
         }
     };
@@ -485,11 +481,11 @@ $(document).ready(function() {
 
 /************************************ MOBILE CROWN GALLERY ************************************/
 
-    var addPhotosMobile = function(arr) {
+    let addPhotosMobile = function(arr) {
 
-        var html, newHtml, el;
+        let html, newHtml, el;
 
-            for (var i = 0; i < 12; i++) {
+            for (let i = 0; i < 12; i++) {
 
                 el = '.swiper-wrapper';
 
@@ -506,7 +502,7 @@ $(document).ready(function() {
 
     addPhotosMobile(crownMountainsArr);
 
-    var swiper = new Swiper('.swiper-container', {
+    let swiper = new Swiper('.swiper-container', {
 
         pagination: '.swiper-pagination',
         spaceBetween: 10
