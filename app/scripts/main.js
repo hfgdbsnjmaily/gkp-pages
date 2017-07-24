@@ -20,7 +20,7 @@ $(document).ready(function() {
 
     $('.header__title').waypoint(() => {
 
-        $('.section-results__counter').each(() => {
+        $('.section-results__counter').each(function() {
 
             let $this = $(this),
             countTo = $this.attr('data-count');
