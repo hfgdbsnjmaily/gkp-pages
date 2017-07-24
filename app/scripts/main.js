@@ -97,27 +97,27 @@ $(document).ready(function() {
 
     $('.header__nav-icon_mobile').click(function() {
 
-        var nav = $('.main-nav-list');
+        var nav = $('.header__nav-list');
         var icon = $('.header__nav-icon_mobile i');
 
         if (isTop === true) {
 
-            $('.nav').addClass('sticky-black');
+            $('.header__nav').addClass('sticky-black');
         }
 
-        if (icon.hasClass('ion-navicon-round')) {
+        if (icon.hasClass('ion-navicon')) {
 
-            icon.addClass('ion-close-round');
-            icon.removeClass('ion-navicon-round');
+            icon.addClass('ion-ios-close-empty');
+            icon.removeClass('ion-navicon');
             nav.slideToggle("slow");
 
         } else {
 
-            icon.addClass('ion-navicon-round');
-            icon.removeClass('ion-close-round');
+            icon.addClass('ion-navicon');
+            icon.removeClass('ion-ios-close-empty');
             nav.slideToggle( "slow", function() {
 
-                 $('.nav').removeClass('sticky-black');
+                 $('.header__nav').removeClass('sticky-black');
             });
         }
     });
@@ -286,10 +286,12 @@ $(document).ready(function() {
         ['wielkasowa.jpg'],
         ['szczeliniec.jpg', 'szczeliniec2.jpg', 'szczeliniec3.jpg', 'szczeliniec4.jpg'],
         ['snieznik.jpg', 'snieznik2.jpg', 'snieznik3.jpg', 'snieznik4.jpg'],
-        ['sleza.jpg', 'sleza2.jpg', 'sleza3.jpg', 'sleza4.jpg', 'sleza5.jpg', 'sleza6.jpg', 'sleza7.jpg']
+        ['sleza.jpg', 'sleza2.jpg', 'sleza3.jpg', 'sleza4.jpg', 'sleza5.jpg', 'sleza6.jpg', 'sleza7.jpg'],
+        ['skopiec.jpg', 'skopiec2.jpg', 'skopiec3.jpg', 'skopiec4.jpg', 'skopiec5.jpg', 'skopiec6.jpg', 'skopiec7.jpg']
     ];
 
     var crownMountainsArr = [
+        [50.9443884, 15.8827756, 'Skopiec', markerGreen, crownMountainsPhotosArr[11], '22 VII 2017', '724 m', 'Góry Kaczawskie', 'skopiec'],
         [50.8500034, 15.4172557,'Wysoka Kopa', markerGreen, crownMountainsPhotosArr[0], '8 VII 2017', '1126 m', 'Góry Izerskie', 'wysokaKopa'],
         [50.6807542, 16.275888, 'Waligóra', markerGreen, crownMountainsPhotosArr[1], '20 V 2017', '936 m', 'Góry Kamienne', 'waligora'],
         [50.8083367, 15.8992001, 'Skalnik', markerGreen, crownMountainsPhotosArr[2], '25 III 2017', '945 m', 'Rudawy Janowickie', 'skalnik'],
@@ -316,8 +318,8 @@ $(document).ready(function() {
         [49.7661082, 19.1530886, 'Czupel', markerRed, 'czupelX.jpg', '', '934 m', 'Beskid Mały'],
         [49.76667, 20.0603113, 'Lubomir', markerRed, 'lubomirX.jpg', '', '912 m', 'Beskid Makowski'],
         [50.2500034, 17.4311446, 'Biskupia Kopa', markerRed, 'biskupiaKopaX.jpg', '', '889 m', 'Góry Opawskie'],
-        [50.4538922, 16.757811, 'Kłodzka Góra', markerRed, 'klodzkaGoraX.jpg', '', '765 m', 'Góry Bardzkie'],
-        [50.9443884, 15.8827756, 'Skopiec', markerRed, 'skopiecX.jpg', '', '724 m', 'Góry Kaczawskie']
+        [50.4538922, 16.757811, 'Kłodzka Góra', markerRed, 'klodzkaGoraX.jpg', '', '765 m', 'Góry Bardzkie']
+
     ];
 
 
@@ -452,7 +454,7 @@ $(document).ready(function() {
 
     var crownGalleries = function(arr) {
 
-        for (var i = 0; i < 11; i++) {
+        for (var i = 0; i < 12; i++) {
             var id = arr[i][8];
 
             document.getElementById(id).onclick = function (event) {
@@ -469,7 +471,7 @@ $(document).ready(function() {
 
     var addListOfPhotos = function(arr) {
 
-        for (var i = 0; i < 11; i++) {
+        for (var i = 0; i < 12; i++) {
             addMorePhotos(arr[i][4], i);
         }
     };
@@ -483,17 +485,17 @@ $(document).ready(function() {
 
 /************************************ MOBILE CROWN GALLERY ************************************/
 
-   /* var addPhotosMobile = function(arr) {
+    var addPhotosMobile = function(arr) {
 
         var html, newHtml, el;
 
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < 12; i++) {
 
-                el = '.section-photos-crown__swiper-wrapper_mobile';
+                el = '.swiper-wrapper';
 
-                html = '<div class="section-photos-crown__swiper-slide_mobile"><img src="images/%photo_name%" /><div class="section-photos-crown__label_mobile">%NAME% %HEIGHT% &mdash; %DATE%</div></div>';
+                html = '<div class="swiper-slide"><img src="/images/%photo_name%" /><div class="label-mobile">%NAME% %HEIGHT% &mdash; %DATE%</div></div>';
 
-                newHtml = html.replace('%photo_name%', arr[i][4]);
+                newHtml = html.replace('%photo_name%', arr[i][8] + '.jpg');
                 newHtml = newHtml.replace('%DATE%', arr[i][5]);
                 newHtml = newHtml.replace('%NAME%', arr[i][2]);
                 newHtml = newHtml.replace('%HEIGHT%', arr[i][6]);
@@ -504,13 +506,13 @@ $(document).ready(function() {
 
     addPhotosMobile(crownMountainsArr);
 
-    var swiper = new Swiper('.section-photos-crown__swiper-container_mobile', {
+    var swiper = new Swiper('.swiper-container', {
 
-        pagination: '.section-photos-crown__swiper-pagination_mobile',
+        pagination: '.swiper-pagination',
         spaceBetween: 10
     });
 
-    swiper = new Swiper('.swiper-container-mobile', {});*/
+    swiper = new Swiper('.swiper-container-mobile', {});
 
 /************************************ GALLERY ************************************/
 
