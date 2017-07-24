@@ -9,12 +9,7 @@ $(document).ready(function() {
 
     document.querySelector('h1').textContent = '';
 
-    if ($(window).width() < 767) {
-        title = "We haven’t been<br> everywhere,<br> but it’s on our list";
-    }
-    else {
-        title = "We haven’t been everywhere,<br> but it’s on our list";
-    }
+    $(window).width() < 767 ? title = "We haven’t been<br> everywhere,<br> but it’s on our list" : title = "We haven’t been everywhere,<br> but it’s on our list";
 
     const typed = new Typed('.header__title', {
         strings: [title],
@@ -98,10 +93,7 @@ $(document).ready(function() {
         const nav = $('.header__nav-list');
         const icon = $('.header__nav-icon_mobile i');
 
-        if (isTop === true) {
-
-            $('.header__nav').addClass('sticky-black');
-        }
+        isTop === true ? $('.header__nav').addClass('sticky-black') : null;
 
         if (icon.hasClass('ion-navicon')) {
 
