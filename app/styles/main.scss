@@ -260,7 +260,7 @@ header {
 
 .header__nav-icon_mobile {
     float: right;
-    margin-top: 10px;
+    margin-top: 1%;
     cursor: pointer;
     display: none;
 
@@ -475,8 +475,6 @@ header {
 .swiper-container {
     width: 300px;
     height: 300px;
-
-
 }
 
 .swiper-slide {
@@ -550,7 +548,8 @@ header {
     img { margin-left: 33%; }
 }
 
-.section-about-us__features_mobile-change {
+.section-about-us__features_mobile-change,
+.section-about-us__features_only-pc {
     @extend .section-about-us__features;
     h3 {
        br { display: none; }
