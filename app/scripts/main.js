@@ -23,9 +23,9 @@ $(document).ready(function() {
 
 /************************************ COUNTER - RESULTS ************************************/
 
-    $('.header__title').waypoint(function() {
+    $('.header__title').waypoint(() => {
 
-        $('.section-results__counter').each(function() {
+        $('.section-results__counter').each(() => {
 
             let $this = $(this),
             countTo = $this.attr('data-count');
@@ -52,7 +52,7 @@ $(document).ready(function() {
 
 /************************************ ANIMATIONS ON SCROLL ************************************/
 
-    $('.section-results').waypoint(function() {
+    $('.section-results').waypoint(() => {
 
         $('.section-results').addClass('animated zoomIn');
     }, {
@@ -60,7 +60,7 @@ $(document).ready(function() {
         offset: '50%'
     });
 
-    $('.about-us-text').waypoint(function() {
+    $('.about-us-text').waypoint(() => {
 
         $('.about-us-text').addClass('animated bounceIn');
     }, {
@@ -71,7 +71,7 @@ $(document).ready(function() {
 /************************************ STICKY NAVIGATION ************************************/
 
 
-    $('.section-results').waypoint(function(direction) {
+    $('.section-results').waypoint(direction => {
 
         if (direction == "down") {
 
@@ -93,7 +93,7 @@ $(document).ready(function() {
 
 /************************************ MOBILE NAVIGATION ************************************/
 
-    $('.header__nav-icon_mobile').click(function() {
+    $('.header__nav-icon_mobile').click(() => {
 
         const nav = $('.header__nav-list');
         const icon = $('.header__nav-icon_mobile i');
@@ -122,9 +122,9 @@ $(document).ready(function() {
 
 /************************************ NAVIGATION SCROLL ************************************/
 
-    $(function() {
+    $(() => {
 
-        $('a[href*="#"]:not([href="#"])').click(function() {
+        $('a[href*="#"]:not([href="#"])').click(() => {
 
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 
@@ -146,7 +146,7 @@ $(document).ready(function() {
 
 /************************************ BUTTONS ************************************/
 
-    $('.section-photos-crown__button_ghost_more-hide').click(function() {
+    $('.section-photos-crown__button_ghost_more-hide').click(() => {
 
         $('.more-photos').animate({
 
@@ -154,7 +154,7 @@ $(document).ready(function() {
         }, 100);
     });
 
-    $('.header__scroll-down').click(function(){
+    $('.header__scroll-down').click(() => {
 
         $('html, body').animate({
 
@@ -162,7 +162,7 @@ $(document).ready(function() {
         }, 1000);
     });
 
-    $('.logo').click(function(){
+    $('.logo').click(() => {
 
         $('html, body').animate({
 
@@ -172,7 +172,7 @@ $(document).ready(function() {
 
 /* more photos button */
 
-    $(function() {
+    $(() => {
 
         $('.more-photos').animate({
 
@@ -200,7 +200,7 @@ $(document).ready(function() {
     }, false);
 /************************************ TOOLTIP ON IMAGES ************************************/
 
-    $(document).ready(function() {
+    $(document).ready(() => {
 
         $('.tooltip').tooltipster({
 
@@ -217,7 +217,7 @@ $(document).ready(function() {
 
 /************************************ QUOTES ************************************/
 
-    $(function () {
+    $(() => {
 
         const quote1 = 'When you go to the mountains, you see them and you admire them. <br>In a sense, they give you a challenge, and you try to express that challenge by climbing them.<br><br>Edmund Hillary';
         const quote2 = 'Mountains are the beginning and the end of all natural scenery.<br><br>John Ruskin';
@@ -255,7 +255,7 @@ $(document).ready(function() {
             sentence.fadeIn(1500);
         }
 
-        window.setInterval(function () {
+        window.setInterval(() => {
 
             sentence.fadeOut(1500);
             change.animate({
@@ -372,7 +372,7 @@ $(document).ready(function() {
 
 /************************************ CROWN GALLERY ************************************/
 
-    ley addPhotos = function(arr) {
+    let addPhotos = function(arr) {
 
         let html, newHtml, el;
 
