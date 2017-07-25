@@ -429,6 +429,19 @@ header {
     }
 }
 
+.section-photos-crown__photo-height {
+      position: absolute;
+  top: 15px;
+  left: 15px;
+  margin: 0 40px 0 0;
+  font-size: 20px;
+  line-height: 30px;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+  opacity: 0.8;
+  display: none;
+}
+
 .more-photos { transition: transform 0.5s, opacity 0.5s; }
 
 .section-photos-crown__button_ghost_more-hide {

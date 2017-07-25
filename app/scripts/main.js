@@ -114,9 +114,9 @@ $(document).ready(function() {
 
 /************************************ NAVIGATION SCROLL ************************************/
 
-    $(() => {
+    $(function() {
 
-        $('a[href*="#"]:not([href="#"])').click(() => {
+        $('a[href*="#"]:not([href="#"])').click(function() {
 
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 
@@ -397,8 +397,6 @@ $(document).ready(function() {
         }
     };
 
-    addPhotos(crownMountainsArr);
-
     let addMorePhotos = function(photosArr, num) {
 
         let html, newHtml, el, className;
@@ -430,6 +428,7 @@ $(document).ready(function() {
             newHtml = newHtml.replace('%NAME1%', crownMountainsArr[num][2]);
             newHtml = newHtml.replace('%name%', crownMountainsArr[num][2]);
             newHtml = newHtml.replace('%HEIGHT%', crownMountainsArr[num][6]);
+            newHtml = newHtml.replace('%HEIGHT2%', crownMountainsArr[num][6]);
             newHtml = newHtml.replace('%ALT%', crownMountainsArr[num][2]);
             newHtml = newHtml.replace('%TITLE%', crownMountainsArr[num][1]);
             newHtml = newHtml.replace('%gallery_name%', crownMountainsArr[num][8]);
@@ -439,6 +438,8 @@ $(document).ready(function() {
             document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
         }
     };
+
+    addPhotos(crownMountainsArr);
 
     let crownGalleries = function(arr) {
 
@@ -502,7 +503,10 @@ $(document).ready(function() {
 
     swiper = new Swiper('.swiper-container-mobile', {});
 
-/************************************ GALLERY ************************************/
+
+ $('.disabled').click(function(e){
+     e.preventDefault();
+  })
 
 
 
