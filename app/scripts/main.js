@@ -468,10 +468,6 @@ $(document).ready(function() {
     addListOfPhotos(crownMountainsArr);
     crownGalleries(crownMountainsArr);
 
-
-
-
-
 /************************************ MOBILE CROWN GALLERY ************************************/
 
     let addPhotosMobile = function(arr) {
