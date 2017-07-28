@@ -17,6 +17,7 @@ $font-size: 20px;
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -102,10 +103,12 @@ h3 {
     padding: 1% 2%;
     font-weight: 300;
     text-decoration: none;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
     transition: background-color 0.2s, border 0.2s, color 0.2s;
     color: $icon-color;
     background-color: #fff;
     border: 1px solid #f2f2f2;
+    -webkit-box-shadow: 1px 1px 30px 0px rgba(184,184,184,1);
     box-shadow: 1px 1px 30px 0px rgba(184,184,184,1);
     &:link,
     &:visited {
@@ -123,6 +126,7 @@ h3 {
 /* --------------------------------------------------------------------------------------------------------------- */
 
 header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url(../images/hero.jpeg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/hero.jpeg);
     background-size: cover;
     background-position: center;
@@ -138,6 +142,7 @@ header {
     width: 1140px;
     height: auto;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
@@ -202,6 +207,7 @@ header {
             text-decoration: none;
             font-size: 90%;
             border-bottom: 2px solid transparent;
+            -webkit-transition: border-bottom 0.2s;
             transition: border-bottom 0.2s;
             z-index: 99;
         }
@@ -224,6 +230,7 @@ header {
 .sticky {
     @extend %sticky-navi;
     background-color: rgba(255, 255, 255, 0.98);
+    -webkit-box-shadow: 0 2px 2px #efefef;
     box-shadow: 0 2px 2px #efefef;
     .header__nav-list {
         li {
@@ -242,6 +249,7 @@ header {
 .sticky-black {
     @extend %sticky-navi;
     background-color: rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     .header__nav-list {
         li {
@@ -378,6 +386,7 @@ header {
         margin: 0;
         top: 50%;
         left: 50%;
+        -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         color: #fff;
         text-align: center;
@@ -386,11 +395,16 @@ header {
     img {
         width: 100%;
         height: auto;
+        -webkit-transform: scale(1.15);
         transform: scale(1.15);
+        -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+        transition: opacity 0.5s, -webkit-transform 0.5s;
         transition: transform 0.5s, opacity 0.5s;
+        transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
         opacity: 0.4;
 
         &:hover{
+            -webkit-transform: scale(1.03);
             transform: scale(1.03);
             opacity: 0.1;
             margin: 0;
@@ -415,6 +429,7 @@ header {
     h3 {
         position: absolute;
         top: 85%;
+        -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         color: rgba(255, 255, 255, 0.8);
         text-align: center;
@@ -430,19 +445,20 @@ header {
 }
 
 .section-photos-crown__photo-height {
-      position: absolute;
-  top: 15px;
-  left: 15px;
-  margin: 0 40px 0 0;
-  font-size: 20px;
-  line-height: 30px;
-  color: #fff;
-  text-shadow: 0 0 2px #000;
-  opacity: 0.8;
-  display: none;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    margin: 0 40px 0 0;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+    text-shadow: 0 0 2px #000;
+    opacity: 0.8;
+    display: none;
 }
 
-.more-photos { transition: transform 0.5s, opacity 0.5s; }
+.more-photos {
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s; transition: opacity 0.5s, -webkit-transform 0.5s; transition: transform 0.5s, opacity 0.5s; transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s; }
 
 .section-photos-crown__button_ghost_more-hide {
     @extend %button;
@@ -507,6 +523,7 @@ header {
 /* --------------------------------------------------------------------------------------------------------------- */
 
 .section-quote {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.3))), url(../images/back-quote.jpeg);
     background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../images/back-quote.jpeg);
     background-size: cover;
     background-position: top;
@@ -588,6 +605,7 @@ header {
         color: $icon-color;
     }
     i {
+        -webkit-transition: color 0.2s;
         transition: color 0.2s;
     }
 }
