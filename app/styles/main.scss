@@ -10,6 +10,9 @@ $font-size: 20px;
     @return ($width / $columns) - ($margin * 2);
 }
 
+@import 'styles';
 @import 'grid';
 @import 'queries';
-@import 'styles';
+
+
+
