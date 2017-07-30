@@ -35,7 +35,7 @@
 
     .section-map h2:after { margin-top: 2%; }
 
-    .section-photos-crown { 
+    .section-photos-crown {
         padding: 5% 0 10% 0;
         h3 { font-size: 89%; }
     }
@@ -183,12 +183,12 @@
 /* Small phones: from 0 to 480px */
 
 @media only screen and (max-width: 480px) {
-    
+
     h2 { padding-bottom: 5%; }
 
     .header__logo_white,
     .header__logo_black { height: 50px; }
-    
+
     .header__nav-list { padding-left: 5%; }
 
     .header__title { margin-top: 75%; }
@@ -201,15 +201,15 @@
 
     .section-quote {
         p {
-            width: 90%; 
+            width: 90%;
             font-size: 120%;
         }
     }
-    
+
     .section-about-us__about-us-box { margin: 0 10% 0 -20%; }
-    
+
     .section-about-us__features_only-pc { display: none; }
-    
+
     .span-1-of-5 { width: 33%;}
 
     .footer__nav {

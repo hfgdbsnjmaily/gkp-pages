@@ -9,7 +9,7 @@ $(document).ready(function() {
 
     document.querySelector('h1').textContent = '';
 
-    $(window).width() < 767 ? title = "We haven’t been<br> everywhere,<br> but it’s on our list" : title = "We haven’t been everywhere,<br> but it’s on our list";
+    $(window).width() < 767 ? title = 'We haven’t been<br> everywhere,<br> but it’s on our list' : title = 'We haven’t been everywhere,<br> but it’s on our list';
 
     const typed = new Typed('.header__title', {
         strings: [title],
@@ -17,8 +17,11 @@ $(document).ready(function() {
     });
 
 /************************************ COUNTER - RESULTS ************************************/
+    let headerWaypoint = new Waypoint({
+        element: $('.header__title')[0],
+        handler: ()=> {
 
-    $('.header__title').waypoint(() => {
+        $('.section-results').addClass('animated zoomIn');
 
         $('.section-results__counter').each(function() {
 
@@ -43,32 +46,27 @@ $(document).ready(function() {
                 }
             });
         });
-    });
+    }});
 
 /************************************ ANIMATIONS ON SCROLL ************************************/
 
-    $('.section-results').waypoint(() => {
 
-        $('.section-results').addClass('animated zoomIn');
-    }, {
+    /*let waypointAboutUs = new Waypoint({
+        element: $('about-us')[0],
+        handler: ()=> {
 
-        offset: '50%'
-    });
-
-    $('.about-us-text').waypoint(() => {
-
-        $('.about-us-text').addClass('animated bounceIn');
-    }, {
+        $('about-us').addClass('animated bounceIn');
+    }}, {
 
         offset: '50%'
-    });
+    });*/
 
 /************************************ STICKY NAVIGATION ************************************/
+    let stickyWaypoint = new Waypoint({
+      element: $('.section-results')[0],
+      handler: direction => {
 
-
-    $('.section-results').waypoint(direction => {
-
-        if (direction == "down") {
+        if (direction == 'down') {
 
             $('nav').addClass('sticky');
             $('nav').removeClass('sticky-black');
@@ -81,9 +79,10 @@ $(document).ready(function() {
             isTop = true;
             return isTop;
         }
+      }
     }, {
 
-        offset: '60px'
+        offset: 60
     });
 
 /************************************ MOBILE NAVIGATION ************************************/
@@ -99,13 +98,13 @@ $(document).ready(function() {
 
             icon.addClass('ion-ios-close-empty');
             icon.removeClass('ion-navicon');
-            nav.slideToggle("slow");
+            nav.slideToggle('slow');
 
         } else {
 
             icon.addClass('ion-navicon');
             icon.removeClass('ion-ios-close-empty');
-            nav.slideToggle( "slow", function() {
+            nav.slideToggle( 'slow', function() {
 
                  $('.header__nav').removeClass('sticky-black');
             });
@@ -113,8 +112,6 @@ $(document).ready(function() {
     });
 
 /************************************ NAVIGATION SCROLL ************************************/
-
-    $(function() {
 
         $('a[href*="#"]:not([href="#"])').click(function() {
 
@@ -134,7 +131,6 @@ $(document).ready(function() {
           }
         }
       });
-    });
 
 /************************************ BUTTONS ************************************/
 
@@ -173,26 +169,24 @@ $(document).ready(function() {
     });
 
 
-    const button = document.querySelectorAll(".section-photos-crown__button_ghost_more-hide")[0];
+    const button = document.querySelectorAll('.section-photos-crown__button_ghost_more-hide')[0];
 
     button.addEventListener('click', function() {
 
-        const element = document.querySelector(".section-photos-crown");
+        const element = document.querySelector('.section-photos-crown');
 
-        if (button.getAttribute("data-text-swap") == button.innerHTML) {
-            button.innerHTML = button.getAttribute("data-text-original");
-            element.style.height = "5000 px";
+        if (button.getAttribute('data-text-swap') == button.innerHTML) {
+            button.innerHTML = button.getAttribute('data-text-original');
+            element.style.height = '5000 px';
         } else {
 
-            button.setAttribute("data-text-original", button.innerHTML);
-            button.innerHTML = button.getAttribute("data-text-swap");
-            element.style.height = "6000 px";
+            button.setAttribute('data-text-original', button.innerHTML);
+            button.innerHTML = button.getAttribute('data-text-swap');
+            element.style.height = '6000 px';
         }
 
     }, false);
 /************************************ TOOLTIP ON IMAGES ************************************/
-
-    $(document).ready(() => {
 
         $('.tooltip').tooltipster({
 
@@ -205,11 +199,8 @@ $(document).ready(function() {
             maxWidth: 190,
             timer: 500
         });
-    });
 
 /************************************ QUOTES ************************************/
-
-    $(() => {
 
         const quote1 = 'When you go to the mountains, you see them and you admire them. <br>In a sense, they give you a challenge, and you try to express that challenge by climbing them.<br><br>Edmund Hillary';
         const quote2 = 'Mountains are the beginning and the end of all natural scenery.<br><br>John Ruskin';
@@ -241,7 +232,7 @@ $(document).ready(function() {
 
             change.html(item);
             change.animate({
-                "opacity": "1"
+                'opacity': '1'
             }, 1500);
 
             sentence.fadeIn(1500);
@@ -252,18 +243,16 @@ $(document).ready(function() {
             sentence.fadeOut(1500);
             change.animate({
 
-                "opacity": "0"
+                'opacity': '0'
             }, 1500);
 
             setTimeout(quotes, 1500);
         }, 5000);
 
-    });
-
 /************************************ MAPS ************************************/
 
-    const markerGreen = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/2ecc71/");
-    const markerRed = new google.maps.MarkerImage("http://www.googlemapsmarkers.com/v1/e74c3c/");
+    const markerGreen = new google.maps.MarkerImage('http://www.googlemapsmarkers.com/v1/2ecc71/');
+    const markerRed = new google.maps.MarkerImage('http://www.googlemapsmarkers.com/v1/e74c3c/');
 
     const crownMountainsPhotosArr = [
         ['wysokaKopa.jpg', 'wysokakopa2.jpg', 'wysokakopa3.jpg', 'wysokakopa4.jpg', 'wysokakopa5.jpg', 'wysokakopa6.jpg'],
@@ -503,8 +492,5 @@ $(document).ready(function() {
  $('.disabled').click(function(e){
      e.preventDefault();
   })
-
-
-
 
 }); //end of script

@@ -488,13 +488,13 @@
 				var instance = $.data( this, 'gallery' );
 
 				if ( !instance ) {
-					logError( "cannot call methods on gallery prior to initialization; " +
-					"attempted to call method '" + options + "'" );
+					logError( 'cannot call methods on gallery prior to initialization; ' +
+					'attempted to call method \'' + options + '\'' );
 					return;
 				}
 
-				if ( !$.isFunction( instance[options] ) || options.charAt(0) === "_" ) {
-					logError( "no such method '" + options + "' for gallery instance" );
+				if ( !$.isFunction( instance[options] ) || options.charAt(0) === '_' ) {
+					logError( 'no such method \'' + options + '\' for gallery instance' );
 					return;
 				}
 

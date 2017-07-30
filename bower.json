@@ -3,10 +3,25 @@
   "private": true,
   "dependencies": {
     "bootstrap": "~4.0.0-alpha.6",
-    "modernizr": "~2.8.1"
+    "modernizr": "~2.8.1",
+    "respond": "^1.4.2",
+    "html5shiv": "^3.7.3",
+    "selectivizr": "^1.0.2",
+    "waypoints": "^4.0.1",
+    "tooltipster": "^4.2.5",
+    "gmaps": "^0.4.25",
+    "typed": "*",
+    "swiper": "^3.4.2",
+    "lightbox2": "lightbox#^2.9.0",
+    "normalize-css": "^7.0.0",
+    "Ionicons": "ionicons#^2.0.1",
+    "typed.js": "typed-js#^2.0.5",
+    "blueimp": "blueimp-gallery#^2.25.2",
+    "animate.css": "animate-css#^3.5.2"
   },
   "devDependencies": {
     "chai": "^4.0.2",
     "mocha": "^3.4.2"
   }
 }
+
