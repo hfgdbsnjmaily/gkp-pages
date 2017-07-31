@@ -113,7 +113,7 @@ $(document).ready(function() {
 
 /************************************ NAVIGATION SCROLL ************************************/
 
-        $('a[href*="#"]:not([href="#"])').click(function() {
+    $('a[href*="#"]:not([href="#"])').click(function() {
 
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 
@@ -160,14 +160,10 @@ $(document).ready(function() {
 
 /* more photos button */
 
-    $(() => {
-
-        $('.more-photos').animate({
+    $('.more-photos').animate({
 
             height: 'toggle'
         }, 100);
-    });
-
 
     const button = document.querySelectorAll('.section-photos-crown__button_ghost_more-hide')[0];
 
@@ -489,8 +485,8 @@ $(document).ready(function() {
     swiper = new Swiper('.swiper-container-mobile', {});
 
 
- $('.disabled').click(function(e){
-     e.preventDefault();
-  })
+    $('.disabled').click(function(e){
+        e.preventDefault();
+    })
 
 }); //end of script
