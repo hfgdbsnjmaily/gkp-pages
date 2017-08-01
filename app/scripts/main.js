@@ -164,11 +164,11 @@ $(document).ready(function() {
             height: 'toggle'
         }, 100);
 
-    const button = document.querySelectorAll('.section-photos-crown__button_ghost_more-hide')[0];
+    const button = $('.section-photos-crown__button_ghost_more-hide')[0];
 
     button.addEventListener('click', function() {
 
-        const element = document.querySelector('.section-photos-crown');
+        const element =$('.section-photos-crown')[0];
 
         if (button.getAttribute('data-text-swap') == button.innerHTML) {
             button.innerHTML = button.getAttribute('data-text-original');
@@ -266,10 +266,9 @@ $(document).ready(function() {
 
     function addMarkers(arr) {
 
-        for (let i = 0; i < arr.length; i++) {
+        arr.map((mountain, i) => {
 
             let marker;
-
 
             if (arr[i].marker == "markerGreen") {
 
@@ -281,33 +280,29 @@ $(document).ready(function() {
             }
 
             map.addMarker({
-                lat: arr[i].lat,
-                lng: arr[i].lng,
-                title: arr[i].name,
+                lat: mountain.lat,
+                lng: mountain.lng,
+                title: mountain.name,
                 icon: marker,
                 infoWindow: {
 
-                    content: arr[i].name
+                    content: mountain.name
                 }
             });
 
             mapmobile.addMarker({
 
-                lat: arr[i].lat,
-                lng: arr[i].lng,
-                title: arr[i].name,
+                lat: mountain.lat,
+                lng: mountain.lng,
+                title: mountain.name,
                 icon: marker,
                 infoWindow: {
 
-                    content: arr[i].name
+                    content: mountain.name
                 }
             });
-        }
-    };
-
-
-
-
+        });
+    }
 
 /************************************ CROWN GALLERY ************************************/
 
@@ -342,7 +337,7 @@ $(document).ready(function() {
             newHtml = newHtml.replace('%gallery_name%', mountain.tag);
             newHtml = newHtml.replace('%gallery_name1%', mountain.tag);
 
-            document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
+            $(el).append(newHtml);
         });
 
     }
@@ -384,7 +379,7 @@ $(document).ready(function() {
             newHtml = newHtml.replace('%gallery_name1%', mountainsObj.crownMountains[num].tag);
             newHtml = newHtml.replace('%gallery_name2%', mountainsObj.crownMountains[num].tag);
 
-            document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
+            $(el).append(newHtml);
         });
     }
 
@@ -440,7 +435,7 @@ $(document).ready(function() {
                 newHtml = newHtml.replace('%name%', mountain.name);
                 newHtml = newHtml.replace('%height%', mountain.height);
 
-                document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
+                $(el).append(newHtml);
             }
         });
     }
@@ -464,11 +459,8 @@ $(document).ready(function() {
 
     const mountainsData = $.getJSON("../data/mountains.json", function(json) {
         mountainsObj = json;
-        console.log(mountainsObj.crownMountains[0].marker);
         loadContent();
     });
-
-    console.log(mountainsObj);
 
 
     $('.disabled').click(function(e){
