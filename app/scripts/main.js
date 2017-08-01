@@ -2,12 +2,11 @@ $(document).ready(function() {
 
     let isTop = true;
 
-
 /************************************ TITLE ************************************/
 
     let title;
 
-    document.querySelector('h1').textContent = '';
+    $('h1').textContent = '';
 
     $(window).width() < 767 ? title = 'We haven’t been<br> everywhere,<br> but it’s on our list' : title = 'We haven’t been everywhere,<br> but it’s on our list';
 
@@ -346,18 +345,18 @@ $(document).ready(function() {
             document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
         });
 
-    };
+    }
 
     function addMorePhotos(photosArr, num) {
 
         let html, newHtml, el, className;
 
-        arr.map((mountain, i) => {
+        photosArr.map((mountain, i) => {
 
             className = mountainsObj.crownMountains[num].tag;
             el = '.'+className;
 
-            if (i == photosArr.length) {
+            if (i == mountain.length) {
 
                 html = '<li><div class="section-photos-crown__crown-photo_hidden"><a href="images/%photo%" title="%name% &mdash; %date%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%alt%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%name1%<br>%date1%</div></h3></div></div></li>';
 
@@ -370,9 +369,9 @@ $(document).ready(function() {
 
             }
 
-            newHtml = html.replace('%photo%', mountain[i]);
-            newHtml = newHtml.replace('%photo1%', mountain[i]);
-            newHtml = newHtml.replace('%photo2%', mountain[i]);
+            newHtml = html.replace('%photo%', mountain);
+            newHtml = newHtml.replace('%photo1%', mountain);
+            newHtml = newHtml.replace('%photo2%', mountain);
             newHtml = newHtml.replace('%date%', mountainsObj.crownMountains[num].date);
             newHtml = newHtml.replace('%date1%', mountainsObj.crownMountains[num].date);
             newHtml = newHtml.replace('%name%', mountainsObj.crownMountains[num].name);
@@ -386,8 +385,8 @@ $(document).ready(function() {
             newHtml = newHtml.replace('%gallery_name2%', mountainsObj.crownMountains[num].tag);
 
             document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
-        }
-    };
+        });
+    }
 
 
 
@@ -395,7 +394,7 @@ $(document).ready(function() {
 
         arr.map((mountain, i) => {
             if (i < mountainsProgress) {
-                let id = arr[i].tag;
+                let id = mountain.tag;
 
                 document.getElementById(id).onclick = function (event) {
                     event = event || window.event;
@@ -414,7 +413,8 @@ $(document).ready(function() {
 
         arr.map((mountain, i) => {
             if (i < mountainsProgress) {
-            addMorePhotos(arr[i].photos, i);
+
+            addMorePhotos(mountain.photos, i);
         }
     });
     }
@@ -435,10 +435,10 @@ $(document).ready(function() {
 
                 html = '<div class="swiper-slide"><img src="/images/%photo_name%" /><div class="label-mobile">%name% %height% &mdash; %date%</div></div>';
 
-                newHtml = html.replace('%photo_name%', arr[i].tag + '.jpg');
-                newHtml = newHtml.replace('%date%', arr[i].date);
-                newHtml = newHtml.replace('%name%', arr[i].name);
-                newHtml = newHtml.replace('%height%', arr[i].height);
+                newHtml = html.replace('%photo_name%', mountain.tag + '.jpg');
+                newHtml = newHtml.replace('%date%', mountain.date);
+                newHtml = newHtml.replace('%name%', mountain.name);
+                newHtml = newHtml.replace('%height%', mountain.height);
 
                 document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
             }
@@ -473,6 +473,6 @@ $(document).ready(function() {
 
     $('.disabled').click(function(e){
         e.preventDefault();
-    })
+    });
 
 }); //end of script
