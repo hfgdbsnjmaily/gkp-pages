@@ -247,56 +247,7 @@ $(document).ready(function() {
 
 /************************************ MAPS ************************************/
 
-    const markerGreen = new google.maps.MarkerImage('http://www.googlemapsmarkers.com/v1/2ecc71/');
-    const markerRed = new google.maps.MarkerImage('http://www.googlemapsmarkers.com/v1/e74c3c/');
-
-    const crownMountainsPhotosArr = [
-        ['wysokaKopa.jpg', 'wysokakopa2.jpg', 'wysokakopa3.jpg', 'wysokakopa4.jpg', 'wysokakopa5.jpg', 'wysokakopa6.jpg'],
-        ['waligora.jpg', 'waligora2.jpg', 'waligora3.jpg', 'waligora4.jpg'],
-        ['skalnik.jpg', 'skalnik2.jpg', 'skalnik3.jpg', 'skalnik4.jpg', 'skalnik5.jpg', 'skalnik6.jpg'],
-        ['chelmiec.jpg', 'chelmiec2.jpg', 'chelmiec3.jpg', 'chelmiec4.jpg', 'chelmiec5.jpg',  'chelmiec6.jpg',  'chelmiec7.jpg',  'chelmiec8.jpg', 'chelmiec9.jpg'],
-        ['tarnica.jpg', 'tarnica2.jpg', 'tarnica3.jpg', 'tarnica4.jpg', 'tarnica5.jpg', 'tarnica7.jpg', 'tarnica8.jpg', 'tarnica9.jpg', 'tarnica10.jpg', 'tarnica11.jpg', 'tarnica12.jpg', 'tarnica13.jpg', 'tarnica14.jpg'],
-        ['sniezka.jpg', 'sniezka2.jpg', 'sniezka3.jpg', 'sniezka4.jpg', 'sniezka5.jpg', 'sniezka6.jpg', 'sniezka7.jpg', 'sniezka8.jpg', 'sniezka9.jpg'],
-        ['skrzyczne.jpg', 'skrzyczne2.jpg', 'skrzyczne3.jpg', 'skrzyczne4.jpg', 'skrzyczne5.jpg', 'skrzyczne6.jpg', 'skrzyczne7.jpg', 'skrzyczne8.jpg', 'skrzyczne9.jpg'],
-        ['wielkasowa.jpg'],
-        ['szczeliniec.jpg', 'szczeliniec2.jpg', 'szczeliniec3.jpg', 'szczeliniec4.jpg'],
-        ['snieznik.jpg', 'snieznik2.jpg', 'snieznik3.jpg', 'snieznik4.jpg'],
-        ['sleza.jpg', 'sleza2.jpg', 'sleza3.jpg', 'sleza4.jpg', 'sleza5.jpg', 'sleza6.jpg', 'sleza7.jpg'],
-        ['skopiec.jpg', 'skopiec2.jpg', 'skopiec3.jpg', 'skopiec4.jpg', 'skopiec5.jpg', 'skopiec6.jpg', 'skopiec7.jpg']
-    ];
-
-    const crownMountainsArr = [
-        [50.9443884, 15.8827756, 'Skopiec', markerGreen, crownMountainsPhotosArr[11], '22 VII 2017', '724 m', 'Góry Kaczawskie', 'skopiec'],
-        [50.8500034, 15.4172557,'Wysoka Kopa', markerGreen, crownMountainsPhotosArr[0], '8 VII 2017', '1126 m', 'Góry Izerskie', 'wysokaKopa'],
-        [50.6807542, 16.275888, 'Waligóra', markerGreen, crownMountainsPhotosArr[1], '20 V 2017', '936 m', 'Góry Kamienne', 'waligora'],
-        [50.8083367, 15.8992001, 'Skalnik', markerGreen, crownMountainsPhotosArr[2], '25 III 2017', '945 m', 'Rudawy Janowickie', 'skalnik'],
-        [50.7791356, 16.2077093, 'Chełmiec', markerGreen, crownMountainsPhotosArr[3], '5 III 2017', '869 m', 'Góry Wałbrzyskie', 'chelmiec'],
-        [49.0745582, 22.724061,'Tarnica', markerGreen, crownMountainsPhotosArr[4], '3 I 2017', '1346 m', 'Bieszczady', 'tarnica'],
-        [50.7360205, 15.737757, 'Śnieżka', markerGreen, crownMountainsPhotosArr[5], '23 X 2016', '1602 m', 'Karkonosze','sniezka'],
-        [49.6959665, 19.0039589, 'Skrzyczne', markerGreen, crownMountainsPhotosArr[6], '17 VII 2016', '1257 m', 'Beskid Śląski', 'skrzyczne'],
-        [50.6803483, 16.483309, 'Wielka Sowa', markerGreen, crownMountainsPhotosArr[7], '20 IX 2015', '1015 m', 'Góry Sowie', 'wielkaSowa'],
-        [50.483671, 16.3336122, 'Szczeliniec', markerGreen, crownMountainsPhotosArr[8], '5 VI 2015', '919 m', 'Góry Stołowe', 'szczeliniec'],
-        [50.0993116, 16.6902543, 'Śnieżnik', markerGreen, crownMountainsPhotosArr[9], '1 II 2015', '1425 m', 'Masyw Śnieżnika', 'snieznik'],
-        [50.864745, 16.707827, 'Ślęża', markerGreen, crownMountainsPhotosArr[10], '15 VIII 2014', '718 m', 'Masyw Ślęży', 'sleza'],
-        [50.891624, 20.896774, 'Łysica', markerRed, 'lysicaX.jpg', '', '612 m', 'Góry Świętokrzyskie'],
-        [49.1795515, 20.0858753, 'Rysy', markerRed, 'rysyX.jpg', '', '2499 m', 'Tatry'],
-        [49.5731663, 19.5286077, 'Babia Góra', markerRed, 'babiaGoraX.jpg', '', '1725 m', 'Beskid Żywiecki'],
-        [49.5429214, 20.1091561, 'Turbacz', markerRed, 'turbaczX.jpg', '', '1310 m', 'Gorce'],
-        [49.4493442, 20.6019427, 'Radziejowa', markerRed, 'radziejowaX.jpg', '', '1262 m', 'Beskid Sądecki'],
-        [49.655234, 20.2746449, 'Mogielica', markerRed, 'mogielicaX.jpg', '', '1170 m', 'Beskid Wyspowy'],
-        [50.2440594, 16.9737003, 'Rudawiec', markerRed, 'rudawiecX.jpg', '', '1112 m', 'Góry Bialskie'],
-        [49.4192215, 20.4559293, 'Orlica', markerRed, 'orlicaX.jpg', '', '1084 m','Góry Orlickie'],
-        [49.1727815, 20.0922553, 'Wysoka', markerRed, 'wysokaX.jpg', '', '1050 m', 'Pieniny'],
-        [49.4294017, 21.0941791,'Lackowa', markerRed, 'lackowaX.jpg', '', '997 m', 'Beskid Niski'],
-        [50.2638922, 17.0117001, 'Kowadło', markerRed, 'kowadloX.jpg', '', '989 m', 'Góry Złote'],
-        [50.2527811, 16.5644779, 'Jagodna', markerRed, 'jagodnaX.jpg', '', '977 m', 'Góry Bystrzyckie'],
-        [49.7661082, 19.1530886, 'Czupel', markerRed, 'czupelX.jpg', '', '934 m', 'Beskid Mały'],
-        [49.76667, 20.0603113, 'Lubomir', markerRed, 'lubomirX.jpg', '', '912 m', 'Beskid Makowski'],
-        [50.2500034, 17.4311446, 'Biskupia Kopa', markerRed, 'biskupiaKopaX.jpg', '', '889 m', 'Góry Opawskie'],
-        [50.4538922, 16.757811, 'Kłodzka Góra', markerRed, 'klodzkaGoraX.jpg', '', '765 m', 'Góry Bardzkie']
-
-    ];
-
+    let mountainsObj;
 
     const map = new GMaps({
 
@@ -314,42 +265,51 @@ $(document).ready(function() {
         zoom: 7
     });
 
-    let addMarkers = function(arr) {
+    function addMarkers(arr) {
 
         for (let i = 0; i < arr.length; i++) {
 
+            let marker;
+
+
+            if (arr[i].marker == "markerGreen") {
+                marker = new google.maps.MarkerImage('http://www.googlemapsmarkers.com/v1/2ecc71/');
+            } else {
+                marker = new google.maps.MarkerImage('http://www.googlemapsmarkers.com/v1/e74c3c/');
+            }
+
             map.addMarker({
-                lat: arr[i][0],
-                lng: arr[i][1],
-                title: arr[i][2],
-                icon: arr[i][3],
+                lat: arr[i].lat,
+                lng: arr[i].lng,
+                title: arr[i].name,
+                icon: marker,
                 infoWindow: {
 
-                    content: arr[i][2]
+                    content: arr[i].name
                 }
             });
 
             mapmobile.addMarker({
 
-                lat: arr[i][0],
-                lng: arr[i][1],
-                title: arr[i][2],
-                icon: arr[i][3],
+                lat: arr[i].lat,
+                lng: arr[i].lng,
+                title: arr[i].name,
+                icon: marker,
                 infoWindow: {
 
-                    content: arr[i][2]
+                    content: arr[i].name
                 }
             });
         }
     };
 
-    addMarkers(crownMountainsArr);
+
 
 
 
 /************************************ CROWN GALLERY ************************************/
 
-    let addPhotos = function(arr) {
+    function addPhotos(arr) {
 
         let html, newHtml, el;
 
@@ -357,7 +317,7 @@ $(document).ready(function() {
 
             el = '.section-photos-crown__photos-all';
 
-            if (arr[i][3] == markerRed) {
+            if (arr[i].marker == "markerRed") {
 
                 html = '<div class="section-more-photos__photo-box"><li><div class="section-photos-crown__crown-photo_dark"><img src="images/%photo_name_x%" alt="%ALT%"><h3 class="new-label"><span>%NAME%<br>%HEIGHT%<br></span></h3></div></div></li></div>';
 
@@ -371,24 +331,24 @@ $(document).ready(function() {
                 el = '.more-photos';
             }
 
-            newHtml = html.replace('%photo_name_x%', arr[i][4]);
-            newHtml = newHtml.replace('%NAME%', arr[i][2]);
-            newHtml = newHtml.replace('%HEIGHT%', arr[i][6]);
-            newHtml = newHtml.replace('%ALT%', arr[i][2]);
-            newHtml = newHtml.replace('%gallery_name%', arr[i][8]);
-            newHtml = newHtml.replace('%gallery_name1%', arr[i][8]);
+            newHtml = html.replace('%photo_name_x%', arr[i].photos[0]);
+            newHtml = newHtml.replace('%NAME%', arr[i].name);
+            newHtml = newHtml.replace('%HEIGHT%', arr[i].height);
+            newHtml = newHtml.replace('%ALT%', arr[i].name);
+            newHtml = newHtml.replace('%gallery_name%', arr[i].tag);
+            newHtml = newHtml.replace('%gallery_name1%', arr[i].tag);
 
             document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
         }
     };
 
-    let addMorePhotos = function(photosArr, num) {
+    function addMorePhotos(photosArr, num) {
 
         let html, newHtml, el, className;
 
         for (let i = 0; i < photosArr.length; i++) {
 
-            className = crownMountainsArr[num][8];
+            className = mountainsObj.crownMountains[num].tag;
             el = '.'+className;
 
             if (i == photosArr.length) {
@@ -406,30 +366,29 @@ $(document).ready(function() {
 
             newHtml = html.replace('%photo%', photosArr[i]);
             newHtml = newHtml.replace('%photo1%', photosArr[i]);
-            newHtml = newHtml.replace('%DATE%', crownMountainsArr[num][5]);
-            newHtml = newHtml.replace('%DATE1%', crownMountainsArr[num][5]);
+            newHtml = newHtml.replace('%DATE%', mountainsObj.crownMountains[num].date);
+            newHtml = newHtml.replace('%DATE1%', mountainsObj.crownMountains[num].date);
             newHtml = newHtml.replace('%photo2%', photosArr[i]);
-            newHtml = newHtml.replace('%NAME%', crownMountainsArr[num][2]);
-            newHtml = newHtml.replace('%NAME1%', crownMountainsArr[num][2]);
-            newHtml = newHtml.replace('%name%', crownMountainsArr[num][2]);
-            newHtml = newHtml.replace('%HEIGHT%', crownMountainsArr[num][6]);
-            newHtml = newHtml.replace('%HEIGHT2%', crownMountainsArr[num][6]);
-            newHtml = newHtml.replace('%ALT%', crownMountainsArr[num][2]);
-            newHtml = newHtml.replace('%TITLE%', crownMountainsArr[num][1]);
-            newHtml = newHtml.replace('%gallery_name%', crownMountainsArr[num][8]);
-            newHtml = newHtml.replace('%gallery_name1%', crownMountainsArr[num][8]);
-            newHtml = newHtml.replace('%gallery_name2%', crownMountainsArr[num][8]);
+            newHtml = newHtml.replace('%NAME%', mountainsObj.crownMountains[num].name);
+            newHtml = newHtml.replace('%NAME1%', mountainsObj.crownMountains[num].name);
+            newHtml = newHtml.replace('%name%', mountainsObj.crownMountains[num].name);
+            newHtml = newHtml.replace('%HEIGHT%', mountainsObj.crownMountains[num].height);
+            newHtml = newHtml.replace('%HEIGHT2%', mountainsObj.crownMountains[num].height);
+            newHtml = newHtml.replace('%ALT%', mountainsObj.crownMountains[num].name);
+            newHtml = newHtml.replace('%gallery_name%', mountainsObj.crownMountains[num].tag);
+            newHtml = newHtml.replace('%gallery_name1%', mountainsObj.crownMountains[num].tag);
+            newHtml = newHtml.replace('%gallery_name2%', mountainsObj.crownMountains[num].tag);
 
             document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
         }
     };
 
-    addPhotos(crownMountainsArr);
 
-    let crownGalleries = function(arr) {
+
+    function crownGalleries(arr) {
 
         for (let i = 0; i < 12; i++) {
-            let id = arr[i][8];
+            let id = arr[i].tag;
 
             document.getElementById(id).onclick = function (event) {
                 event = event || window.event;
@@ -443,19 +402,20 @@ $(document).ready(function() {
     };
 
 
-    let addListOfPhotos = function(arr) {
+    function addListOfPhotos(arr) {
 
         for (let i = 0; i < 12; i++) {
-            addMorePhotos(arr[i][4], i);
+            addMorePhotos(arr[i].photos, i);
         }
     };
 
-    addListOfPhotos(crownMountainsArr);
-    crownGalleries(crownMountainsArr);
+
+
+
 
 /************************************ MOBILE CROWN GALLERY ************************************/
 
-    let addPhotosMobile = function(arr) {
+    function addPhotosMobile(arr) {
 
         let html, newHtml, el;
 
@@ -465,16 +425,16 @@ $(document).ready(function() {
 
                 html = '<div class="swiper-slide"><img src="/images/%photo_name%" /><div class="label-mobile">%NAME% %HEIGHT% &mdash; %DATE%</div></div>';
 
-                newHtml = html.replace('%photo_name%', arr[i][8] + '.jpg');
-                newHtml = newHtml.replace('%DATE%', arr[i][5]);
-                newHtml = newHtml.replace('%NAME%', arr[i][2]);
-                newHtml = newHtml.replace('%HEIGHT%', arr[i][6]);
+                newHtml = html.replace('%photo_name%', arr[i].tag + '.jpg');
+                newHtml = newHtml.replace('%DATE%', arr[i].date);
+                newHtml = newHtml.replace('%NAME%', arr[i].name);
+                newHtml = newHtml.replace('%HEIGHT%', arr[i].height);
 
                 document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
             }
     };
 
-    addPhotosMobile(crownMountainsArr);
+
 
     let swiper = new Swiper('.swiper-container', {
 
@@ -483,6 +443,22 @@ $(document).ready(function() {
     });
 
     swiper = new Swiper('.swiper-container-mobile', {});
+
+    function loadContent(){
+        addMarkers(mountainsObj.crownMountains);
+        addPhotos(mountainsObj.crownMountains);
+        addListOfPhotos(mountainsObj.crownMountains);
+        crownGalleries(mountainsObj.crownMountains);
+        addPhotosMobile(mountainsObj.crownMountains);
+    }
+
+    const mountainsData = $.getJSON("../data/mountains.json", function(json) {
+        mountainsObj = json;
+        console.log(mountainsObj.crownMountains[0].marker);
+        loadContent();
+    });
+
+    console.log(mountainsObj);
 
 
     $('.disabled').click(function(e){
