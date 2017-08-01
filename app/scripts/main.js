@@ -273,8 +273,11 @@ $(document).ready(function() {
 
 
             if (arr[i].marker == "markerGreen") {
+
                 marker = new google.maps.MarkerImage('http://www.googlemapsmarkers.com/v1/2ecc71/');
+
             } else {
+
                 marker = new google.maps.MarkerImage('http://www.googlemapsmarkers.com/v1/e74c3c/');
             }
 
@@ -309,17 +312,19 @@ $(document).ready(function() {
 
 /************************************ CROWN GALLERY ************************************/
 
+    const mountainsProgress = 12;
+
     function addPhotos(arr) {
 
         let html, newHtml, el;
 
-        for (let i = 0; i < arr.length; i++) {
+        arr.map((mountain, i) => {
 
             el = '.section-photos-crown__photos-all';
 
             if (arr[i].marker == "markerRed") {
 
-                html = '<div class="section-more-photos__photo-box"><li><div class="section-photos-crown__crown-photo_dark"><img src="images/%photo_name_x%" alt="%ALT%"><h3 class="new-label"><span>%NAME%<br>%HEIGHT%<br></span></h3></div></div></li></div>';
+                html = '<div class="section-more-photos__photo-box"><li><div class="section-photos-crown__crown-photo_dark"><img src="images/%photo_name_x%" alt="%alt%"><h3 class="new-label"><span>%name%<br>%height%<br></span></h3></div></div></li></div>';
 
             } else {
 
@@ -331,50 +336,51 @@ $(document).ready(function() {
                 el = '.more-photos';
             }
 
-            newHtml = html.replace('%photo_name_x%', arr[i].photos[0]);
-            newHtml = newHtml.replace('%NAME%', arr[i].name);
-            newHtml = newHtml.replace('%HEIGHT%', arr[i].height);
-            newHtml = newHtml.replace('%ALT%', arr[i].name);
-            newHtml = newHtml.replace('%gallery_name%', arr[i].tag);
-            newHtml = newHtml.replace('%gallery_name1%', arr[i].tag);
+            newHtml = html.replace('%photo_name_x%', mountain.photos[0]);
+            newHtml = newHtml.replace('%name%', mountain.name);
+            newHtml = newHtml.replace('%height%', mountain.height);
+            newHtml = newHtml.replace('%alt%', mountain.name);
+            newHtml = newHtml.replace('%gallery_name%', mountain.tag);
+            newHtml = newHtml.replace('%gallery_name1%', mountain.tag);
 
             document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
-        }
+        });
+
     };
 
     function addMorePhotos(photosArr, num) {
 
         let html, newHtml, el, className;
 
-        for (let i = 0; i < photosArr.length; i++) {
+        arr.map((mountain, i) => {
 
             className = mountainsObj.crownMountains[num].tag;
             el = '.'+className;
 
             if (i == photosArr.length) {
 
-                html = '<li><div class="section-photos-crown__crown-photo_hidden"><a href="images/%photo%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%ALT%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li>';
+                html = '<li><div class="section-photos-crown__crown-photo_hidden"><a href="images/%photo%" title="%name% &mdash; %date%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%alt%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%name1%<br>%date1%</div></h3></div></div></li>';
 
             } else if (i === 0) {
 
-                html = '<li><div class="section-photos-crown__crown-photo"><a href="images/%photo1%" class="section-photos-crown__photo-link" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%ALT%" class="tooltip" title="Click to open gallery from %name%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li>';
+                html = '<li><div class="section-photos-crown__crown-photo"><a href="images/%photo1%" class="section-photos-crown__photo-link" title="%name% &mdash; %date%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%alt%" class="tooltip" title="Click to open gallery from %name2%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%name1%<br>%date1%</div></h3></div></div></li>';
             } else {
 
-                html = '<li><div class="section-photos-crown__crown-photo_hidden"><a href="images/%photo2%" title="%NAME% &mdash; %DATE%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%ALT%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%NAME1%<br>%DATE1%</div></h3></div></div></li>';
+                html = '<li><div class="section-photos-crown__crown-photo_hidden"><a href="images/%photo2%" title="%name% &mdash; %date%" data-gallery="#blueimp-gallery-%gallery_name%"><img src="images/%photo%" alt="%alt%"></a><h3 class="new-label"></h3><div class="section-photos-crown__caption"><h3><div>%name1%<br>%date1%</div></h3></div></div></li>';
 
             }
 
-            newHtml = html.replace('%photo%', photosArr[i]);
-            newHtml = newHtml.replace('%photo1%', photosArr[i]);
-            newHtml = newHtml.replace('%DATE%', mountainsObj.crownMountains[num].date);
-            newHtml = newHtml.replace('%DATE1%', mountainsObj.crownMountains[num].date);
-            newHtml = newHtml.replace('%photo2%', photosArr[i]);
-            newHtml = newHtml.replace('%NAME%', mountainsObj.crownMountains[num].name);
-            newHtml = newHtml.replace('%NAME1%', mountainsObj.crownMountains[num].name);
+            newHtml = html.replace('%photo%', mountain[i]);
+            newHtml = newHtml.replace('%photo1%', mountain[i]);
+            newHtml = newHtml.replace('%photo2%', mountain[i]);
+            newHtml = newHtml.replace('%date%', mountainsObj.crownMountains[num].date);
+            newHtml = newHtml.replace('%date1%', mountainsObj.crownMountains[num].date);
             newHtml = newHtml.replace('%name%', mountainsObj.crownMountains[num].name);
-            newHtml = newHtml.replace('%HEIGHT%', mountainsObj.crownMountains[num].height);
-            newHtml = newHtml.replace('%HEIGHT2%', mountainsObj.crownMountains[num].height);
-            newHtml = newHtml.replace('%ALT%', mountainsObj.crownMountains[num].name);
+            newHtml = newHtml.replace('%name1%', mountainsObj.crownMountains[num].name);
+            newHtml = newHtml.replace('%name2%', mountainsObj.crownMountains[num].name);
+            newHtml = newHtml.replace('%height%', mountainsObj.crownMountains[num].height);
+            newHtml = newHtml.replace('%height%', mountainsObj.crownMountains[num].height);
+            newHtml = newHtml.replace('%alt%', mountainsObj.crownMountains[num].name);
             newHtml = newHtml.replace('%gallery_name%', mountainsObj.crownMountains[num].tag);
             newHtml = newHtml.replace('%gallery_name1%', mountainsObj.crownMountains[num].tag);
             newHtml = newHtml.replace('%gallery_name2%', mountainsObj.crownMountains[num].tag);
@@ -387,28 +393,31 @@ $(document).ready(function() {
 
     function crownGalleries(arr) {
 
-        for (let i = 0; i < 12; i++) {
-            let id = arr[i].tag;
+        arr.map((mountain, i) => {
+            if (i < mountainsProgress) {
+                let id = arr[i].tag;
 
-            document.getElementById(id).onclick = function (event) {
-                event = event || window.event;
-                let target = event.target || event.srcElement,
-                    link = target.src ? target.parentNode : target,
-                    options = {index: link, event: event},
-                    links = this.getElementsByTagName('a');
-                blueimp.Gallery(links, options);
-            };
-        }
-    };
+                document.getElementById(id).onclick = function (event) {
+                    event = event || window.event;
+                    let target = event.target || event.srcElement,
+                        link = target.src ? target.parentNode : target,
+                        options = {index: link, event: event},
+                        links = this.getElementsByTagName('a');
+                    blueimp.Gallery(links, options);
+                };
+            }
+        });
+    }
 
 
     function addListOfPhotos(arr) {
 
-        for (let i = 0; i < 12; i++) {
+        arr.map((mountain, i) => {
+            if (i < mountainsProgress) {
             addMorePhotos(arr[i].photos, i);
         }
-    };
-
+    });
+    }
 
 
 
@@ -419,21 +428,22 @@ $(document).ready(function() {
 
         let html, newHtml, el;
 
-            for (let i = 0; i < 12; i++) {
+            arr.map((mountain, i) => {
+            if (i < mountainsProgress) {
 
                 el = '.swiper-wrapper';
 
-                html = '<div class="swiper-slide"><img src="/images/%photo_name%" /><div class="label-mobile">%NAME% %HEIGHT% &mdash; %DATE%</div></div>';
+                html = '<div class="swiper-slide"><img src="/images/%photo_name%" /><div class="label-mobile">%name% %height% &mdash; %date%</div></div>';
 
                 newHtml = html.replace('%photo_name%', arr[i].tag + '.jpg');
-                newHtml = newHtml.replace('%DATE%', arr[i].date);
-                newHtml = newHtml.replace('%NAME%', arr[i].name);
-                newHtml = newHtml.replace('%HEIGHT%', arr[i].height);
+                newHtml = newHtml.replace('%date%', arr[i].date);
+                newHtml = newHtml.replace('%name%', arr[i].name);
+                newHtml = newHtml.replace('%height%', arr[i].height);
 
                 document.querySelector(el).insertAdjacentHTML('beforeend', newHtml);
             }
-    };
-
+        });
+    }
 
 
     let swiper = new Swiper('.swiper-container', {
