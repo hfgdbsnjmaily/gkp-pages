@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 /************************************ TITLE ************************************/
 
-    let title;
+    /*let title;
 
     $('h1').textContent = '';
 
@@ -270,7 +270,7 @@ $(document).ready(function() {
 
             let marker;
 
-            if (arr[i].marker == "markerGreen") {
+            if (arr[i].marker == 'markerGreen') {
 
                 marker = new google.maps.MarkerImage('http://www.googlemapsmarkers.com/v1/2ecc71/');
 
@@ -306,7 +306,7 @@ $(document).ready(function() {
 
 /************************************ CROWN GALLERY ************************************/
 
-    const mountainsProgress = 12;
+    const mountainsProgress = 15;
 
     function addPhotos(arr) {
 
@@ -316,9 +316,9 @@ $(document).ready(function() {
 
             el = '.section-photos-crown__photos-all';
 
-            if (arr[i].marker == "markerRed") {
+            if (arr[i].marker == 'markerRed') {
 
-                html = '<div class="section-more-photos__photo-box"><li><div class="section-photos-crown__crown-photo_dark"><img src="images/%photo_name_x%" alt="%alt%"><h3 class="new-label"><span>%name%<br>%height%<br></span></h3></div></div></li></div>';
+                html = '<div class="section-more-photos__photo-box"><ul class="section-more-photos__photos clearfix"><li><div class="section-photos-crown__crown-photo_dark"><img src="images/%photo_name_x%" alt="%alt%"><h3 class="new-label"><span>%name%<br>%height%<br></span></h3></div></li></ul></div>';
 
             } else {
 
@@ -457,7 +457,7 @@ $(document).ready(function() {
         addPhotosMobile(mountainsObj.crownMountains);
     }
 
-    const mountainsData = $.getJSON("../data/mountains.json", function(json) {
+    const mountainsData = $.getJSON('../mountains.json', function(json) {
         mountainsObj = json;
         loadContent();
     });
